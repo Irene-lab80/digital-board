@@ -16,7 +16,7 @@ const suffix = (
 
 export default () => (
   <Search
-    style={{ maxWidth: '565px' }}
+    style={{ minWidth: '565px' }}
     placeholder=""
     allowClear
     enterButton="Искать"

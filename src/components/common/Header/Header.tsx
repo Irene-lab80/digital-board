@@ -8,10 +8,18 @@ import Profile from '../ProfileButton/ProfileButton';
 const Header = () => (
   <div className={style.header_wrapper}>
     <header className={style.header}>
-      <Logo />
-      <Search />
-      <Button buttonTitle="Подать объявление" />
-      <Profile title="Войти" />
+      <div className={style.header__logo}>
+        <Logo />
+      </div>
+      <div className={style.header__search}>
+        <Search />
+      </div>
+      <div className={style.header__button}>
+        <Button buttonTitle="Подать объявление" />
+      </div>
+      <div className={style.header__profileButton}>
+        <Profile title="Войти" />
+      </div>
     </header>
   </div>
 );
