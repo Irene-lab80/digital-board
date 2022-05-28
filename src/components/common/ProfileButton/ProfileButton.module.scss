@@ -16,11 +16,17 @@
   font-size: 14px;
   line-height: 24px;
   color: $color-text-dark-s;
-  cursor: pointer;
+  // cursor: pointer;
+}
+
+.profileButton:hover .profile__icon {
+  background-image: url('../../../assets/images/person-icon-colored.svg');
+  background-repeat: no-repeat;
+  transition: .3s;
 }
 
 .profileButton:hover {
-  background-image: url('../../../assets/images/person-icon-colored.svg');
-  background-repeat: no-repeat;
-  color: #214f50;
+  color: $color-button-main;
+  transition: .3s;
+  cursor: pointer;
 }

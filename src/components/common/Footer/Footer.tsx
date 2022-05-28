@@ -8,10 +8,13 @@ import vkIcon from '../../../assets/images/vk-icon.svg';
 const Footer = () => (
   <div className={style.footer__wrapper}>
     <footer className={style.footer}>
-      <div className={style.footer__logo}>
-        <Logo />
-        <div className={style.footer__text}> Доска объявлений </div>
+      <div className={style.footer__left}>
+        <div className={style.footer__logo}>
+          <Logo />
+        </div>
+        <div className={style.footer__text}>Доска объявлений</div>
       </div>
+
       <div className={style.footer__copyright}>© ООО «Доска диджитал», 2022</div>
       <div className={style.footer__socials}>
         <a className={style.footer__link} href="http://facebook.com">
