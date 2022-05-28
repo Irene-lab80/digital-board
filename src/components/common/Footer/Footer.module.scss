@@ -1,0 +1,48 @@
+@import "../../../assets/styles/constants";
+
+.footer__wrapper {
+  background: $color-text-dark-xs;
+}
+
+.footer {
+  display: flex;
+  height: 120px;
+  align-items: center;
+  justify-content: space-between;
+  max-width: $content-width;
+  margin: auto;
+}
+
+.footer__logo {
+  display: flex;
+}
+
+.footer__text {
+  border-left: 1px solid $color-text-dark-s;
+  opacity: 0.6;
+  height: 32px;
+  padding-left: 24px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  margin-left: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.footer__copyright {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  opacity: 0.6;
+}
+
+.footer__link {
+  margin-right: 24px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+

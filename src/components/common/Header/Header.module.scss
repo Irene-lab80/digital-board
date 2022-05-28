@@ -1,0 +1,12 @@
+@import "../../../assets/styles/constants";
+
+.header {
+  display: flex;
+  height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  max-width: $content-width;
+  margin: 0 auto;
+}
+

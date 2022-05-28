@@ -1,0 +1,26 @@
+@import "../../../assets/styles/constants.scss";
+
+.profile__icon {
+  background-image: url('../../../assets/images/person-icon.svg');
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  display: inline-block;
+}
+
+.profileButton {
+  display: flex;
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: $color-text-dark-s;
+  cursor: pointer;
+}
+
+.profileButton:hover {
+  background-image: url('../../../assets/images/person-icon-colored.svg');
+  background-repeat: no-repeat;
+  color: #214f50;
+}

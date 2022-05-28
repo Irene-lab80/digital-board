@@ -1,0 +1,21 @@
+@import "../../../assets/styles/main.scss";
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  &__img {
+    padding-right: 4px;
+    width: 31px;
+    height: 20px;
+  }
+
+  &__text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    color: $color-text-dark-s;
+    margin: 0;
+  }
+}
