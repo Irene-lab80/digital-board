@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Input, Button, Checkbox } from 'antd';
 
-const AuthForm: React.FC = () => {
+const RegistrationPage: React.FC = () => {
   const onFinish = (values: any) => {
     console.log('Success:', values);
   };
@@ -20,6 +20,22 @@ const AuthForm: React.FC = () => {
       onFinishFailed={onFinishFailed}
       autoComplete="off"
     >
+      <Form.Item
+        label="Имя"
+        name="name"
+        rules={[{ required: true, message: 'Введите имя!' }]}
+      >
+        <Input />
+      </Form.Item>
+
+      <Form.Item
+        label="Фамилия"
+        name="lastname"
+        rules={[{ required: true, message: 'Введите фамилию!' }]}
+      >
+        <Input />
+      </Form.Item>
+
       <Form.Item
         name="email"
         label="E-mail"
@@ -40,18 +56,29 @@ const AuthForm: React.FC = () => {
       <Form.Item
         label="Пароль"
         name="password"
-        rules={[{ required: true, message: 'Please input your password!' }]}
+        rules={[{ required: true, message: 'Введите пароль!' }]}
       >
         <Input.Password />
       </Form.Item>
 
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
         <Button type="primary" htmlType="submit">
-          Войти
+          Создать аккаунт
         </Button>
       </Form.Item>
+
+      <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
+        <Checkbox>
+          Принимаю условия
+          <br />
+          <a href="!#">
+            Пользовательского соглашения
+          </a>
+        </Checkbox>
+      </Form.Item>
     </Form>
+
   );
 };
 
-export default AuthForm;
+export default RegistrationPage;
