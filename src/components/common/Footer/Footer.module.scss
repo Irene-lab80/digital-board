@@ -14,7 +14,7 @@
 }
 
 .footer__logo {
-  padding: 0 24px;
+  padding: 0 24px 0 15px;
 }
 
 .footer__left {
@@ -30,12 +30,12 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
-  // margin-left: 24px;
   display: flex;
   align-items: center;
 }
 
 .footer__copyright {
+  margin-right: 110px;
   font-family: 'Jost';
   font-style: normal;
   font-weight: 400;
@@ -49,5 +49,9 @@
   &:last-child {
     margin-right: 0;
   }
+}
+
+.footer__socials {
+  margin-right: 15px;
 }
 

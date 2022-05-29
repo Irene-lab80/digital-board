@@ -7,8 +7,9 @@ type profilePropsType = {
 
 const ProfileButton = ({ title }: profilePropsType) => (
   <div className={style.profileButton}>
+    <span className={style.profile__lock} />
     <span className={style.profile__icon} />
-    {title}
+    <span className={style.profile__text}>{title}</span>
   </div>
 );
 

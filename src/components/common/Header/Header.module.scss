@@ -1,4 +1,5 @@
 @import "../../../assets/styles/constants";
+@import "../../../assets/styles/mixins";
 
 .header {
   display: flex;
@@ -10,15 +11,37 @@
 
   &__logo {
     margin: 0 15px;
+
+    @include media-tablet {
+      margin: 0 0 0 24px;
+    }
   }
 
   &__search {
-    // min-width: 556px;
+    min-width: 556px;
     margin-left: 35px;
+
+    @include media-laptop {
+      min-width: 286px; 
+      margin-left: 24px;  
+    } 
+
+    @include media-tablet {
+      margin-left: 24px;  
+      width: initial; 
+    } 
+
+    @include media-mobile {
+      margin-left: 16px;  
+    } 
   }
 
   &__button {
     margin-left: 60px;
+
+    @include media-tablet {
+      margin-left: 0;
+    }
   }
 
   &__profileButton {

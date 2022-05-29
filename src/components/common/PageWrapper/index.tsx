@@ -1,4 +1,5 @@
 import React from 'react';
+import AuthPage from '../../Pages/AuthPage';
 import style from './PageWrapper.module.scss';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
@@ -9,7 +10,7 @@ const PageWrapper = () => (
     <Header />
     <main className={style.content}>
       <h1>content</h1>
-      {/* <Outlet /> */}
+      <AuthPage />
     </main>
     <Footer />
   </div>

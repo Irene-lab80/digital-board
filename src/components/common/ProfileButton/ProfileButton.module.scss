@@ -1,4 +1,5 @@
 @import "../../../assets/styles/constants.scss";
+@import "../../../assets/styles/mixins";
 
 .profile__icon {
   background-image: url('../../../assets/images/person-icon.svg');
@@ -6,6 +7,26 @@
   height: 24px;
   margin-right: 8px;
   display: inline-block;
+}
+
+.profile__text {
+  display: inline-block;
+
+  @include media-tablet {
+    display: none;
+  }
+}
+
+.profile__lock {
+  display: none;
+  width: 24px;
+  height: 24px;
+  margin-right: 24px;
+
+  @include media-tablet {
+    display: inline-block;
+    background-image: url('../../../assets/images/lock-icon.svg');
+  }
 }
 
 .profileButton {

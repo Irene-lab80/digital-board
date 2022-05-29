@@ -3,7 +3,7 @@ import Logo from '../Logo/Logo';
 import Button from '../Button/Button';
 import Search from '../Search/Search';
 import style from './Header.module.scss';
-import Profile from '../ProfileButton/ProfileButton';
+import ProfileButton from '../ProfileButton/ProfileButton';
 
 const Header = () => (
   <div className={style.header_wrapper}>
@@ -18,7 +18,7 @@ const Header = () => (
         <Button buttonTitle="Подать объявление" />
       </div>
       <div className={style.header__profileButton}>
-        <Profile title="Войти" />
+        <ProfileButton title="Войти" />
       </div>
     </header>
   </div>

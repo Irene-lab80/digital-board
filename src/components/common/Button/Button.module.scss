@@ -1,4 +1,5 @@
 @import "../../../assets/styles/main.scss";
+@import "../../../assets/styles/mixins";
 
 .button {
   padding: 6px 26.5px;
@@ -12,5 +13,9 @@
   
   &:hover {
     background-color: $color-button-accented-hover;
+  }
+
+  @include media-tablet {
+    padding: 6px 21.5px;
   }
 }
