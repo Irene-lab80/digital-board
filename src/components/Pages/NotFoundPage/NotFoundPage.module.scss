@@ -1,0 +1,37 @@
+@import '../../../assets/styles/constants';
+@import '../../../assets/styles/mixins';
+
+.page__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 24px 0;
+  width: 1170px;
+
+  @include media-laptop {
+    width: initial;
+  }
+}
+
+.page__info {
+  margin-right: 24px;
+}
+
+.page__message {
+  line-height: 24px;
+  font-size: 18px;
+  margin-bottom: 32px;
+}
+
+.page__message_bold {
+  margin-bottom: 32px;
+  line-height: 32px;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.page__img {
+  display: block;
+  max-width: 466px;
+  height: fit-content;
+}
