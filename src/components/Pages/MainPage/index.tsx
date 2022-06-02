@@ -1,5 +1,6 @@
 import React from 'react';
+import FormHeader from '../../common/FormHeader';
 
-const MainPage = () => <h1>MainPAAAAGE</h1>;
+const MainPage = () => <FormHeader />;
 
 export default MainPage;
