@@ -1,6 +1,5 @@
 import React from 'react';
-import FormHeader from '../../common/FormHeader';
 
-const MainPage = () => <FormHeader />;
+const MainPage = () => <h1>BANNER</h1>;
 
 export default MainPage;

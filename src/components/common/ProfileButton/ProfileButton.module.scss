@@ -1,6 +1,10 @@
 @import "../../../assets/styles/constants.scss";
 @import "../../../assets/styles/mixins";
 
+.profile__wrapper {
+  display: flex;
+}
+
 .profile__icon {
   background-image: url('../../../assets/images/person-icon.svg');
   width: 24px;
@@ -11,6 +15,7 @@
 
 .profile__text {
   display: inline-block;
+  color: $color-text-dark-s;
 
   @include media-tablet {
     display: none;
@@ -37,17 +42,19 @@
   font-size: 14px;
   line-height: 24px;
   color: $color-text-dark-s;
-  // cursor: pointer;
+}
+
+.profileButton:hover {
+  cursor: pointer;
 }
 
 .profileButton:hover .profile__icon {
   background-image: url('../../../assets/images/person-icon-colored.svg');
   background-repeat: no-repeat;
-  transition: .3s;
+  transition: all .3s;
 }
 
-.profileButton:hover {
-  color: $color-button-main;
-  transition: .3s;
-  cursor: pointer;
+.profileButton:hover .profile__text {
+  color: #3A95FF;
+  transition: all .3s;
 }

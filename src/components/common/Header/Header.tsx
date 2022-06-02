@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 import Button from '../Button/Button';
 import Search from '../Search/Search';
