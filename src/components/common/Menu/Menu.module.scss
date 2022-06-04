@@ -3,7 +3,6 @@
 .menu {
   margin: 0;
   padding: 0;
-  display: flex;
 }
 
 .active {
@@ -11,15 +10,14 @@
 }
 
 .menuItem {
-  color: $color-text-dark-m;
+  display: inline-flex;
+  align-items: center;
   list-style: none;
-  font-size: 16px;
-  line-height: 24px;
-  margin-right: 40px;
-
-  border-radius: 35px;
-  display: flex;
   flex-shrink: 0;
+  font-size: 16px;
+  border-radius: 35px;
+  margin-right: 40px;
+  color: $color-text-dark-m;
 }
 
 .menuItem:last-child {
