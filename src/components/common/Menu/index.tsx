@@ -2,7 +2,7 @@ import React from 'react';
 import style from './Menu.module.scss';
 
 const Menu = () => (
-  <nav>
+  <nav className={style.nav}>
     <ul className={style.menu}>
       <li className={style.menuItem_accented}>Вся доска</li>
       <li className={style.menuItem_bordered}>Автомобили</li>
