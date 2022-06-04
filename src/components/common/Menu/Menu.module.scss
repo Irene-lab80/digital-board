@@ -1,0 +1,39 @@
+@import '../../../assets/styles/constants';
+
+.menu {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.active {
+  background: $color-button-accented;
+}
+
+.menuItem {
+  color: #2A2F37;
+  list-style: none;
+  font-size: 16px;
+  line-height: 24px;
+  margin-right: 40px;
+  padding: 8px 24px;
+  border-radius: 35px;
+  display: flex;
+  flex-shrink: 0;
+}
+
+.menuItem:last-child {
+  margin-right: 0;
+}
+
+.menuItem_accented {
+  @extend .menuItem;
+  background-color: $color-button-accented;
+  color: $color-text-dark-l;
+}
+
+.menuItem_bordered {
+  @extend .menuItem;
+  border: 1px solid $color-button-main;
+  color: $color-button-main;
+}
