@@ -3,9 +3,16 @@ import Card from '../Card';
 import style from './Feed.module.scss';
 
 const Feed = () => (
-  <div className={style.wrapper}>
+  <div className={style.feedwrapper}>
     <h2>Вся лента</h2>
-    <Card />
+    <div className={style.cardsWrapper}>
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+    </div>
   </div>
 );
 

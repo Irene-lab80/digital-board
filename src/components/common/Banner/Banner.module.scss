@@ -1,15 +1,25 @@
+@import '../../../assets/styles/constants';
 .wrapper  {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+
+.info {
+  max-width: 445px;
+  margin-right: 166px;
+}
+
 .title {
+  font-weight: 700;
   font-size: 48px;
+  line-height: 56px;
+  color: $color-text-dark-l;
 }
 
 .img {
-  max-width: 660px;
+  max-width: 557px;
 }
 
 .text {

@@ -8,6 +8,12 @@
 
 body {
   font-family: 'Jost';
+  color: $color-text-dark-l;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  background: rgba(42, 47, 55, 0.02);;
 }
 
 button {

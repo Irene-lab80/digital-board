@@ -1,6 +1,10 @@
 @import "../../../assets/styles/constants";
 @import "../../../assets/styles/mixins";
 
+.header_wrapper {
+  background: #ffffff;
+}
+
 .header {
   display: flex;
   height: 72px;
