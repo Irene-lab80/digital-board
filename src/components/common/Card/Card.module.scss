@@ -14,12 +14,9 @@
 }
 
 .img {
-  max-width: 363px;
+  width: 363px;
   height: 200px;
-  background-image: url('../../../assets/images/1.jpg');
-  background-position: center ;
-  background-repeat: no-repeat;
-  background-size: cover;
+  object-fit: cover;
   border-radius: 4px 4px 0 0;
 }
 

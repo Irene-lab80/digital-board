@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './Card.module.scss';
+import img from '../../../assets/images/1.jpg';
 
 type CardPropsType = {
   tag: string;
@@ -13,7 +14,7 @@ type CardPropsType = {
 const Card = ({ tag, title, description, price, date, viewNumber }: CardPropsType) => (
   <div className={style.wrapper}>
     <div className={style.imgWrapper}>
-      <div className={style.img} />
+      <img className={style.img} src={img} alt="product" />
       <div className={style.tag}>{tag}</div>
     </div>
     <div className={style.info}>
