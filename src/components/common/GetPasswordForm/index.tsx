@@ -13,8 +13,6 @@ const GetPasswordForm: React.FC = () => {
   return (
     <Form
       name="basic"
-      labelCol={{ span: 8 }}
-      wrapperCol={{ span: 16 }}
       initialValues={{ remember: true }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
@@ -35,13 +33,13 @@ const GetPasswordForm: React.FC = () => {
         <Input />
       </Form.Item>
 
-      <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+      <Form.Item>
         <Button type="primary" htmlType="submit">
           Выслать ссылку
         </Button>
       </Form.Item>
 
-      <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
+      <Form.Item name="remember" valuePropName="checked">
         Выполняя вход в сервис, вы подтверждаете, что ознакомились с документами
         <a href="!#">«политика конфидициальности»</a>
         ,
