@@ -6,6 +6,7 @@ import AuthContainer from './components/Containers/AuthContainer';
 import RegistrationContainer from './components/Containers/RegistrationContainer';
 import NotFoundContainer from './components/Containers/NotFoundContainer';
 import MainPageContainer from './components/Containers/MainPageContainer';
+import GetPasswordContainer from './components/Containers/GetPasswordContainer';
 
 const App = () => (
   <div className="App">
@@ -14,6 +15,7 @@ const App = () => (
         <Route index element={<MainPageContainer />} />
         <Route path="auth" element={<AuthContainer />} />
         <Route path="reg" element={<RegistrationContainer />} />
+        <Route path="get-pass" element={<GetPasswordContainer />} />
         <Route path="*" element={<NotFoundContainer />} />
       </Route>
     </Routes>

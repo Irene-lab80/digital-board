@@ -1,8 +1,7 @@
 import React from 'react';
 import { Form, Input, Button } from 'antd';
-import { NavLink } from 'react-router-dom';
 
-const AuthForm: React.FC = () => {
+const GetPasswordPage: React.FC = () => {
   const onFinish = (values: any) => {
     console.log('Success:', values);
   };
@@ -36,24 +35,24 @@ const AuthForm: React.FC = () => {
         <Input />
       </Form.Item>
 
-      <Form.Item
-        label="Пароль"
-        name="password"
-        rules={[{ required: true, message: 'Please input your password!' }]}>
-        <Input.Password />
-      </Form.Item>
-
-      <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-        <NavLink to="/get-pass">Забыли пароль?</NavLink>
-      </Form.Item>
-
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
         <Button type="primary" htmlType="submit">
-          Войти
+          Выслать ссылку
         </Button>
+      </Form.Item>
+
+      <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
+        Выполняя вход в сервис, вы подтверждаете, что ознакомились с документами
+        <a href="!#">«политика конфидициальности»</a>
+        ,
+        <a href="!#">«согласие на обработку персональных данных»</a>
+        и
+        <a href="!#">«пользовательское соглашение»</a>
+        {' '}
+        и согласны с ними.
       </Form.Item>
     </Form>
   );
 };
 
-export default AuthForm;
+export default GetPasswordPage;
