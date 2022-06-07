@@ -2,6 +2,7 @@ import React from 'react';
 import Card from '../Card';
 import style from './Feed.module.scss';
 import { data } from '../../../helpers';
+import ButtonMain from '../ButtonMain';
 
 const Feed = () => (
   <div className={style.feedwrapper}>
@@ -88,6 +89,7 @@ const Feed = () => (
         viewNumber={data[8].viewNumber}
         imgPath={data[8].src}
       />
+      <ButtonMain buttonTitle="Загрузить еще" />
     </div>
   </div>
 );

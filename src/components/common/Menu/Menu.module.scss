@@ -20,6 +20,10 @@
   color: $color-text-dark-m;
 }
 
+.menuItem:hover {
+  cursor: pointer;
+}
+
 .menuItem:last-child {
   margin-right: 0;
 }

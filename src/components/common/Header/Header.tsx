@@ -1,7 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import Logo from '../Logo/Logo';
-import Button from '../Button/Button';
+import Button from '../Button';
 import Search from '../Search/Search';
 import style from './Header.module.scss';
 import ProfileButton from '../ProfileButton/ProfileButton';
