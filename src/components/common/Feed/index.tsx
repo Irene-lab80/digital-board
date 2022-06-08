@@ -18,7 +18,7 @@ const Feed = () => (
           date={data[0].date}
           viewNumber={data[0].viewNumber}
           imgPath={data[0].src}
-      />
+        />
       </Link>
       <Card
         tag={data[1].tag}
