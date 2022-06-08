@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Card from '../Card';
 import style from './Feed.module.scss';
 import { data } from '../../../helpers';
@@ -8,15 +9,17 @@ const Feed = () => (
   <div className={style.feedwrapper}>
     <h2>Вся лента</h2>
     <div className={style.cardsWrapper}>
-      <Card
-        tag={data[0].tag}
-        title={data[0].title}
-        description={data[0].description}
-        price={data[0].price}
-        date={data[0].date}
-        viewNumber={data[0].viewNumber}
-        imgPath={data[0].src}
+      <Link to="product">
+        <Card
+          tag={data[0].tag}
+          title={data[0].title}
+          description={data[0].description}
+          price={data[0].price}
+          date={data[0].date}
+          viewNumber={data[0].viewNumber}
+          imgPath={data[0].src}
       />
+      </Link>
       <Card
         tag={data[1].tag}
         title={data[1].title}

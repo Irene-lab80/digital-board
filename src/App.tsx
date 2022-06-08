@@ -7,6 +7,7 @@ import RegistrationContainer from './components/Containers/RegistrationContainer
 import NotFoundContainer from './components/Containers/NotFoundContainer';
 import MainPageContainer from './components/Containers/MainPageContainer';
 import GetPasswordContainer from './components/Containers/GetPasswordContainer';
+import ProductPageContainer from './components/Containers/ProductPageContainer';
 
 const App = () => (
   <div className="App">
@@ -17,6 +18,7 @@ const App = () => (
         <Route path="reg" element={<RegistrationContainer />} />
         <Route path="get-pass" element={<GetPasswordContainer />} />
         <Route path="*" element={<NotFoundContainer />} />
+        <Route path="product" element={<ProductPageContainer />} />
       </Route>
     </Routes>
   </div>

@@ -9,10 +9,11 @@ type CardPropsType = {
   price: string;
   date: string;
   viewNumber: string;
-  imgPath: any;
+  imgPath: string;
 };
 
 const Card = ({ tag, title, description, price, date, viewNumber, imgPath }: CardPropsType) => (
+
   <div className={style.wrapper}>
     <div className={style.imgWrapper}>
       <img className={style.img} src={imgPath} alt="product" />
@@ -25,13 +26,10 @@ const Card = ({ tag, title, description, price, date, viewNumber, imgPath }: Car
       <div className={style.footer}>
         <div className={style.date}>{date}</div>
         <ViewsNumber>{viewNumber}</ViewsNumber>
-        {/* <div className={style.views}>
-          <span className={style.icon} />
-          <span className={style.viewNumber}>{viewNumber}</span>
-        </div> */}
       </div>
     </div>
   </div>
+
 );
 
 export default Card;
