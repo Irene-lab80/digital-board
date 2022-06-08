@@ -1,0 +1,20 @@
+
+@import '../../../assets/styles/constants';
+
+.views {
+  display: flex;
+  align-items: center;
+}
+
+.viewNumber {
+  padding-left: 8px;
+  color: $color-text-dark-l;
+  opacity: 0.4;
+}
+
+.icon {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  background-image: url('../../../assets/images/views-icon.svg');
+}

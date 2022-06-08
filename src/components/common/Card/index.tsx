@@ -1,4 +1,5 @@
 import React from 'react';
+import ViewsNumber from '../ViewsNumber';
 import style from './Card.module.scss';
 
 type CardPropsType = {
@@ -23,10 +24,11 @@ const Card = ({ tag, title, description, price, date, viewNumber, imgPath }: Car
       <div className={style.price}>{`${price} Р `}</div>
       <div className={style.footer}>
         <div className={style.date}>{date}</div>
-        <div className={style.views}>
+        <ViewsNumber>{viewNumber}</ViewsNumber>
+        {/* <div className={style.views}>
           <span className={style.icon} />
           <span className={style.viewNumber}>{viewNumber}</span>
-        </div>
+        </div> */}
       </div>
     </div>
   </div>
