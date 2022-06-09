@@ -4,7 +4,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import style from './ProductPage.module.scss';
-import img1 from '../../../assets/images/products/10.png';
+import img1 from '../../../assets/images/products/10.jpg';
 import img2 from '../../../assets/images/products/11.png';
 import img3 from '../../../assets/images/products/12.png';
 import img4 from '../../../assets/images/products/13.png';
@@ -46,30 +46,28 @@ const ProductPage: React.FC = () => {
         </div>
       </Slider>
 
-      <div className={style.thumbnails}>
-        <Slider
-          centerMode
-          focusOnSelect
-          asNavFor={nav1}
-          ref={slider2}
-          slidesToShow={3}
-          swipeToSlide
-          className={style.thumbnailswrapper}>
-          <div className={style.slide}>
-            <img alt="img" className={style.thumbnailImg} src={img1} width={162} />
-          </div>
-          <div className={style.slide}>
-            <img alt="img" className={style.thumbnailImg} src={img2} width={162} />
-          </div>
-          <div className={style.slide}>
-            <img alt="img" className={style.thumbnailImg} src={img3} width={162} />
-          </div>
-          <div className={style.slide}>
-            <img alt="img" className={style.thumbnailImg} src={img4} width={162} />
-          </div>
+      <Slider
+        centerMode
+        focusOnSelect
+        asNavFor={nav1}
+        ref={slider2}
+        slidesToShow={4}
+        swipeToSlide
+        className={style.thumbnailswrapper}>
+        <div className={style.thumbnailSlide}>
+          <img alt="img" className={style.thumbnailImg} src={img1} width={162} />
+        </div>
+        <div className={style.thumbnailSlide}>
+          <img alt="img" className={style.thumbnailImg} src={img2} width={162} />
+        </div>
+        <div className={style.thumbnailSlide}>
+          <img alt="img" className={style.thumbnailImg} src={img3} width={162} />
+        </div>
+        <div className={style.thumbnailSlide}>
+          <img alt="img" className={style.thumbnailImg} src={img4} width={162} />
+        </div>
 
-        </Slider>
-      </div>
+      </Slider>
 
     </>
   );
