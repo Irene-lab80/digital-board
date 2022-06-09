@@ -1,2 +1,11 @@
 @import '../../../assets/styles/constants';
 @import '../../../assets/styles/mixins';
+
+.wrapper {
+  display: flex;
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+}
