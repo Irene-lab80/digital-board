@@ -38,10 +38,16 @@
 
 .description {
   margin-top: 16px;
+  color: $color-text-dark-l;
+  opacity: 0.8;
 }
 
 .info {
   padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 248px;
 }
 
 .title {
@@ -68,4 +74,5 @@
 
 .date {
   opacity: 0.4;
+  color: $color-text-dark-l;
 }

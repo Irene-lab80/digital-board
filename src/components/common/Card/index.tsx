@@ -20,12 +20,16 @@ const Card = ({ tag, title, description, price, date, viewNumber, imgPath }: Car
       <div className={style.tag}>{tag}</div>
     </div>
     <div className={style.info}>
-      <div className={style.title}>{title}</div>
-      <div className={style.description}>{description}</div>
-      <div className={style.price}>{`${price} Р `}</div>
-      <div className={style.footer}>
-        <div className={style.date}>{date}</div>
-        <ViewsNumber>{viewNumber}</ViewsNumber>
+      <div className={style.top}>
+        <div className={style.title}>{title}</div>
+        <div className={style.description}>{description}</div>
+      </div>
+      <div className={style.bottom}>
+        <div className={style.price}>{`${price} Р `}</div>
+        <div className={style.footer}>
+          <div className={style.date}>{date}</div>
+          <ViewsNumber>{viewNumber}</ViewsNumber>
+        </div>
       </div>
     </div>
   </div>
