@@ -13,6 +13,10 @@
   cursor: pointer;
 }
 
+.wrapper:hover .title  {
+  color: $color-button-main;
+}
+
 .img {
   width: 363px;
   height: 200px;
