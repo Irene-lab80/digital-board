@@ -14,7 +14,7 @@ const ProductPage = () => (
       <div>PRICE</div>
 
       <div>Смотрите также:</div>
-      <CustomButton />
+      <CustomButton>Показать номер</CustomButton>
 
     </aside>
 
