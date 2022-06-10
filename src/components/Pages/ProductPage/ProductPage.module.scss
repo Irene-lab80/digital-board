@@ -1,6 +1,11 @@
 @import '../../../assets/styles/constants';
 @import '../../../assets/styles/mixins';
 
+
+.slider {
+  margin-top: 24px;
+}
+
 .wrapper {
   width: 1170px; //TODO: fix the width for adaptive
   display: flex;
@@ -28,6 +33,28 @@
   }
 }
 
-.number, .views {
+.number, 
+.views, 
+.title {
   margin-top: 24px;
+}
+
+.date {
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 8px 20px;
+  background: rgba(42, 47, 55, 0.06);
+}
+
+.title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.number {
+  font-size: 18px;
+  line-height: 24px;
 }

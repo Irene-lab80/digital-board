@@ -11,6 +11,7 @@ const ProductPage = () => (
     <div className={style.wrapper}>
       <main className={style.main}>
         <div className={style.date}>14 апреля 2022</div>
+        <h2 className={style.title}>Стиральная машина Bosch</h2>
         <div className={style.number}>WS-25645-253-55</div>
         {/* TODO: change, there were a way to add class to a component?  */}
         <ViewsNumber cname={style.views}>2 456</ViewsNumber>
@@ -18,14 +19,11 @@ const ProductPage = () => (
       </main>
 
       <aside className={style.aside}>
-        <div>PRICE</div>
+        <div className={style.price}>PRICE</div>
         <div>Смотрите также:</div>
         <CustomButton>Показать номер</CustomButton>
-
       </aside>
-
     </div>
-
   </>
 );
 
