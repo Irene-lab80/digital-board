@@ -9,7 +9,11 @@ import img2 from '../../../assets/images/products/11.png';
 import img3 from '../../../assets/images/products/12.png';
 import img4 from '../../../assets/images/products/13.png';
 
-const ProductSlider: React.FC = () => {
+type ProductSliderProps = {
+  cname: string;
+}
+
+const ProductSlider: React.FC<ProductSliderProps> = ({ cname }) => {
   const [nav1, setNav1] = useState();
   const [nav2, setNav2] = useState();
   const slider1: any = useRef(null); // TODO: remove any??
@@ -22,7 +26,7 @@ const ProductSlider: React.FC = () => {
 
   return (
 
-    <>
+    <div className={cname}>
       <Slider
         className={style.wrapper}
         autoplay={false}
@@ -69,7 +73,7 @@ const ProductSlider: React.FC = () => {
 
       </Slider>
 
-    </>
+    </div>
   );
 };
 
