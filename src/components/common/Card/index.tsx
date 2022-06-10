@@ -28,7 +28,7 @@ const Card = ({ tag, title, description, price, date, viewNumber, imgPath }: Car
         <div className={style.price}>{`${price} Р `}</div>
         <div className={style.footer}>
           <div className={style.date}>{date}</div>
-          <ViewsNumber>{viewNumber}</ViewsNumber>
+          <ViewsNumber cname="">{viewNumber}</ViewsNumber>
         </div>
       </div>
     </div>
