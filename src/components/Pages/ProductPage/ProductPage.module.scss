@@ -2,10 +2,28 @@
 @import '../../../assets/styles/mixins';
 
 .wrapper {
+  width: 1170px; //TODO: fix the width for adaptive
   display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+}
+
+.main {
+  width: calc(766 / 1170 * 100%);
 }
 
 .aside {
   display: flex;
   flex-direction: column;
+  width: calc(330 / 1170 * 100%);
+}
+
+.arrow {
+  display: block;
+  height: 24px;
+  width: 24px;
+  &:hover{
+    opacity: 0.8;
+    cursor: pointer;
+  }
 }

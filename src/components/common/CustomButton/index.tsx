@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const Button = styled.button`
@@ -10,10 +10,6 @@ const Button = styled.button`
   white-space: nowrap;
   &:hover {
     background-color: #3A95FF;
-  }
-
-  @include media-tablet {
-    padding: 6px 21.5px;
   }
 `;
 
