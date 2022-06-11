@@ -19,11 +19,13 @@ const ProductPage = () => (
       </main>
 
       <aside className={style.aside}>
-        <div className={style.price}>PRICE</div>
-        <div>Смотрите также:</div>
-        <CustomButton buttonStyle="btn--primary">
-          Показать номер
-        </CustomButton>
+        <div className={style.price}>22 500 Р</div>
+        <div className={style.button}>
+          <CustomButton buttonStyle="btn--primary">
+            Показать номер
+          </CustomButton>
+        </div>
+        <div className={style.more}>Смотрите также:</div>
       </aside>
     </div>
   </>
