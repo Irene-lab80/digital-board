@@ -1,6 +1,7 @@
 @import './constants.scss';
-// @import './normalize.scss';
+@import './mixins';
 
+// @import './normalize.scss';
 
 * {
   box-sizing: border-box;
@@ -20,3 +21,57 @@ button {
   border: none;
   cursor: pointer;
 }
+
+.btn {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 6px 26.5px;
+  transition: all .3s;
+  width: fit-content;
+
+  @include media-tablet {
+    padding: 6px 21.5px;
+  }
+}
+
+.btn--primary {
+  background-color: $color-button-main;
+  color: $color-primary-light;
+  border: 1px solid $color-button-main;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: $color-button-main;
+  border: 1px solid $color-button-main;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.btn--accent {
+  background-color: $color-button-accented;
+
+  &:hover {
+    background-color: $color-button-accented-hover;
+  }
+}
+
+
+.icon--more {
+  display: inline-flex;
+  background-image: url('../../assets/images/repeat.svg');
+  width: 16px;
+  height: 16px;
+  margin-right: 12px;
+  transition: all .3s;
+}
+

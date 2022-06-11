@@ -21,7 +21,9 @@ const ProductPage = () => (
       <aside className={style.aside}>
         <div className={style.price}>PRICE</div>
         <div>Смотрите также:</div>
-        <CustomButton>Показать номер</CustomButton>
+        <CustomButton buttonStyle="btn--primary">
+          Показать номер
+        </CustomButton>
       </aside>
     </div>
   </>

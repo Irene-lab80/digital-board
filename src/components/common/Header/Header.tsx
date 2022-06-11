@@ -1,9 +1,9 @@
 import React from 'react';
 import Logo from '../Logo/Logo';
-import Button from '../Button';
 import Search from '../Search/Search';
 import style from './Header.module.scss';
 import ProfileButton from '../ProfileButton/ProfileButton';
+import CustomButton from '../CustomButton';
 
 const Header = () => (
   <div className={style.header_wrapper}>
@@ -15,7 +15,7 @@ const Header = () => (
         <Search />
       </div>
       <div className={style.header__button}>
-        <Button buttonTitle="Подать объявление" />
+        <CustomButton buttonStyle="btn--accent">Подать объявление</CustomButton>
       </div>
       <div className={style.header__profileButton}>
         <ProfileButton title="Войти" />
