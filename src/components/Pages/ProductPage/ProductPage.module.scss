@@ -76,10 +76,6 @@
   line-height: 24px;
 }
 
-.tel {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  color: $color-button-main;
-  padding: 9px 0;
+.button {
+  display: flex;
 }

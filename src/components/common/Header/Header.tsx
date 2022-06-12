@@ -17,7 +17,7 @@ const Header = () => (
         <div className={style.searchMobile}><SearchOutlined style={{ fontSize: '24px', opacity: '0.4' }} /></div>
       </div>
       <div className={style.button}>
-        <CustomButton buttonStyle="btn--accent">Подать объявление</CustomButton>
+        <CustomButton onClick={() => {}} buttonStyle="btn--accent">Подать объявление</CustomButton>
       </div>
       <div className={style.profileLock} />
       <div className={style.profileButton}>

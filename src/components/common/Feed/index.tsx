@@ -22,7 +22,7 @@ const Feed = () => (
       ))}
     </div>
     <div className={style.btnWrapper}>
-      <CustomButton buttonStyle="btn--outline">
+      <CustomButton onClick={() => {}} buttonStyle="btn--outline">
         <span className="icon--more" />
         {' '}
         Загрузить еще
