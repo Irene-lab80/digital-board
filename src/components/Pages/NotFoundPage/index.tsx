@@ -6,7 +6,7 @@ const NotFoundPage = () => (
   <div className={style.page__wrapper}>
     <div className={style.page__info}>
       <p className={style.page__message_bold}>Упс! Кажется, на эту страницу прилег котик</p>
-      <p className={style.page__message}>Ошибка 404</p>
+      <p className={style.page__message_error}>Ошибка 404</p>
       <p className={style.page__message}>
         Мы уже разбираемся, почему так получилось, скоро все починим.
       </p>

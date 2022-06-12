@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 24px 0;
+  // padding: 0px 24px 0;
   width: 1170px;
 
   @include media-laptop {
@@ -15,11 +15,18 @@
 
 .page__info {
   margin-right: 24px;
+  margin-top: 36px;
+}
+
+.page__message_error {
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 32px;
 }
 
 .page__message {
   line-height: 24px;
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 32px;
 }
 
@@ -34,4 +41,8 @@
   display: block;
   max-width: 466px;
   height: fit-content;
+
+  @include media-tablet {
+    width: 286px
+  }
 }
