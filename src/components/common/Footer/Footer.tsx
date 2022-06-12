@@ -14,7 +14,6 @@ const Footer = () => (
         </div>
         <div className={style.footer__text}>Доска объявлений</div>
       </div>
-
       <div className={style.footer__copyright}>© ООО «Доска диджитал», 2022</div>
       <div className={style.footer__socials}>
         <a className={style.footer__link} href="http://facebook.com">

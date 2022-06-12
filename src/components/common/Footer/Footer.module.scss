@@ -1,4 +1,5 @@
 @import "../../../assets/styles/constants";
+@import "../../../assets/styles/mixins";
 
 .footer__wrapper {
   background: $color-medium-light;
@@ -11,6 +12,10 @@
   justify-content: space-between;
   max-width: $content-width;
   margin: auto;
+
+  @include media-530 {
+    flex-wrap: wrap;
+  }
 }
 
 .footer__logo {
@@ -32,16 +37,30 @@
   line-height: 16px;
   display: flex;
   align-items: center;
+
+  @include media-730 {
+   display: none;
+  }
 }
 
 .footer__copyright {
   margin-right: 110px;
   font-family: 'Jost';
   font-style: normal;
+  text-align: center;
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
   opacity: 0.6;
+
+  @include media-730 {
+    margin-right: 0;
+  }
+
+  @include media-530 {
+    order: 1;
+    width: 100%;
+  }
 }
 
 .footer__link {
@@ -53,5 +72,6 @@
 
 .footer__socials {
   margin-right: 15px;
+  flex-shrink: 0;
 }
 

@@ -10,6 +10,10 @@
   @media (max-width: $width-730) { @content; }
 }
 
+@mixin media-530 {
+  @media (max-width: $width-530) { @content; }
+}
+
 @mixin media-mobile {
   @media (max-width: $mobile-width) { @content; }
 }
