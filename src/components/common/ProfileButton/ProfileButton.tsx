@@ -9,7 +9,6 @@ type profilePropsType = {
 const ProfileButton = ({ title }: profilePropsType) => (
   <div className={style.profileButton}>
     <NavLink className={style.profile__wrapper} to="/auth">
-      <span className={style.profile__lock} />
       <span className={style.profile__icon} />
       <span className={style.profile__text}>{title}</span>
     </NavLink>

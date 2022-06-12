@@ -9,6 +9,7 @@ const suffix = (
   <SearchOutlined
     style={{
       opacity: '0.4',
+      fontSize: '24px'
     }}
   />
 );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { MenuOutlined, SearchOutlined } from '@ant-design/icons';
 import Logo from '../Logo/Logo';
 import Search from '../Search/Search';
 import style from './Header.module.scss';
@@ -11,14 +12,19 @@ const Header = () => (
       <div className={style.logo}>
         <Logo />
       </div>
-      <div className={style.search}>
-        <Search />
+      <div className={style.searchWrapper}>
+        <div className={style.search}><Search /></div>
+        <div className={style.searchMobile}><SearchOutlined style={{ fontSize: '24px', opacity: '0.4' }} /></div>
       </div>
       <div className={style.button}>
         <CustomButton buttonStyle="btn--accent">Подать объявление</CustomButton>
       </div>
+      <div className={style.profileLock} />
       <div className={style.profileButton}>
         <ProfileButton title="Войти" />
+      </div>
+      <div className={style.burger}>
+        <MenuOutlined style={{ fontSize: '24px', opacity: '0.4' }} />
       </div>
     </header>
   </div>

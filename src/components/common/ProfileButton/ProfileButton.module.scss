@@ -22,18 +22,6 @@
   }
 }
 
-.profile__lock {
-  display: none;
-  width: 24px;
-  height: 24px;
-  margin-right: 24px;
-
-  @include media-tablet {
-    display: inline-block;
-    background-image: url('../../../assets/images/lock-icon.svg');
-  }
-}
-
 .profileButton {
   display: flex;
   font-family: 'Jost';
