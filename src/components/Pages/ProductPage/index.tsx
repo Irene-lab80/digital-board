@@ -22,8 +22,9 @@ const ProductPage = () => (
         <div className={style.price}>22 500 Р</div>
         <div className={style.button}>
           <CustomButton buttonStyle="btn--primary">
-            Показать номер
+            <span>Показать номер</span>
           </CustomButton>
+          <a href="tel: +79304566569" className={style.tel}>+7 (930) 456 - 65 - 69</a>
         </div>
         <div className={style.more}>Смотрите также:</div>
       </aside>
