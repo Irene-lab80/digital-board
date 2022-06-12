@@ -18,7 +18,7 @@ const App = () => (
         <Route path="reg" element={<RegistrationContainer />} />
         <Route path="get-pass" element={<GetPasswordContainer />} />
         <Route path="*" element={<NotFoundContainer />} />
-        <Route path="product" element={<ProductPageContainer />} />
+        <Route path=":title" element={<ProductPageContainer />} />
       </Route>
     </Routes>
   </div>
