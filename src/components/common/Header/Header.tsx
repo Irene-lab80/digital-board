@@ -6,18 +6,18 @@ import ProfileButton from '../ProfileButton/ProfileButton';
 import CustomButton from '../CustomButton';
 
 const Header = () => (
-  <div className={style.header_wrapper}>
+  <div className={style.wrapper}>
     <header className={style.header}>
-      <div className={style.header__logo}>
+      <div className={style.logo}>
         <Logo />
       </div>
-      <div className={style.header__search}>
+      <div className={style.search}>
         <Search />
       </div>
-      <div className={style.header__button}>
+      <div className={style.button}>
         <CustomButton buttonStyle="btn--accent">Подать объявление</CustomButton>
       </div>
-      <div className={style.header__profileButton}>
+      <div className={style.profileButton}>
         <ProfileButton title="Войти" />
       </div>
     </header>

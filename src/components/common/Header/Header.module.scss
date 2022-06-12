@@ -1,7 +1,7 @@
 @import "../../../assets/styles/constants";
 @import "../../../assets/styles/mixins";
 
-.header_wrapper {
+.wrapper {
   background: #ffffff;
 }
 
@@ -12,45 +12,45 @@
   justify-content: space-between;
   max-width: $content-width;
   margin: 0 auto;
+}
 
-  &__logo {
-    margin: 0 15px;
+.logo {
+  margin: 0 15px;
 
-    @include media-tablet {
-      margin: 0 0 0 24px;
-    }
+  @include media-tablet {
+    margin: 0 0 0 24px;
   }
+}
 
-  &__search {
-    min-width: 556px;
-    margin-left: 35px;
+.search {
+  min-width: 556px;
+  margin-left: 35px;
 
-    @include media-laptop {
-      min-width: 286px; 
-      margin-left: 24px;  
-    } 
+  @include media-laptop {
+    min-width: 286px; 
+    margin-left: 24px;  
+  } 
 
-    @include media-tablet {
-      margin-left: 24px;  
-      width: initial; 
-    } 
+  @include media-tablet {
+    margin-left: 24px;  
+    width: initial; 
+  } 
 
-    @include media-mobile {
-      margin-left: 16px;  
-    } 
+  @include media-mobile {
+    margin-left: 16px;  
+  } 
+}
+
+.button {
+  margin-left: 60px;
+
+  @include media-tablet {
+    margin-left: 0;
   }
+}
 
-  &__button {
-    margin-left: 60px;
-
-    @include media-tablet {
-      margin-left: 0;
-    }
-  }
-
-  &__profileButton {
-    margin-right: 15px;
-    margin-left: 15px;
-  }
+.profileButton {
+  margin-right: 15px;
+  margin-left: 15px;
 }
 
