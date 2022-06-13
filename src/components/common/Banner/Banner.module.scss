@@ -3,12 +3,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 0;
+  padding: 20px 15px;
 }
 
 .info {
   // margin-right: 166px;
-  width: calc(445 / 1170 * 100%) ; 
+  width: calc(445 / 1200 * 100%) ; 
 }
 
 .title {
@@ -19,7 +19,7 @@
 }
 
 .img {
-  width: calc(557 / 1170 * 100%);
+  width: calc(557 / 1200 * 100%);
 }
 
 .text {
