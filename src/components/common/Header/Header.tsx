@@ -4,7 +4,7 @@ import Logo from '../Logo/Logo';
 import Search from '../Search';
 import style from './Header.module.scss';
 import ProfileButton from '../ProfileButton';
-import CustomButton from '../CustomButton';
+import ModalBtn from '../ModalBtn';
 
 const Header = () => (
   <div className={style.wrapper}>
@@ -17,7 +17,7 @@ const Header = () => (
         <div className={style.searchMobile}><SearchOutlined style={{ fontSize: '24px', opacity: '0.4' }} /></div>
       </div>
       <div className={style.button}>
-        <CustomButton onClick={() => {}} buttonStyle="btn--accent">Подать объявление</CustomButton>
+        <ModalBtn />
       </div>
       <div className={style.profileLock} />
       <div className={style.profileButton}>
@@ -29,5 +29,4 @@ const Header = () => (
     </header>
   </div>
 );
-
 export default Header;
