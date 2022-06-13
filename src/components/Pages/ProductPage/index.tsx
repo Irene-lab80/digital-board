@@ -33,7 +33,7 @@ const ProductPage = ({ productInfo }: ProductPagePropsType) => (
         <div className={style.number}>WS-25645-253-55</div>
         {/* TODO: change, there were a way to add class to a component?  */}
         <ViewsNumber cname={style.views}>{productInfo?.views}</ViewsNumber>
-        <ProductSlider cname={style.slider} />
+        <ProductSlider cname={style.slider} src={productInfo?.src} />
         <div className={style.info}>
           <div className={style.infoTitle}>Описание:</div>
           <p className={style.description}>{productInfo?.description}</p>

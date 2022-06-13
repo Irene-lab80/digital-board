@@ -5,7 +5,7 @@ import { data } from '../../../helpers';
 
 const ProductPageContainer = () => {
   const { title } = useParams();
-  const product = data.find((el) => el.title === title)!;
+  const product = data.find((el) => el.title === title);
 
   return <ProductPage productInfo={product} />;
 };
