@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ProductSlider from '../../common/ProductSlider';
 import style from './ProductPage.module.scss';
 import arrow from '../../../assets/images/arrow-back.svg';
@@ -7,7 +8,9 @@ import ShowTelButton from '../../common/ShowTelButton';
 
 const ProductPage = () => (
   <>
-    <img className={style.arrow} src={arrow} alt="Arrow back" />
+    <Link to="/">
+      <img className={style.arrow} src={arrow} alt="Arrow back" />
+    </Link>
     <div className={style.wrapper}>
       <main className={style.main}>
         <div className={style.date}>14 апреля 2022</div>
