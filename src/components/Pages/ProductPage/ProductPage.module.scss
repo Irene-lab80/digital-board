@@ -6,20 +6,20 @@
 }
 
 .wrapper {
-  width: 1200; //TODO: fix the width for adaptive
+  width: $content-width; //TODO: fix the width for adaptive
   display: flex;
   justify-content: space-between;
   margin-top: 32px;
 }
 
 .main {
-  width: calc(766 / 1200 * 100%);
+  width: calc(766 / 1170 * 100%);
 }
 
 .aside {
   display: flex;
   flex-direction: column;
-  width: calc(330 / 1200 * 100%);
+  width: calc(330 / 1170 * 100%);
 }
 
 .arrow {

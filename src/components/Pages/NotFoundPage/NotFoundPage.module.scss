@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1200px;
+  width: $content-width;
 
   @include media-laptop {
     width: initial;
