@@ -2,14 +2,6 @@ import React, { useState } from 'react';
 import { Modal } from 'antd';
 import CustomButton from '../CustomButton';
 
-// type ModalBtnProps = {
-//   children: Element[];
-//   title: string;
-//   visible: boolean;
-//   onOk: () => void;
-//   onCancel: () => void;
-// }
-
 const ModalBtn: React.FC = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -26,10 +18,21 @@ const ModalBtn: React.FC = () => {
   };
 
   // TODO: add children props, ts doesnt work?
+
   return (
     <>
       <CustomButton onClick={showModal} buttonStyle="btn--accent">Подать объявление</CustomButton>
-      <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} />
+      {/* @ts-ignore this lib is incompatible with react18 */}
+      <Modal title="Действие недоступно" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+        Для подачи объявления необходимо
+        {' '}
+        <a href="/reg">зарегистрироваться</a>
+        {' '}
+        или
+        {' '}
+        <a href="/auth">авторизоваться</a>
+        .
+      </Modal>
     </>
   );
 };
