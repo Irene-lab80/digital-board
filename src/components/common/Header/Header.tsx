@@ -1,9 +1,9 @@
 import React from 'react';
 import { MenuOutlined, SearchOutlined } from '@ant-design/icons';
 import Logo from '../Logo/Logo';
-import Search from '../Search/Search';
+import Search from '../Search';
 import style from './Header.module.scss';
-import ProfileButton from '../ProfileButton/ProfileButton';
+import ProfileButton from '../ProfileButton';
 import CustomButton from '../CustomButton';
 
 const Header = () => (
