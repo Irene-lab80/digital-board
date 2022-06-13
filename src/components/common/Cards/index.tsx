@@ -35,9 +35,9 @@ const Cards: any = () => {
     }
   }
 
+  // TODO: remove any
   type PropsType = {
     children: any
-    // React.ReactNode
   }
 
   const Desktop: React.FC<PropsType> = ({ children }) => {

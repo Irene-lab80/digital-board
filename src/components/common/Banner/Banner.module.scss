@@ -19,7 +19,7 @@
 }
 
 .img {
-  max-width: 557px;
+  max-width: calc(557px / 1200px * 100%) ;
 }
 
 .text {
