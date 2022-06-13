@@ -13,8 +13,8 @@ const Cards: any = () => {
       description={el.description}
       price={el.price}
       date={el.date}
-      viewNumber={el.viewNumber}
-      imgPath={el.src}
+      views={el.views}
+      src={el.src}
       />
   ));
 

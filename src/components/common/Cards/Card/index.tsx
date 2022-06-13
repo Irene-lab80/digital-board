@@ -4,20 +4,21 @@ import ViewsNumber from '../../ViewsNumber';
 import style from './Card.module.scss';
 
 type CardPropsType = {
+  // id: number;
   tag: string;
   title: string;
   description: string;
   price: string;
   date: string;
-  viewNumber: string;
-  imgPath: string;
+  views: string;
+  src: string;
 };
 
-const Card = ({ tag, title, description, price, date, viewNumber, imgPath }: CardPropsType) => (
-  <Link to={`product/:${title}`}>
+const Card = ({ tag, title, description, price, date, views, src }: CardPropsType) => (
+  <Link to={`product/${title}`}>
     <div className={style.wrapper}>
       <div className={style.imgWrapper}>
-        <img className={style.img} src={imgPath} alt="product" />
+        <img className={style.img} src={src} alt="product" />
         <div className={style.tag}>{tag}</div>
       </div>
       <div className={style.info}>
@@ -29,7 +30,7 @@ const Card = ({ tag, title, description, price, date, viewNumber, imgPath }: Car
           <div className={style.price}>{`${price} Р `}</div>
           <div className={style.footer}>
             <div className={style.date}>{date}</div>
-            <ViewsNumber cname="">{viewNumber}</ViewsNumber>
+            <ViewsNumber cname="">{views}</ViewsNumber>
           </div>
         </div>
       </div>

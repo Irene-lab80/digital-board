@@ -18,8 +18,9 @@ export const data = [
     description: 'Машина в хорошем состоянии. Возможен разумный торг',
     price: '22 500',
     date: '14 апреля 2021',
-    viewNumber: '365',
-    src: img1
+    views: '365',
+    src: img1,
+    tel: '+7 (930) 456 - 65 - 01'
   },
   {
     id: 2,
@@ -28,8 +29,9 @@ export const data = [
     description: 'Шапочка детская на ребенка 7-10 лет. 60% шерст, 40% вискоза',
     price: '500',
     date: '14 апреля 2021',
-    viewNumber: '365',
-    src: img2
+    views: '365',
+    src: img2,
+    tel: '+7 (930) 456 - 65 - 02'
   },
   {
     id: 3,
@@ -38,8 +40,9 @@ export const data = [
     description: 'Новая толстовка белая без принта с карманом',
     price: '2 000',
     date: '14 апреля 2021',
-    viewNumber: '365',
-    src: img3
+    views: '365',
+    src: img3,
+    tel: '+7 (930) 456 - 65 - 03'
   },
   {
     id: 4,
@@ -48,8 +51,9 @@ export const data = [
     description: 'Велосипед в отличном состоянии. Ретро-стиль',
     price: '28 000',
     date: '14 апреля 2021',
-    viewNumber: '365',
-    src: img4
+    views: '365',
+    src: img4,
+    tel: '+7 (930) 456 - 65 - 04'
   },
   {
     id: 5,
@@ -58,8 +62,9 @@ export const data = [
     description: 'Наушники почти новые. Срок эксплуатации - меньше месяца',
     price: '4 500',
     date: '14 апреля 2021',
-    viewNumber: '365',
-    src: img5
+    views: '365',
+    src: img5,
+    tel: '+7 (930) 456 - 65 - 05'
   },
   {
     id: 6,
@@ -68,8 +73,9 @@ export const data = [
     description: 'Кофемашина с капучинатором. Пакет кофе 1 кг. - в подарок',
     price: '8 500',
     date: '14 апреля 2021',
-    viewNumber: '365',
-    src: img6
+    views: '365',
+    src: img6,
+    tel: '+7 (930) 456 - 65 - 06'
   },
   {
     id: 7,
@@ -78,8 +84,9 @@ export const data = [
     description: 'Итальянска сумка из натуральной кожи. Качественная фурнитура, состояние новой',
     price: '7 500',
     date: '14 апреля 2021',
-    viewNumber: '365',
-    src: img7
+    views: '365',
+    src: img7,
+    tel: '+7 (930) 456 - 65 - 07'
   },
   {
     id: 8,
@@ -88,8 +95,9 @@ export const data = [
     description: 'Ботинки почти новые, качественные, теплые. Носили 2 недели',
     price: '8 000',
     date: '14 апреля 2021',
-    viewNumber: '365',
-    src: img8
+    views: '365',
+    src: img8,
+    tel: '+7 (930) 456 - 65 - 08'
   },
   {
     id: 9,
@@ -98,7 +106,8 @@ export const data = [
     description: 'Качественная красивая доска с креплениями',
     price: '43 000',
     date: '14 апреля 2021',
-    viewNumber: '365',
-    src: img9
+    views: '365',
+    src: img9,
+    tel: '+7 (930) 456 - 65 - 09'
   }
 ];
