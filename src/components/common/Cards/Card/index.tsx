@@ -1,5 +1,5 @@
 import React from 'react';
-import ViewsNumber from '../ViewsNumber';
+import ViewsNumber from '../../ViewsNumber';
 import style from './Card.module.scss';
 
 type CardPropsType = {
