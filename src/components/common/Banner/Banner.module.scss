@@ -2,13 +2,13 @@
 .wrapper  {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 20px 0;
 }
 
 .info {
-  max-width: 445px;
-  margin-right: 166px;
+  // margin-right: 166px;
+  width: calc(445 / 1170 * 100%) ; 
 }
 
 .title {
@@ -19,7 +19,7 @@
 }
 
 .img {
-  max-width: calc(557px / 1200px * 100%) ;
+  width: calc(557 / 1170 * 100%);
 }
 
 .text {
