@@ -1,15 +1,11 @@
 @import '../../../assets/styles/constants';
 @import '../../../assets/styles/mixins';
 
-.slider {
-  margin-top: 24px;
-}
-
 .wrapper {
   width: $content-width; //TODO: fix the width for adaptive
   display: flex;
   justify-content: space-between;
-  margin-top: 32px;
+  margin: 32px 15px 0;
 }
 
 .main {
@@ -23,13 +19,16 @@
 }
 
 .arrow {
-  display: block;
-  height: 24px;
-  width: 24px;
+  display: inline-block;
+  padding: 15px;
   &:hover{
     opacity: 0.8;
     cursor: pointer;
   }
+}
+
+.slider {
+  margin-top: 24px;
 }
 
 .number, 
