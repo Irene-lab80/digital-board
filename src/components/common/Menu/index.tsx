@@ -5,7 +5,7 @@ const Menu = () => (
   <nav className={style.nav}>
     <ul className={style.menu}>
       <li className={style.menuItem_accented}>Вся доска</li>
-      <li className={style.menuItem_bordered}>Автомобили</li>
+      <li className={style.menuItem}>Автомобили</li>
       <li className={style.menuItem}>Аксессуары</li>
       <li className={style.menuItem}>Мебель</li>
       <li className={style.menuItem}>Одежда</li>
