@@ -15,7 +15,7 @@ const Cards: any = () => {
       date={el.date}
       viewNumber={el.viewNumber}
       imgPath={el.src}
-    />
+      />
   ));
 
   const arrayOfCardTablet = [];

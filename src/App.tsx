@@ -17,8 +17,9 @@ const App = () => (
         <Route path="auth" element={<AuthContainer />} />
         <Route path="reg" element={<RegistrationContainer />} />
         <Route path="get-pass" element={<GetPasswordContainer />} />
+        {/* TODO: fix paths like product:title/not-exsting-title to go to 404 page, google how */}
+        <Route path="product/:title" element={<ProductPageContainer />} />
         <Route path="*" element={<NotFoundContainer />} />
-        <Route path=":title" element={<ProductPageContainer />} />
       </Route>
     </Routes>
   </div>
