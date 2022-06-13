@@ -2,7 +2,7 @@ import React from 'react';
 import style from './ViewsNumber.module.scss';
 
 type CardPropsType = {
-  children: string;
+  children: string | undefined;
   cname: string | undefined;
 };
 

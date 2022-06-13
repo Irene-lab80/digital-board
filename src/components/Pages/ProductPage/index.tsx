@@ -17,6 +17,7 @@ type ProductPagePropsType = {
     views: string;
     src: string;
     tel: string;
+    location: string;
   } | undefined;
 }
 
@@ -31,8 +32,14 @@ const ProductPage = ({ productInfo }: ProductPagePropsType) => (
         <h2 className={style.title}>{productInfo?.title}</h2>
         <div className={style.number}>WS-25645-253-55</div>
         {/* TODO: change, there were a way to add class to a component?  */}
-        <ViewsNumber cname={style.views}>11111</ViewsNumber>
+        <ViewsNumber cname={style.views}>{productInfo?.views}</ViewsNumber>
         <ProductSlider cname={style.slider} />
+        <div className={style.info}>
+          <div className={style.infoTitle}>Описание:</div>
+          <p className={style.description}>{productInfo?.description}</p>
+          <div className={style.infoTitle}>Местоположение:</div>
+          <span className={style.location}>{productInfo?.location}</span>
+        </div>
       </main>
 
       <aside className={style.aside}>
@@ -41,7 +48,10 @@ const ProductPage = ({ productInfo }: ProductPagePropsType) => (
         <div className={style.button}>
           <ShowTelButton>{productInfo?.tel}</ShowTelButton>
         </div>
+        {/* TODO:  ?? */}
         <div className={style.more}>Смотрите также:</div>
+        <div>Card 1</div>
+        <div>Card 2</div>
       </aside>
     </div>
   </>
