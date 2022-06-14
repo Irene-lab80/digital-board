@@ -3,16 +3,17 @@ import { NavLink } from 'react-router-dom';
 import style from './ProfileButton.module.scss';
 
 type profilePropsType = {
-  title: string;
+  children: any;
+  onClick: ()=> void;
 };
 
-const ProfileButton = ({ title }: profilePropsType) => (
-  <div className={style.profileButton}>
+const ProfileButton:React.FC<profilePropsType> = ({ children, onClick }) => (
+  <button type="button" className={style.profileButton} onClick={onClick}>
     <NavLink className={style.profile__wrapper} to="/auth">
       <span className={style.profile__icon} />
-      <span className={style.profile__text}>{title}</span>
+      <span className={style.profile__text}>{children}</span>
     </NavLink>
-  </div>
+  </button>
 );
 
 export default ProfileButton;

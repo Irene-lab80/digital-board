@@ -3,9 +3,8 @@ import { MenuOutlined, SearchOutlined } from '@ant-design/icons';
 import Logo from '../Logo/Logo';
 import Search from '../Search';
 import style from './Header.module.scss';
-import ProfileButton from '../ProfileButton';
 import ModalBtn from '../ModalBtn';
-import DropDownProfileBtn from '../DropDownProfileBtn/Header';
+import DropDownProfileBtn from '../DropDownProfileBtn/Index';
 
 const Header = () => (
   <div className={style.wrapper}>

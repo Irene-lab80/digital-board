@@ -1,0 +1,16 @@
+@import "../../../assets/styles/constants";
+@import "../../../assets/styles/mixins";
+
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  background-color: $color-medium-light;
+  border-radius: 100%;
+  padding: 9px;
+  margin-right: 16px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
