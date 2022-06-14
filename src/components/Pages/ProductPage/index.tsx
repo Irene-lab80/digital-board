@@ -5,6 +5,7 @@ import style from './ProductPage.module.scss';
 import arrow from '../../../assets/images/arrow-back.svg';
 import ViewsNumber from '../../common/ViewsNumber';
 import ShowTelButton from '../../common/ShowTelButton';
+import ProductMap from '../../common/ProductMap';
 
 type ProductPagePropsType = {
   productInfo: {
@@ -39,6 +40,10 @@ const ProductPage = ({ productInfo }: ProductPagePropsType) => (
           <p className={style.description}>{productInfo?.description}</p>
           <div className={style.infoTitle}>Местоположение:</div>
           <span className={style.location}>{productInfo?.location}</span>
+        </div>
+        <div className={style.map}>
+          {/* TODO: починить  */}
+          <ProductMap />
         </div>
       </main>
 
