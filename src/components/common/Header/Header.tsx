@@ -5,6 +5,7 @@ import Search from '../Search';
 import style from './Header.module.scss';
 import ProfileButton from '../ProfileButton';
 import ModalBtn from '../ModalBtn';
+import DropDownProfileBtn from '../DropDownProfileBtn/Header';
 
 const Header = () => (
   <div className={style.wrapper}>
@@ -21,7 +22,7 @@ const Header = () => (
       </div>
       <div className={style.profileLock} />
       <div className={style.profileButton}>
-        <ProfileButton title="Войти" />
+        <DropDownProfileBtn />
       </div>
       <div className={style.burger}>
         <MenuOutlined style={{ fontSize: '24px', opacity: '0.4' }} />
