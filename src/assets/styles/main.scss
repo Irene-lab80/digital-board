@@ -86,11 +86,11 @@ h6 {
 
 .tel_visible {
   display: inline-flex;
+  align-items: center;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   color: $color-button-main;
-  padding: 9px 0;
   margin-left: 10px;
 }
 
