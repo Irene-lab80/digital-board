@@ -9,6 +9,7 @@ import ViewsNumber from '../../common/ViewsNumber';
 import ShowTelButton from '../../common/ShowTelButton';
 import ProductMap from '../../common/ProductMap';
 import CardsSmall from '../../common/CardsSmall';
+import 'moment/locale/ru'; // without this line it didn't work
 
 moment.locale('ru');
 
