@@ -1,6 +1,7 @@
 import React from 'react';
 import { DownOutlined } from '@ant-design/icons';
 import { Dropdown, Menu, Space } from 'antd';
+import { Link } from 'react-router-dom';
 import style from './DropDownProfileBtn.module.scss';
 import ExitSvg from '../svg/ExitSvg';
 import BookSvg from '../svg/BookSvg';
@@ -18,17 +19,19 @@ const menu = (
       <span className={style.avatar}>UN</span>
       UserName
     </Menu.Item>
-    <Menu.Item
-      style={{
-        fontSize: '14px',
-        paddingTop: 16,
-        paddingBottom: 16,
-        paddingLeft: 24,
-        paddingRight: 24,
-      }}
-      icon={<span className={style.icon}><BookSvg /></span>}>
-      Мои объявления
-    </Menu.Item>
+    <Link to="my-ads">
+      <Menu.Item
+        style={{
+          fontSize: '14px',
+          paddingTop: 16,
+          paddingBottom: 16,
+          paddingLeft: 24,
+          paddingRight: 24,
+        }}
+        icon={<span className={style.icon}><BookSvg /></span>}>
+        Мои объявления
+      </Menu.Item>
+    </Link>
     <Menu.Item
       style={{
         fontSize: '14px',
