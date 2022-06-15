@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import style from './Card.module.scss';
+import style from './CardSmall.module.scss';
 
 type CardPropsType = {
   id: number;

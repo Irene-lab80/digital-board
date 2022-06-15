@@ -58,7 +58,7 @@ const ProductPage = ({ productInfo }: ProductPagePropsType) => (
       </main>
 
       <aside className={style.aside}>
-        <div className={style.price}>{productInfo?.price}</div>
+        <div className={style.price}>{`${productInfo?.price.toLocaleString('ru')} Р`}</div>
         {/* TODO: google how to better set outer margin in react */}
         <div className={style.button}>
           <ShowTelButton>{productInfo?.tel}</ShowTelButton>
