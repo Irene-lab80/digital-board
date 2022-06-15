@@ -1,11 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
+
 import ProductSlider from '../../common/ProductSlider';
 import style from './ProductPage.module.scss';
 import arrow from '../../../assets/images/arrow-back.svg';
 import ViewsNumber from '../../common/ViewsNumber';
 import ShowTelButton from '../../common/ShowTelButton';
 import ProductMap from '../../common/ProductMap';
+import CardsSmall from '../../common/CardsSmall';
+
+moment.locale('ru');
 
 type ProductPagePropsType = {
   productInfo: {
@@ -30,7 +35,7 @@ const ProductPage = ({ productInfo }: ProductPagePropsType) => (
     </Link>
     <div className={style.wrapper}>
       <main className={style.main}>
-        <div className={style.date}>{productInfo?.date}</div>
+        <div className={style.date}>{moment(productInfo?.date).format('LL')}</div>
         <h2 className={style.title}>{productInfo?.title}</h2>
         {/* TODO: is that id? */}
         <div className={style.number}>WS-25645-253-55</div>
@@ -58,8 +63,9 @@ const ProductPage = ({ productInfo }: ProductPagePropsType) => (
         </div>
         {/* TODO:  ?? */}
         <div className={style.more}>Смотрите также:</div>
-        <div>Card 1</div>
-        <div>Card 2</div>
+        <CardsSmall />
+        {/* <div>Card 1</div>
+        <div>Card 2</div> */}
         {/* data => filter(tag) => filter(data) => first two */}
       </aside>
     </div>
