@@ -95,3 +95,9 @@ p {
   margin-left: 10px;
 }
 
+// without it ymaps renders twice on dev because of strict mode 
+// TODO: remove and try to deploy maybe?
+ymaps[class$="map"]:first-child:not(:last-child) {
+  display: none;
+}
+
