@@ -82,7 +82,7 @@ export const data = [
     title: 'Кофемашина',
     description: 'Кофемашина с капучинатором. Пакет кофе 1 кг. - в подарок',
     price: 8500,
-    date: 'Mar 17 2022 10:00:00 AM',
+    date: 'Mar 10 2022 10:00:00 AM',
     views: 3615,
     src: img6,
     tel: '+7 (930) 456 - 65 - 06',
