@@ -3,8 +3,7 @@ import { useMediaQuery } from 'react-responsive';
 import Card from './Card';
 import { data } from '../../../helpers';
 
-// TODO: remove any
-const Cards: any = () => {
+const Cards = () => {
   const arrayOfCards = data.map((el) => (
     <Card
       key={el.id}
