@@ -32,6 +32,7 @@ const ProductPage = ({ productInfo }: ProductPagePropsType) => (
       <main className={style.main}>
         <div className={style.date}>{productInfo?.date}</div>
         <h2 className={style.title}>{productInfo?.title}</h2>
+        {/* TODO: is that id? */}
         <div className={style.number}>WS-25645-253-55</div>
         {/* TODO: change, there were a way to add class to a component?  */}
         <ViewsNumber cname={style.views}>{productInfo?.views}</ViewsNumber>
