@@ -1,4 +1,5 @@
 import React from 'react';
+import EyeSvg from '../svg/EyeSvg';
 import style from './ViewsNumber.module.scss';
 
 type CardPropsType = {
@@ -9,7 +10,7 @@ type CardPropsType = {
 const ViewsNumber: React.FC<CardPropsType> = ({ children, cname }) => (
   <div className={cname}>
     <div className={style.wrapper}>
-      <span className={style.icon} />
+      <EyeSvg />
       <span className={style.viewNumber}>
         {children}
       </span>
