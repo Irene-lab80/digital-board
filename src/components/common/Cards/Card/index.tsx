@@ -8,9 +8,9 @@ type CardPropsType = {
   tag: string;
   title: string;
   description: string;
-  price: string;
+  price: number;
   date: string;
-  views: string;
+  views: number;
   src: string;
 };
 
@@ -27,7 +27,10 @@ const Card = ({ tag, title, description, price, date, views, src }: CardPropsTyp
           <div className={style.description}>{description}</div>
         </div>
         <div className={style.bottom}>
-          <div className={style.price}>{`${price} Р `}</div>
+          <div className={style.price}>
+            {`${(price).toLocaleString('ru')
+            } Р `}
+          </div>
           <div className={style.footer}>
             <div className={style.date}>{date}</div>
             <ViewsNumber cname="">{views}</ViewsNumber>

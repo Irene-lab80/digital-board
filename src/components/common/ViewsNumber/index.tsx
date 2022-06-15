@@ -3,10 +3,11 @@ import EyeSvg from '../svg/EyeSvg';
 import style from './ViewsNumber.module.scss';
 
 type CardPropsType = {
-  children: string | undefined;
+  children: number | undefined;
   cname: string | undefined;
 };
 
+// TODO: implement counter
 const ViewsNumber: React.FC<CardPropsType> = ({ children, cname }) => (
   <div className={cname}>
     <div className={style.wrapper}>

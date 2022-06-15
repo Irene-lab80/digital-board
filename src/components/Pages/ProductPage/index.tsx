@@ -13,9 +13,9 @@ type ProductPagePropsType = {
     tag: string;
     title: string;
     description: string;
-    price: string;
+    price: number;
     date: string;
-    views: string;
+    views: number;
     src: string;
     tel: string;
     location: string;
@@ -60,6 +60,7 @@ const ProductPage = ({ productInfo }: ProductPagePropsType) => (
         <div className={style.more}>Смотрите также:</div>
         <div>Card 1</div>
         <div>Card 2</div>
+        {/* data => filter(tag) => filter(data) => first two */}
       </aside>
     </div>
   </>
