@@ -4,7 +4,7 @@ import ViewsNumber from '../../ViewsNumber';
 import style from './Card.module.scss';
 
 type CardPropsType = {
-  // id: number;
+  id: number;
   tag: string;
   title: string;
   description: string;
@@ -14,8 +14,8 @@ type CardPropsType = {
   src: string;
 };
 
-const Card = ({ tag, title, description, price, date, views, src }: CardPropsType) => (
-  <Link to={`product/${title}`}>
+const Card = ({ id, tag, title, description, price, date, views, src }: CardPropsType) => (
+  <Link to={`product/${id}`}>
     <div className={style.wrapper}>
       <div className={style.imgWrapper}>
         <img className={style.img} src={src} alt="product" />

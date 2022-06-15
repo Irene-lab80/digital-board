@@ -4,8 +4,8 @@ import ProductPage from '../../Pages/ProductPage';
 import { data } from '../../../helpers';
 
 const ProductPageContainer = () => {
-  const { title } = useParams();
-  const product = data.find((el) => el.title === title);
+  const { id } = useParams();
+  const product = data.find((el) => el.id.toString() === id);
 
   return <ProductPage productInfo={product} />;
 };

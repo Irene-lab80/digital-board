@@ -6,6 +6,7 @@ import { data } from '../../../helpers';
 const Cards = () => {
   const arrayOfCards = data.map((el) => (
     <Card
+      id={el.id}
       key={el.id}
       tag={el.tag}
       title={el.title}
