@@ -65,7 +65,7 @@ const ProductPage = ({ productInfo }: ProductPagePropsType) => (
         </div>
         {/* TODO:  ?? */}
         <div className={style.more}>Смотрите также:</div>
-        <CardsSmall />
+        <CardsSmall bigTag={productInfo?.tag} />
         {/* <div>Card 1</div>
         <div>Card 2</div> */}
         {/* data => filter(tag) => filter(data) => first two */}

@@ -6,9 +6,13 @@ import { data } from '../../../helpers';
 
 moment.locale('ru');
 
-// TODO: leave only two first cards by date
-const CardsSmall = () => {
-  const newData = data.filter(((el) => el.tag === 'Техника'));
+type CardsSmallType = {
+  bigTag: string | undefined;
+}
+
+// TODO: leave only two first cards by date, and remove the same card as a big card
+const CardsSmall = ({ bigTag }: CardsSmallType) => {
+  const newData = data.filter(((el) => el.tag.toString() === bigTag));
   const arrayOfCards = newData.map((el) => (
     <CardSmall
       id={el.id}
