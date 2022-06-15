@@ -19,12 +19,14 @@
   color: $color-text-dark-l;
 }
 
-.img {
-  width: calc(557 / 1170 * 100%);
-}
-
 .text {
   font-size: 16px;
   line-height: 24px;
   opacity: 0.8;
+  margin-top: 40px;
 }
+
+.img {
+  width: calc(557 / 1170 * 100%);
+}
+
