@@ -12,7 +12,7 @@ const coordinates = [
 
 const ProductMap = () => (
   <YMaps>
-    <Map defaultState={mapData} width="766px" height="325px">
+    <Map defaultState={mapData} width="100%" height="100%">
       {coordinates.map((coordinate) => <Placemark geometry={coordinate} />)}
     </Map>
   </YMaps>
