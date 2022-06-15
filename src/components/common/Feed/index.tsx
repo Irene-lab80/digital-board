@@ -2,6 +2,7 @@ import React from 'react';
 import style from './Feed.module.scss';
 import CustomButton from '../CustomButton';
 import Cards from '../Cards';
+import LoadSvg from '../svg/LoadSvg';
 
 const Feed = () => (
   <div className={style.feedwrapper}>
@@ -11,8 +12,10 @@ const Feed = () => (
     </div>
     <div className={style.btnWrapper}>
       <CustomButton onClick={() => {}} buttonStyle="btn--outline">
-        <span className="icon--more" />
-        Загрузить еще
+        <LoadSvg />
+        <span className={style.btnText}>
+          Загрузить еще
+        </span>
       </CustomButton>
     </div>
   </div>
