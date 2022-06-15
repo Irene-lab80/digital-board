@@ -1,7 +1,6 @@
 @import './constants.scss';
 @import './mixins';
-
-// @import './normalize.scss';
+@import './normalize.scss';
 
 * {
   box-sizing: border-box;
@@ -71,7 +70,6 @@ p {
   }
 }
 
-
 .icon--more {
   display: inline-flex;
   background-image: url('../../assets/images/repeat.svg');
@@ -101,3 +99,6 @@ ymaps[class$="map"]:first-child:not(:last-child) {
   display: none;
 }
 
+.slick-arrow {
+  display: none;
+}
