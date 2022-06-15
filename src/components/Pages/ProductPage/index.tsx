@@ -19,6 +19,7 @@ type ProductPagePropsType = {
     src: string;
     tel: string;
     location: string;
+    coordinates: number[]
   } | undefined;
 }
 
@@ -42,8 +43,9 @@ const ProductPage = ({ productInfo }: ProductPagePropsType) => (
           <span className={style.location}>{productInfo?.location}</span>
         </div>
         <div className={style.map}>
-          {/* TODO: починить  */}
-          <ProductMap />
+          <ProductMap coordinates={[
+            productInfo?.coordinates
+          ]} />
         </div>
       </main>
 

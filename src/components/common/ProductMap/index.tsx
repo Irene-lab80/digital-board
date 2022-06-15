@@ -1,21 +1,25 @@
 import React from 'react';
 import { YMaps, Map, Placemark } from 'react-yandex-maps';
 
-const mapData = {
-  center: [56.31411400787571, 43.99142546510246],
-  zoom: 12,
+type ProductMapType = {
+  coordinates: any
+}
+
+const ProductMap = ({ coordinates }: ProductMapType) => {
+  const x = coordinates;
+  return (
+    <YMaps>
+      <Map
+        defaultState={{
+          center: x[0],
+          zoom: 12,
+        }}
+        width="100%"
+        height="100%">
+        {x.map((coordinate: number[]) => <Placemark geometry={coordinate} />)}
+      </Map>
+    </YMaps>
+  );
 };
-
-const coordinates = [
-  [56.31411400787571, 43.99142546510246]
-];
-
-const ProductMap = () => (
-  <YMaps>
-    <Map defaultState={mapData} width="100%" height="100%">
-      {coordinates.map((coordinate) => <Placemark geometry={coordinate} />)}
-    </Map>
-  </YMaps>
-);
 
 export default ProductMap;
