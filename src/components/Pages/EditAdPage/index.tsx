@@ -1,21 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import CustomButton from '../../common/CustomButton';
-import BackArrowSvg from '../../common/svg/BackArrowSvg';
 import style from './EditAdPage.module.scss';
 import 'antd/dist/antd.css';
 import EditAdFrom from '../../common/EditAdFrom';
+import GoBackBtn from '../../common/GoBackBtn';
 
 const EditAdPage = () => (
   <div className={style.wrapper}>
     <nav className={style.nav}>Админ меню</nav>
     <div className={style.mainWrapper}>
-      <Link to="/">
-        <div className={style.backBtn}>
-          <BackArrowSvg />
-          <div className={style.backBtnText}>Вернуться назад</div>
-        </div>
-      </Link>
+      <GoBackBtn>
+        Вернуться назад
+      </GoBackBtn>
       <main className={style.main}>
         <div className={style.top}>
           <h2 className={style.title}>Чепчик</h2>

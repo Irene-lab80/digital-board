@@ -1,6 +1,5 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
-import { Link } from 'react-router-dom';
 import moment from 'moment';
 import ProductSlider from '../../common/ProductSlider';
 import style from './ProductPage.module.scss';
@@ -9,7 +8,7 @@ import ShowTelButton from '../../common/ShowTelButton';
 import ProductMap from '../../common/ProductMap';
 import CardsSmall from '../../common/CardsSmall';
 import 'moment/locale/ru'; // without this line it didn't work
-import BackArrowSvg from '../../common/svg/BackArrowSvg';
+import GoBackBtn from '../../common/GoBackBtn';
 
 moment.locale('ru');
 
@@ -31,9 +30,7 @@ type ProductPagePropsType = {
 
 const ProductPage = ({ productInfo }: ProductPagePropsType) => (
   <>
-    <Link to="/">
-      <BackArrowSvg />
-    </Link>
+    <GoBackBtn> </GoBackBtn>
     <div className={style.wrapper}>
       <main className={style.main}>
         <div className={style.date}>{moment(productInfo?.date).format('LL')}</div>
@@ -54,7 +51,6 @@ const ProductPage = ({ productInfo }: ProductPagePropsType) => (
           ]} />
         </div>
       </main>
-
       <aside className={style.aside}>
         <div className={style.price}>{`${productInfo?.price.toLocaleString('ru')} Р`}</div>
         <div className={style.button}>
