@@ -1,6 +1,17 @@
 @import "../../../assets/styles/constants";
 @import "../../../assets/styles/mixins";
 
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.wrapper:hover .text{
+  color: $color-button-main-hover;
+}
+
 .avatar {
   display: inline-flex;
   align-items: center;
@@ -10,7 +21,17 @@
   margin-right: 16px;
 }
 
+.text {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: $color-text-dark-s;
+}
+
 .icon {
   display: flex;
   align-items: center;
+  margin-right: 8px;
 }

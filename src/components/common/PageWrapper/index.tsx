@@ -2,11 +2,11 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import style from './PageWrapper.module.scss';
 import Footer from '../Footer/Footer';
-import HeaderAdmin from '../HeaderAdmin';
+import Header from '../Header/Header';
 
 const PageWrapper = () => (
   <div className={style.page_wrapper}>
-    <HeaderAdmin />
+    <Header />
     <main className={style.content}>
       <Outlet />
     </main>

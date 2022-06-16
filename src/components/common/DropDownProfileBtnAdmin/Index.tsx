@@ -1,11 +1,12 @@
-import React from 'react';
-import { DownOutlined } from '@ant-design/icons';
-import { Dropdown, Menu, Space } from 'antd';
+import React, { useState } from 'react';
+import { Dropdown, Menu } from 'antd';
 import { Link } from 'react-router-dom';
 import style from './DropDownProfileBtn.module.scss';
 import ExitSvg from '../svg/ExitSvg';
 import BookSvg from '../svg/BookSvg';
 import PanelSvg from '../svg/PanelSvg';
+import PersonSvg from '../svg/PersonSvg';
+import PersonSvgActive from '../svg/PersonSvgActive';
 
 // TODO: переделать стили? СДелать отдельный компонент?
 const menu = (
@@ -57,19 +58,41 @@ const menu = (
   </Menu>
 );
 
-const DropDownProfileBtnAdmin = () => (
-  <>
-    {/* @ts-ignore this lib is incompatible with react18 */}
-    <Dropdown overlay={menu}>
-      <button type="button" onClick={(e) => e.preventDefault()}>
-        <Space>
-          <span className={style.profile__icon} />
-          <span className={style.profile__text}>Профиль</span>
-          <DownOutlined />
-        </Space>
-      </button>
-    </Dropdown>
-  </>
-);
+const DropDownProfileBtnAdmin = () => {
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseOver = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseOut = () => {
+    setIsHovering(false);
+  };
+  return (
+    <>
+      {/* @ts-ignore this lib is incompatible with react18 */}
+      <Dropdown overlay={menu}>
+        <div
+          onMouseOver={handleMouseOver}
+          onMouseOut={handleMouseOut}
+          onFocus={handleMouseOver}
+          onBlur={handleMouseOut}
+          className={style.wrapper}>
+          {!isHovering && (
+          <span className={style.icon}>
+            <PersonSvg />
+          </span>
+          )}
+          {isHovering && (
+          <span className={style.icon}>
+            <PersonSvgActive />
+          </span>
+          )}
+          <span className={style.text}>Профиль</span>
+        </div>
+      </Dropdown>
+    </>
+  );
+};
 
 export default DropDownProfileBtnAdmin;
