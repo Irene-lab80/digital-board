@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
 import style from './CardSmall.module.scss';
 
 type CardPropsType = {
@@ -12,7 +13,7 @@ type CardPropsType = {
 };
 
 const CardSmall = ({ id, title, src }: CardPropsType) => (
-  <Link to={`product/${id}`}>
+  <NavLink to={`/product/${id}`}>
     <div className={style.wrapper}>
       <div className={style.imgWrapper}>
         <img className={style.img} src={src} alt="product" />
@@ -20,7 +21,7 @@ const CardSmall = ({ id, title, src }: CardPropsType) => (
       <div className={style.title}>{title}</div>
       {/* <div className={style.title}>{date}</div> */}
     </div>
-  </Link>
+  </NavLink>
 );
 
 export default CardSmall;

@@ -21,7 +21,6 @@ const App = () => (
         <Route path="get-pass" element={<GetPasswordContainer />} />
         <Route path="my-ads" element={<MyAdsPageContainer />} />
         <Route path="edit-ad" element={<EditAdPageContainer />} />
-        {/* TODO: fix paths like product:title/not-exsting-title to go to 404 page, google how */}
         <Route path="product/:id" element={<ProductPageContainer />} />
         <Route path="*" element={<NotFoundContainer />} />
       </Route>
