@@ -1,3 +1,4 @@
+import moment from 'moment';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ViewsNumber from '../../ViewsNumber';
@@ -32,7 +33,7 @@ const Card = ({ id, tag, title, description, price, date, views, src }: CardProp
             } Р `}
           </div>
           <div className={style.footer}>
-            <div className={style.date}>{date}</div>
+            <div className={style.date}>{moment(date).format('LL')}</div>
             <ViewsNumber cname="">{views}</ViewsNumber>
           </div>
         </div>
