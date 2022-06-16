@@ -9,6 +9,7 @@ import MainPageContainer from './components/Containers/MainPageContainer';
 import GetPasswordContainer from './components/Containers/GetPasswordContainer';
 import ProductPageContainer from './components/Containers/ProductPageContainer';
 import MyAdsPageContainer from './components/Containers/MyAdsPageContainer';
+import EditAdPageContainer from './components/Containers/EditAdPageContainer';
 
 const App = () => (
   <div className="App">
@@ -19,6 +20,7 @@ const App = () => (
         <Route path="reg" element={<RegistrationContainer />} />
         <Route path="get-pass" element={<GetPasswordContainer />} />
         <Route path="my-ads" element={<MyAdsPageContainer />} />
+        <Route path="edit-ad" element={<EditAdPageContainer />} />
         {/* TODO: fix paths like product:title/not-exsting-title to go to 404 page, google how */}
         <Route path="product/:id" element={<ProductPageContainer />} />
         <Route path="*" element={<NotFoundContainer />} />

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import style from './PageWrapper.module.scss';
-import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import HeaderAdmin from '../HeaderAdmin';
 
 const PageWrapper = () => (
   <div className={style.page_wrapper}>
-    <Header />
+    <HeaderAdmin />
     <main className={style.content}>
       <Outlet />
     </main>

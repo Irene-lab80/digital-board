@@ -1,12 +1,13 @@
 import React from 'react';
 import { MenuOutlined, SearchOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 import Search from '../Search';
-import style from './Header.module.scss';
-import ModalBtn from '../ModalBtn';
-import ProfileButton from '../ProfileButton';
+import style from './HeaderAdmin.module.scss';
+import DropDownProfileBtn from '../DropDownProfileBtn/Index';
+import CustomButton from '../CustomButton';
 
-const Header = () => (
+const HeaderAdmin = () => (
   <div className={style.wrapper}>
     <header className={style.header}>
       <div className={style.logo}>
@@ -19,11 +20,13 @@ const Header = () => (
         </div>
       </div>
       <div className={style.button}>
-        <ModalBtn />
+        <Link to="edit-ad">
+          <CustomButton onClick={() => {}} buttonStyle="btn--accent">Подать объявление</CustomButton>
+        </Link>
       </div>
       <div className={style.profileLock} />
       <div className={style.profileButton}>
-        <ProfileButton onClick={() => {}}>Войти</ProfileButton>
+        <DropDownProfileBtn />
       </div>
       <div className={style.burger}>
         <MenuOutlined style={{ fontSize: '24px', opacity: '0.4' }} />
@@ -31,4 +34,4 @@ const Header = () => (
     </header>
   </div>
 );
-export default Header;
+export default HeaderAdmin;
