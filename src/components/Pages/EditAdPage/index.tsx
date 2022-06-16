@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import CustomButton from '../../common/CustomButton';
 import BackArrowSvg from '../../common/svg/BackArrowSvg';
 import style from './EditAdPage.module.scss';
+import 'antd/dist/antd.css';
+import EditAdFrom from '../../common/EditAdFrom';
 
 const EditAdPage = () => (
   <div className={style.wrapper}>
@@ -24,7 +26,7 @@ const EditAdPage = () => (
           </div>
         </div>
         <div className={style.form}>
-          123
+          <EditAdFrom />
         </div>
       </main>
     </div>
