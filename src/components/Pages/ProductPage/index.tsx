@@ -16,7 +16,7 @@ moment.locale('ru');
 
 type ProductPagePropsType = {
   productInfo: {
-    // id: number;
+    id: number;
     tag: string;
     title: string;
     description: string;
@@ -65,7 +65,7 @@ const ProductPage = ({ productInfo }: ProductPagePropsType) => (
         </div>
         {/* TODO:  ?? */}
         <div className={style.more}>Смотрите также:</div>
-        <CardsSmall bigTag={productInfo?.tag} />
+        <CardsSmall bigTag={productInfo?.tag} id={productInfo?.id} />
         {/* <div>Card 1</div>
         <div>Card 2</div> */}
         {/* data => filter(tag) => filter(data) => first two */}

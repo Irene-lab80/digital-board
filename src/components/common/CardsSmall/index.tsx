@@ -8,11 +8,12 @@ moment.locale('ru');
 
 type CardsSmallType = {
   bigTag: string | undefined;
+  id: number | undefined;
 }
 
-// TODO: leave only two first cards by date, and remove the same card as a big card
-const CardsSmall = ({ bigTag }: CardsSmallType) => {
-  const newData = data.filter(((el) => el.tag.toString() === bigTag));
+// TODO: leave only two first cards by date
+const CardsSmall = ({ bigTag, id }: CardsSmallType) => {
+  const newData = data.filter(((el) => el.tag.toString() === bigTag && el.id !== id));
   const arrayOfCards = newData.map((el) => (
     <CardSmall
       id={el.id}
