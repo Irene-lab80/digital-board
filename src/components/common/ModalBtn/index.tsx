@@ -17,8 +17,6 @@ const ModalBtn: React.FC = () => {
     setIsModalVisible(false);
   };
 
-  // TODO: add children props, ts doesnt work?
-
   return (
     <>
       <CustomButton onClick={showModal} buttonStyle="btn--accent">Подать объявление</CustomButton>
