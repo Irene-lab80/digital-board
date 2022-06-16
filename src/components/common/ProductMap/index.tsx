@@ -1,6 +1,7 @@
 import React from 'react';
-import { YMaps, Map, Placemark } from 'react-yandex-maps';
+import { YMaps, Map, Placemark, SearchControl } from 'react-yandex-maps';
 
+// TODO: remove any
 type ProductMapType = {
   coordinates: any
 }
@@ -17,7 +18,9 @@ const ProductMap = ({ coordinates }: ProductMapType) => {
         width="100%"
         height="100%">
         {x.map((coordinate: number[]) => <Placemark geometry={coordinate} />)}
+        {/* <SearchControl /> */}
       </Map>
+
     </YMaps>
   );
 };
