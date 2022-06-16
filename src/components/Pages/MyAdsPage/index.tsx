@@ -81,10 +81,12 @@ const MyAdsPage = () => (
           <h2 className={style.title}>Объявления</h2>
           <span className={style.subtitle}>Всего: 45</span>
         </div>
-        <CustomButton buttonStyle="btn--primary" onClick={() => {}}>
-          Добавить
-          <span className={style.icon}><PlusSvg /></span>
-        </CustomButton>
+        <div className={style.btnWrapper}>
+          <CustomButton buttonStyle="btn--primary" onClick={() => {}}>
+            Добавить
+            <span className={style.icon}><PlusSvg /></span>
+          </CustomButton>
+        </div>
       </div>
       <div className={style.table}>
         <Table dataSource={dataSource} columns={columns} />

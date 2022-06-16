@@ -38,10 +38,14 @@
 .icon {
   width: 20px;
   height: 20px;
-  // padding-left: 16px;
+  padding-left: 10px;
 }
 
 .top {
   display: flex;
   justify-content: space-between;
+}
+
+.btnWrapper {
+  width: 129px
 }

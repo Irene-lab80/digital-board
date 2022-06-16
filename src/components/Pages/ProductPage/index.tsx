@@ -2,15 +2,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
-
 import ProductSlider from '../../common/ProductSlider';
 import style from './ProductPage.module.scss';
-import arrow from '../../../assets/images/arrow-back.svg';
 import ViewsNumber from '../../common/ViewsNumber';
 import ShowTelButton from '../../common/ShowTelButton';
 import ProductMap from '../../common/ProductMap';
 import CardsSmall from '../../common/CardsSmall';
 import 'moment/locale/ru'; // without this line it didn't work
+import BackArrowSvg from '../../common/svg/BackArrowSvg';
 
 moment.locale('ru');
 
@@ -33,7 +32,7 @@ type ProductPagePropsType = {
 const ProductPage = ({ productInfo }: ProductPagePropsType) => (
   <>
     <Link to="/">
-      <img className={style.arrow} src={arrow} alt="Arrow back" />
+      <BackArrowSvg />
     </Link>
     <div className={style.wrapper}>
       <main className={style.main}>
@@ -41,7 +40,6 @@ const ProductPage = ({ productInfo }: ProductPagePropsType) => (
         <h2 className={style.title}>{productInfo?.title}</h2>
         {/* TODO: is that id? */}
         <div className={style.number}>WS-25645-253-55</div>
-        {/* TODO: change, there were a way to add class to a component?  */}
         <ViewsNumber cname={style.views}>{productInfo?.views}</ViewsNumber>
         <ProductSlider cname={style.slider} src={productInfo?.src} />
         <div className={style.info}>
@@ -59,16 +57,11 @@ const ProductPage = ({ productInfo }: ProductPagePropsType) => (
 
       <aside className={style.aside}>
         <div className={style.price}>{`${productInfo?.price.toLocaleString('ru')} Р`}</div>
-        {/* TODO: google how to better set outer margin in react */}
         <div className={style.button}>
           <ShowTelButton>{productInfo?.tel}</ShowTelButton>
         </div>
-        {/* TODO:  ?? */}
         <div className={style.more}>Смотрите также:</div>
         <CardsSmall bigTag={productInfo?.tag} id={productInfo?.id} />
-        {/* <div>Card 1</div>
-        <div>Card 2</div> */}
-        {/* data => filter(tag) => filter(data) => first two */}
       </aside>
     </div>
   </>
