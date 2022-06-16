@@ -1,19 +1,20 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import React from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 
-type AuthHOCProps = {
+type AuthHocProps = {
   children: React.ReactNode;
 }
 
-const AuthHOC: React.FC<AuthHOCProps> = ({ children }) => {
-  const isAuth = true;
+const AuthHoc: React.FC<AuthHocProps> = ({ children }) => {
+  const location = useLocation();
+  const isAuth = false;
 
   if (isAuth) {
     return <>{ children }</>;
   }
 
-  return <Navigate to="/auth" />;
+  return <Navigate to="/auth" state={{ from: location }} />;
 };
 
-export default AuthHOC;
+export default AuthHoc;
