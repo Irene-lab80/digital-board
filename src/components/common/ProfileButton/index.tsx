@@ -1,19 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import PersonSvg from '../svg/PersonSvg';
+import PersonSvgActive from '../svg/PersonSvgActive';
 import style from './ProfileButton.module.scss';
 
-type profilePropsType = {
-  children: any;
-  onClick: ()=> void;
-};
+const ProfileButton = () => {
+  const [isHovering, setIsHovering] = useState(false);
 
-const ProfileButton:React.FC<profilePropsType> = ({ children, onClick }) => (
-  <button type="button" className={style.profileButton} onClick={onClick}>
+  const handleMouseOver = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseOut = () => {
+    setIsHovering(false);
+  };
+
+  return (
     <NavLink className={style.profile__wrapper} to="/auth">
-      <span className={style.profile__icon} />
-      <span className={style.profile__text}>{children}</span>
+      <div
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
+        onFocus={handleMouseOver}
+        onBlur={handleMouseOut}
+        className={style.wrapper}>
+        {!isHovering && (
+        <span className={style.icon}>
+          <PersonSvg />
+        </span>
+        )}
+        {isHovering && (
+        <span className={style.icon}>
+          <PersonSvgActive />
+        </span>
+        )}
+        <span className={style.text}>Войти</span>
+      </div>
     </NavLink>
-  </button>
-);
+  );
+};
 
 export default ProfileButton;

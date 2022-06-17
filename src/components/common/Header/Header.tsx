@@ -23,7 +23,7 @@ const Header = () => (
       </div>
       <div className={style.profileLock} />
       <div className={style.profileButton}>
-        <ProfileButton onClick={() => {}}>Войти</ProfileButton>
+        <ProfileButton />
       </div>
       <div className={style.burger}>
         <MenuOutlined style={{ fontSize: '24px', opacity: '0.4' }} />

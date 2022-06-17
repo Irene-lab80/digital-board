@@ -1,20 +1,22 @@
 @import "../../../assets/styles/constants.scss";
 @import "../../../assets/styles/mixins";
 
-.profile__wrapper {
+.wrapper {
   display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
-.profile__icon {
-  background-image: url('../../../assets/images/person-icon.svg');
-  width: 24px;
-  height: 24px;
-  margin-right: 8px;
-  display: inline-block;
+.wrapper:hover .text{
+  color: $color-button-main-hover;
 }
 
-.profile__text {
-  display: inline-block;
+.text {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
   color: $color-text-dark-s;
 
   @include media-tablet {
@@ -22,27 +24,8 @@
   }
 }
 
-.profileButton {
+.icon {
   display: flex;
-  font-family: 'Jost';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
-  color: $color-text-dark-s;
-}
-
-.profileButton:hover {
-  cursor: pointer;
-}
-
-.profileButton:hover .profile__icon {
-  background-image: url('../../../assets/images/person-icon-colored.svg');
-  background-repeat: no-repeat;
-  transition: all .3s;
-}
-
-.profileButton:hover .profile__text {
-  color: #3A95FF;
-  transition: all .3s;
+  align-items: center;
+  margin-right: 8px;
 }
