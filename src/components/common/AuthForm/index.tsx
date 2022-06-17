@@ -1,10 +1,14 @@
 import React from 'react';
 import { Form, Input, Button } from 'antd';
 import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { SetUserNameAction } from '../../../store/actions';
 
 const AuthForm: React.FC = () => {
+  const dispatch = useDispatch();
   const onFinish = (values: any) => {
     console.log('Success:', values);
+    dispatch(SetUserNameAction(values.email));
   };
 
   const onFinishFailed = (errorInfo: any) => {

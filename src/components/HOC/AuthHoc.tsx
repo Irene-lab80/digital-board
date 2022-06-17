@@ -1,14 +1,22 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';
+import GetUserName from '../../store/selectors';
 
 type AuthHocProps = {
   children: React.ReactNode;
 }
 
 const AuthHoc: React.FC<AuthHocProps> = ({ children }) => {
+  const name = useSelector(GetUserName);
+  let isAuth;
   const location = useLocation();
-  const isAuth = false;
+  if (name) {
+    isAuth = true;
+  } else {
+    isAuth = false;
+  }
 
   if (isAuth) {
     return <>{ children }</>;
