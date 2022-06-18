@@ -23,7 +23,7 @@ const DropDownProfileBtn = () => {
         paddingBottom: 16,
 
       }}>
-        <span className={style.avatar}>{name.slice(0, 2)}</span>
+        <span className={style.avatar}>{name.slice(0, 2).toLocaleUpperCase()}</span>
         {name || 'no_auth'}
       </Menu.Item>
       <Link to="my-ads">
@@ -48,7 +48,7 @@ const DropDownProfileBtn = () => {
           paddingRight: 24,
         }}
         icon={<span className={style.icon}><ExitSvg /></span>}>
-        Выход
+        <button type="button" onClick={() => {}}>Выход</button>
       </Menu.Item>
     </Menu>
   );

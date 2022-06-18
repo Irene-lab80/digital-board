@@ -23,7 +23,7 @@ const DropDownProfileBtnAdmin = () => {
         paddingTop: 16,
         paddingBottom: 16,
       }}>
-        <span className={style.avatar}>{name.slice(0, 2)}</span>
+        <span className={style.avatar}>{name.slice(0, 2).toUpperCase()}</span>
         Admin
       </Menu.Item>
       <Link to="my-ads">
