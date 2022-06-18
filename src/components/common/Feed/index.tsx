@@ -6,7 +6,9 @@ import LoadSvg from '../svg/LoadSvg';
 
 const Feed = () => (
   <div className={style.feedwrapper}>
-    <h2>Вся лента</h2>
+    <div className={style.titleWrapper}>
+      <h2 className={style.title}>Вся лента</h2>
+    </div>
     <div className={style.cardsWrapper}>
       <Cards />
     </div>
