@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Input, Button, Checkbox } from 'antd';
+import CustomButton from '../CustomButton';
 
 const RegistrationPage: React.FC = () => {
   const onFinish = (values: any) => {
@@ -13,32 +14,27 @@ const RegistrationPage: React.FC = () => {
   return (
     <Form
       name="basic"
-      labelCol={{ span: 8 }}
-      wrapperCol={{ span: 16 }}
       initialValues={{ remember: true }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
       autoComplete="off"
     >
       <Form.Item
-        label="Имя"
         name="name"
         rules={[{ required: true, message: 'Введите имя!' }]}
       >
-        <Input />
+        <Input placeholder="Имя" />
       </Form.Item>
 
       <Form.Item
-        label="Фамилия"
         name="lastname"
         rules={[{ required: true, message: 'Введите фамилию!' }]}
       >
-        <Input />
+        <Input placeholder="Фамилия" />
       </Form.Item>
 
       <Form.Item
         name="email"
-        label="E-mail"
         rules={[
           {
             type: 'email',
@@ -50,24 +46,43 @@ const RegistrationPage: React.FC = () => {
           },
         ]}
       >
-        <Input />
+        <Input placeholder="Email" />
       </Form.Item>
 
       <Form.Item
-        label="Пароль"
         name="password"
-        rules={[{ required: true, message: 'Введите пароль!' }]}
+        rules={[{ required: true, message: 'Введите пароль!' }, { min: 5, message: 'Пароль должен быть не менее 8 символов.' }]}
       >
-        <Input.Password />
+        <Input.Password placeholder="Пароль" />
       </Form.Item>
 
-      <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-        <Button type="primary" htmlType="submit">
-          Создать аккаунт
-        </Button>
+      <Form.Item
+        name="confirm"
+        dependencies={['password']}
+        hasFeedback
+        rules={[
+          {
+            required: true,
+            message: 'Повторите пароль',
+          },
+          ({ getFieldValue }) => ({
+            validator(_, value) {
+              if (!value || getFieldValue('password') === value) {
+                return Promise.resolve();
+              }
+              return Promise.reject(new Error('The two passwords that you entered do not match!'));
+            },
+          }),
+        ]}
+      >
+        <Input.Password placeholder="Повторите пароль" />
       </Form.Item>
 
-      <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
+      <Form.Item>
+        <button className="btn btn--primary" type="submit" onClick={() => {}}>Создать аккаунт</button>
+      </Form.Item>
+
+      <Form.Item name="remember" valuePropName="checked">
         <Checkbox>
           Принимаю условия
           <br />

@@ -3,6 +3,8 @@ import { Form, Input, Button } from 'antd';
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { SetUserNameAction } from '../../../store/actions';
+import style from './AuthForm.module.scss';
+import CustomButton from '../CustomButton';
 
 const AuthForm: React.FC = () => {
   const dispatch = useDispatch();
@@ -18,43 +20,38 @@ const AuthForm: React.FC = () => {
   return (
     <Form
       name="basic"
-      labelCol={{ span: 8 }}
-      wrapperCol={{ span: 16 }}
       initialValues={{ remember: true }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
       autoComplete="off">
       <Form.Item
         name="email"
-        label="E-mail"
         rules={[
           {
             type: 'email',
-            message: 'The input is not valid E-mail!',
+            message: 'Некорректный E-mail!',
           },
           {
             required: true,
-            message: 'Please input your E-mail!',
+            message: 'Введите E-mail!',
           },
         ]}>
-        <Input />
+        <Input placeholder="Email" />
       </Form.Item>
 
       <Form.Item
-        label="Пароль"
         name="password"
-        rules={[{ required: true, message: 'Please input your password!' }]}>
-        <Input.Password />
+        rules={[{ required: true, message: 'Введите пароль!' }]}>
+        <Input.Password placeholder="Пароль" />
       </Form.Item>
 
-      <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+      <Form.Item>
         <NavLink to="/get-pass">Забыли пароль?</NavLink>
       </Form.Item>
 
-      <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-        <Button type="primary" htmlType="submit">
-          Войти
-        </Button>
+      {/* TODO: change to custom btn? */}
+      <Form.Item>
+        <button className="btn btn--primary" type="submit" onClick={() => {}}>Войти</button>
       </Form.Item>
     </Form>
   );
