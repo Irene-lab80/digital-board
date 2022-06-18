@@ -11,6 +11,7 @@ import ProductPageContainer from './components/Containers/ProductPageContainer';
 import MyAdsPageContainer from './components/Containers/MyAdsPageContainer';
 import EditAdPageContainer from './components/Containers/EditAdPageContainer';
 import AuthHoc from './components/HOC/AuthHoc';
+import './assets/styles/main.scss';
 
 const App = () => (
   <div className="App">
