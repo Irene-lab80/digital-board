@@ -1,26 +1,44 @@
 import React, { useState } from 'react';
 import { Dropdown, Menu } from 'antd';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import style from './DropDownProfileBtn.module.scss';
 import ExitSvg from '../svg/ExitSvg';
 import BookSvg from '../svg/BookSvg';
 import PanelSvg from '../svg/PanelSvg';
 import PersonSvg from '../svg/PersonSvg';
 import PersonSvgActive from '../svg/PersonSvgActive';
+import GetUserName from '../../../store/selectors';
 
 // TODO: переделать стили? СДелать отдельный компонент?
-const menu = (
-  <Menu title="">
-    <Menu.Item style={{
-      fontSize: '16px',
-      fontWeight: 700,
-      paddingTop: 16,
-      paddingBottom: 16,
-    }}>
-      <span className={style.avatar}>AA</span>
-      Admin
-    </Menu.Item>
-    <Link to="my-ads">
+
+const DropDownProfileBtnAdmin = () => {
+  const name = useSelector(GetUserName);
+
+  const menu = (
+    <Menu title="">
+      <Menu.Item style={{
+        fontSize: '16px',
+        fontWeight: 700,
+        paddingTop: 16,
+        paddingBottom: 16,
+      }}>
+        <span className={style.avatar}>{name.slice(0, 2)}</span>
+        Admin
+      </Menu.Item>
+      <Link to="my-ads">
+        <Menu.Item
+          style={{
+            fontSize: '14px',
+            paddingTop: 16,
+            paddingBottom: 16,
+            paddingLeft: 24,
+            paddingRight: 24,
+          }}
+          icon={<span className={style.icon}><BookSvg /></span>}>
+          Мои объявления
+        </Menu.Item>
+      </Link>
       <Menu.Item
         style={{
           fontSize: '14px',
@@ -29,36 +47,23 @@ const menu = (
           paddingLeft: 24,
           paddingRight: 24,
         }}
-        icon={<span className={style.icon}><BookSvg /></span>}>
-        Мои объявления
+        icon={<span className={style.icon}><PanelSvg /></span>}>
+        Админ Панель
       </Menu.Item>
-    </Link>
-    <Menu.Item
-      style={{
-        fontSize: '14px',
-        paddingTop: 16,
-        paddingBottom: 16,
-        paddingLeft: 24,
-        paddingRight: 24,
-      }}
-      icon={<span className={style.icon}><PanelSvg /></span>}>
-      Админ Панель
-    </Menu.Item>
-    <Menu.Item
-      style={{
-        fontSize: '14px',
-        paddingTop: 16,
-        paddingBottom: 16,
-        paddingLeft: 24,
-        paddingRight: 24,
-      }}
-      icon={<span className={style.icon}><ExitSvg /></span>}>
-      Выход
-    </Menu.Item>
-  </Menu>
-);
+      <Menu.Item
+        style={{
+          fontSize: '14px',
+          paddingTop: 16,
+          paddingBottom: 16,
+          paddingLeft: 24,
+          paddingRight: 24,
+        }}
+        icon={<span className={style.icon}><ExitSvg /></span>}>
+        Выход
+      </Menu.Item>
+    </Menu>
+  );
 
-const DropDownProfileBtnAdmin = () => {
   const [isHovering, setIsHovering] = useState(false);
 
   const handleMouseOver = () => {

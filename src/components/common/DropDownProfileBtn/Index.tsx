@@ -23,7 +23,7 @@ const DropDownProfileBtn = () => {
         paddingBottom: 16,
 
       }}>
-        <span className={style.avatar}>UN</span>
+        <span className={style.avatar}>{name.slice(0, 2)}</span>
         {name || 'no_auth'}
       </Menu.Item>
       <Link to="my-ads">
