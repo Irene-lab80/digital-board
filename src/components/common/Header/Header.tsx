@@ -35,7 +35,7 @@ const Header = () => {
         </div>
         <div className={style.profileLock} />
         <div className={style.profileButton}>
-          {name ? <DropDownProfileBtn /> : <ProfileButton /> }
+          {name ? <DropDownProfileBtn /> : <ProfileButton>Войти</ProfileButton> }
         </div>
         <div className={style.burger}>
           <MenuOutlined style={{ fontSize: '24px', opacity: '0.4' }} />

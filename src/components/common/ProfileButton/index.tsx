@@ -4,7 +4,11 @@ import PersonSvg from '../svg/PersonSvg';
 import PersonSvgActive from '../svg/PersonSvgActive';
 import style from './ProfileButton.module.scss';
 
-const ProfileButton = () => {
+type ProfileButtonType = {
+  children: string;
+}
+
+const ProfileButton = ({ children }: ProfileButtonType) => {
   const [isHovering, setIsHovering] = useState(false);
 
   const handleMouseOver = () => {
@@ -33,7 +37,7 @@ const ProfileButton = () => {
           <PersonSvgActive />
         </span>
         )}
-        <span className={style.text}>Войти</span>
+        <span className={style.text}>{children}</span>
       </div>
     </NavLink>
   );
