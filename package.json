@@ -2,6 +2,7 @@
   "name": "digital-board",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://myusername.github.io/my-app",
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@testing-library/jest-dom": "^5.16.4",
@@ -32,7 +33,6 @@
     "typescript": "^4.6.3",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://myusername.github.io/digital-board",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

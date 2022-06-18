@@ -1,7 +1,7 @@
 import React from 'react';
 import CustomButton from '../../common/CustomButton';
 import style from './EditAdPage.module.scss';
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.min.css';
 import EditAdFrom from '../../common/EditAdFrom';
 import GoBackBtn from '../../common/GoBackBtn';
 
