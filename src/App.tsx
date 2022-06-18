@@ -16,7 +16,7 @@ import './assets/styles/main.scss';
 const App = () => (
   <div className="App">
     <Routes>
-      <Route path="/" element={<PageWrapper />}>
+      <Route path="/digital-board/" element={<PageWrapper />}>
         <Route index element={<MainPageContainer />} />
         <Route path="auth" element={<AuthContainer />} />
         <Route path="reg" element={<RegistrationContainer />} />
