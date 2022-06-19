@@ -16,7 +16,7 @@ const FormReg: React.FC = () => {
     if (
       !value.match(re)
     ) {
-      callback('Пароль должен содержать не менее 8 символов, оба регистра и цифры!');
+      callback('Пароль должен не менее 8 символов и состоять из цифр и латинских букв обоих регистров');
     } else {
       callback();
     }
@@ -49,7 +49,7 @@ const FormReg: React.FC = () => {
         rules={[
           {
             type: 'email',
-            message: 'Невалидный E-mail!',
+            message: 'Некорректный формат адреса электронной почты!',
           },
           {
             required: true,
