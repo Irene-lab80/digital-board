@@ -3,8 +3,33 @@ import { useMediaQuery } from 'react-responsive';
 import Card from './Card';
 import { data } from '../../../helpers';
 
-const Cards = () => {
-  const arrayOfCards = data.map((el) => (
+type CardsType = {
+  filterName: string | undefined;
+}
+
+const Cards = ({ filterName }: CardsType) => {
+  // const filterName = 'Техника';
+  let newData;
+  if (filterName === 'Все товары') {
+    newData = data;
+  } else if (filterName === 'Автомобили') {
+    newData = data.filter(((el) => el.tag.toString() === filterName));
+  } else if (filterName === 'Аксессуары') {
+    newData = data.filter(((el) => el.tag.toString() === filterName));
+  } else if (filterName === 'Мебель') {
+    newData = data.filter(((el) => el.tag.toString() === filterName));
+  } else if (filterName === 'Одежда') {
+    newData = data.filter(((el) => el.tag.toString() === filterName));
+  } else if (filterName === 'Спорт') {
+    newData = data.filter(((el) => el.tag.toString() === filterName));
+  } else if (filterName === 'Техника') {
+    newData = data.filter(((el) => el.tag.toString() === filterName));
+  } else if (filterName === 'Товары для дома') {
+    newData = data.filter(((el) => el.tag.toString() === filterName));
+  }
+  // const newData = data.filter(((el) => el.tag.toString() === filterName));
+
+  const arrayOfCards = newData?.map((el) => (
     <Card
       id={el.id}
       key={el.id}
@@ -18,22 +43,22 @@ const Cards = () => {
       />
   ));
 
-  const arrayOfCardTablet = [];
-  const arrayOfCardMobile = [];
+  // const arrayOfCardTablet = [];
+  // const arrayOfCardMobile = [];
 
-  for (let i = 0; i < 6; i += 1) {
-    while (i < 6) {
-      arrayOfCardTablet.push(arrayOfCards[i]);
-      i += 1;
-    }
-  }
+  // for (let i = 0; i < 6; i += 1) {
+  //   while (i < 6) {
+  //     arrayOfCardTablet?.push(arrayOfCards[i]);
+  //     i += 1;
+  //   }
+  // }
 
-  for (let i = 0; i < 3; i += 1) {
-    while (i <= 2) {
-      arrayOfCardMobile.push(arrayOfCards[i]);
-      i += 1;
-    }
-  }
+  // for (let i = 0; i < 3; i += 1) {
+  //   while (i <= 2) {
+  //     arrayOfCardMobile.push(arrayOfCards[i]);
+  //     i += 1;
+  //   }
+  // }
 
   // TODO: remove any
   type PropsType = {
@@ -55,8 +80,8 @@ const Cards = () => {
   return (
     <>
       <Desktop>{arrayOfCards}</Desktop>
-      <Tablet>{arrayOfCardTablet}</Tablet>
-      <Mobile>{arrayOfCardMobile}</Mobile>
+      {/* <Tablet>{arrayOfCardTablet}</Tablet>
+      <Mobile>{arrayOfCardMobile}</Mobile> */}
     </>
   );
 };

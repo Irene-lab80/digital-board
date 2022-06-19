@@ -8,6 +8,9 @@ import img6 from '../assets/images/products/6.jpg';
 import img7 from '../assets/images/products/7.jpg';
 import img8 from '../assets/images/products/8.jpg';
 import img9 from '../assets/images/products/9.jpg';
+import img10 from '../assets/images/products/10.jpg';
+import img11 from '../assets/images/products/11.jpg';
+import img12 from '../assets/images/products/12.jpg';
 
 // TODO: change to key id
 export const data = [
@@ -127,5 +130,44 @@ export const data = [
     tel: '+7 (930) 456 - 65 - 09',
     location: 'г. Нижний Новгород, Парковая улица, 5',
     coordinates: [56.177782, 43.896347]
+  },
+  {
+    id: 10,
+    tag: 'Автомобили',
+    title: 'Сhevrolet Сamaro',
+    description: 'Имеется весь необходимый пакет документов',
+    price: 5400000,
+    date: 'Mar 12 2022 12:01:00 AM',
+    views: 3,
+    src: img10,
+    tel: '+7 (930) 456 - 65 - 09',
+    location: 'г. Нижний Новгород, Малая Ямская улица, 63',
+    coordinates: [56.30992241012217, 43.98005524789925]
+  },
+  {
+    id: 11,
+    tag: 'Аксессуары',
+    title: 'Cолнечные очки Rey Ban',
+    description: 'Новые',
+    price: 10000,
+    date: 'Mar 12 2022 10:00:00 AM',
+    views: 300,
+    src: img11,
+    tel: '+7 (930) 456 - 65 - 09',
+    location: 'г. Нижний Новгород, улица Маршала Баграмяна, 4',
+    coordinates: [56.303126934317156, 43.97521325906721]
+  },
+  {
+    id: 12,
+    tag: 'Мебель',
+    title: 'Кресло IKEA',
+    description: 'Кресло в стиле минимализм',
+    price: 25000,
+    date: 'Mar 12 2022 10:00:00 AM',
+    views: 25,
+    src: img12,
+    tel: '+7 (930) 456 - 65 - 09',
+    location: 'г. Нижний Новгород, Россия, Нижний Новгород, улица Бекетова, 3А, корп. 9',
+    coordinates: [56.289857647280336, 43.98624696926804]
   }
 ];

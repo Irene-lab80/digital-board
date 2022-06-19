@@ -6,7 +6,6 @@ import Menu from '../../common/Menu';
 const MainPage = () => (
   <>
     <Banner />
-    <Menu />
     <FeedContainer />
   </>
 );
