@@ -3,41 +3,90 @@ import style from './Feed.module.scss';
 import CustomButton from '../CustomButton';
 import Cards from '../Cards';
 import LoadSvg from '../svg/LoadSvg';
-import Menu from '../Menu';
 
 const Feed = () => {
   const [filter, setFilter] = useState('Все товары');
   const filterHandler = (event: any) => {
     setFilter(event.target.getAttribute('id'));
   };
+  // const typeNames = ['active', 'inactive'];
+  // const [activeType, setActiveType] = useState(typeNames[0]);
 
   return (
     <div className={style.feedwrapper}>
       <nav className={style.nav}>
         <ul className={style.menu}>
-          <li className={style.menuItem}>
-            <button type="button" id="Все товары" onClick={filterHandler}>Все товары</button>
+          <li className={filter === 'Все товары' ? 'menu-item--active' : ''}>
+            <button
+              className="menu-item"
+              type="button"
+              id="Все товары"
+              onClick={filterHandler}>
+              Все товары
+            </button>
           </li>
-          <li className={style.menuItem}>
-            <button type="button" id="Автомобили" onClick={filterHandler}>Автомобили</button>
+          <li className={filter === 'Автомобили' ? 'menu-item--active' : ''}>
+            <button
+              className="menu-item"
+              type="button"
+              id="Автомобили"
+              onClick={filterHandler}>
+              Автомобили
+            </button>
           </li>
-          <li className={style.menuItem}>
-            <button type="button" id="Аксессуары" onClick={filterHandler}>Аксессуары</button>
+          <li className={filter === 'Аксессуары' ? 'menu-item--active' : ''}>
+            <button
+              className="menu-item"
+              type="button"
+              id="Аксессуары"
+              onClick={filterHandler}>
+              Аксессуары
+            </button>
           </li>
-          <li className={style.menuItem}>
-            <button type="button" id="Мебель" onClick={filterHandler}>Мебель</button>
+          <li className={filter === 'Мебель' ? 'menu-item--active' : ''}>
+            <button
+              className="menu-item"
+              type="button"
+              id="Мебель"
+              onClick={filterHandler}>
+              Мебель
+            </button>
           </li>
-          <li className={style.menuItem}>
-            <button type="button" id="Одежда" onClick={filterHandler}>Одежда</button>
+          <li className={filter === 'Одежда' ? 'menu-item--active' : ''}>
+            <button
+              className="menu-item"
+              type="button"
+              id="Одежда"
+              onClick={filterHandler}>
+              Одежда
+            </button>
           </li>
-          <li className={style.menuItem}>
-            <button type="button" id="Спорт" onClick={filterHandler}>Спорт</button>
+          <li className={filter === 'Спорт' ? 'menu-item--active' : ''}>
+            <button
+              className="menu-item"
+              type="button"
+              id="Спорт"
+              onClick={filterHandler}>
+              Спорт
+            </button>
           </li>
-          <li className={style.menuItem}>
-            <button type="button" id="Техника" onClick={filterHandler}>Техника</button>
+          <li className={filter === 'Техника' ? 'menu-item--active' : ''}>
+            <button
+              className="menu-item"
+              type="button"
+              id="Техника"
+              onClick={filterHandler}>
+              Техника
+            </button>
           </li>
-          <li className={style.menuItem}>
-            <button type="button" id="Товары для дома" onClick={filterHandler}>Товары для дома</button>
+          <li className={filter === 'Товары для дома' ? 'menu-item--active' : ''}>
+            <button
+              className="menu-item"
+              type="button"
+              id="Товары для дома"
+              onClick={filterHandler}>
+              Товары для дома
+            </button>
           </li>
         </ul>
       </nav>
