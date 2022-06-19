@@ -14,6 +14,9 @@ import GetUserName from '../../../store/selectors';
 const DropDownProfileBtn = () => {
   const name = useSelector(GetUserName);
 
+  // TODO
+  const exitHandler = () => {};
+
   const menu = (
     <Menu title="">
       <Menu.Item style={{
@@ -48,7 +51,7 @@ const DropDownProfileBtn = () => {
           paddingRight: 24,
         }}
         icon={<span className={style.icon}><ExitSvg /></span>}>
-        <button type="button" onClick={() => {}}>Выход</button>
+        <button type="button" onClick={exitHandler}>Выход</button>
       </Menu.Item>
     </Menu>
   );
