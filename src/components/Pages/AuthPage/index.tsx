@@ -1,11 +1,11 @@
 import React from 'react';
-import AuthForm from '../../common/AuthForm';
+import FormAuth from '../../common/FormAuth';
 import FormHeader from '../../common/FormHeader';
 
 const AuthPage = () => (
   <>
     <FormHeader />
-    <AuthForm />
+    <FormAuth />
   </>
 );
 export default AuthPage;

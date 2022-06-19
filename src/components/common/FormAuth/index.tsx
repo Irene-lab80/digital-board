@@ -3,9 +3,9 @@ import { Form, Input } from 'antd';
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { SetUserNameAction } from '../../../store/actions';
-import style from './AuthForm.module.scss';
+import style from './FormAuth.module.scss';
 
-const AuthForm: React.FC = () => {
+const FormAuth: React.FC = () => {
   const dispatch = useDispatch();
   const onFinish = (values: any) => {
     console.log('Success:', values);
@@ -56,4 +56,4 @@ const AuthForm: React.FC = () => {
   );
 };
 
-export default AuthForm;
+export default FormAuth;

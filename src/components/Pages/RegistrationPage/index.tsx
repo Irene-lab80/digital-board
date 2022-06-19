@@ -1,11 +1,11 @@
 import React from 'react';
-import RegistrationForm from '../../common/RegistrationForm';
+import FormReg from '../../common/FormReg';
 import FormHeader from '../../common/FormHeader';
 
 const RegistrationPage = () => (
   <>
     <FormHeader />
-    <RegistrationForm />
+    <FormReg />
   </>
 );
 

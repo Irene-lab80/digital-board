@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Input, Checkbox } from 'antd';
 
-const RegistrationPage: React.FC = () => {
+const FormReg: React.FC = () => {
   const onFinish = (values: any) => {
     console.log('Success:', values);
   };
@@ -109,4 +109,4 @@ const RegistrationPage: React.FC = () => {
   );
 };
 
-export default RegistrationPage;
+export default FormReg;
