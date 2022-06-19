@@ -10,6 +10,18 @@ const RegistrationPage: React.FC = () => {
     console.log('Failed:', errorInfo);
   };
 
+  const validatePassword = (rule: any, value: any, callback: any) => {
+    // at least one small letter, at least one capital, at least 8 digits, no special symbols
+    const re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+    if (
+      !value.match(re)
+    ) {
+      callback('Пароль должен содержать не менее 8 символов, оба регистра и цифры!');
+    } else {
+      callback();
+    }
+  };
+
   return (
     <Form
       name="basic"
@@ -20,14 +32,14 @@ const RegistrationPage: React.FC = () => {
     >
       <Form.Item
         name="name"
-        rules={[{ required: true, message: 'Введите имя!' }]}
+        rules={[{ required: true, message: 'Введите имя!' }, { max: 25, message: 'Имя не должно быть длиннее 25 символов' }]}
       >
         <Input placeholder="Имя" />
       </Form.Item>
 
       <Form.Item
         name="lastname"
-        rules={[{ required: true, message: 'Введите фамилию!' }]}
+        rules={[{ required: true, message: 'Введите фамилию!' }, { max: 25, message: 'Фамилия не должна быть длиннее 25 символов' }]}
       >
         <Input placeholder="Фамилия" />
       </Form.Item>
@@ -37,11 +49,11 @@ const RegistrationPage: React.FC = () => {
         rules={[
           {
             type: 'email',
-            message: 'The input is not valid E-mail!',
+            message: 'Невалидный E-mail!',
           },
           {
             required: true,
-            message: 'Please input your E-mail!',
+            message: 'Введите E-mail!',
           },
         ]}
       >
@@ -50,7 +62,9 @@ const RegistrationPage: React.FC = () => {
 
       <Form.Item
         name="password"
-        rules={[{ required: true, message: 'Введите пароль!' }, { min: 5, message: 'Пароль должен быть не менее 8 символов.' }]}
+        rules={[{ required: true, message: 'Введите пароль!' },
+          // { min: 5, message: 'Пароль должен быть не менее 8 символов.' },
+          { validator: validatePassword }]}
       >
         <Input.Password placeholder="Пароль" />
       </Form.Item>
@@ -69,7 +83,7 @@ const RegistrationPage: React.FC = () => {
               if (!value || getFieldValue('password') === value) {
                 return Promise.resolve();
               }
-              return Promise.reject(new Error('The two passwords that you entered do not match!'));
+              return Promise.reject(new Error('Пароли не совпадают!'));
             },
           }),
         ]}
