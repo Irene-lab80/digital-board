@@ -1,6 +1,5 @@
 import React from 'react';
-import { Form, Input, Button, Checkbox } from 'antd';
-import CustomButton from '../CustomButton';
+import { Form, Input, Checkbox } from 'antd';
 
 const RegistrationPage: React.FC = () => {
   const onFinish = (values: any) => {

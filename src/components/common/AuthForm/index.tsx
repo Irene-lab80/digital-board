@@ -1,10 +1,9 @@
 import React from 'react';
-import { Form, Input, Button } from 'antd';
+import { Form, Input } from 'antd';
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { SetUserNameAction } from '../../../store/actions';
 import style from './AuthForm.module.scss';
-import CustomButton from '../CustomButton';
 
 const AuthForm: React.FC = () => {
   const dispatch = useDispatch();
@@ -46,7 +45,7 @@ const AuthForm: React.FC = () => {
       </Form.Item>
 
       <Form.Item>
-        <NavLink to="/get-pass">Забыли пароль?</NavLink>
+        <NavLink className={style.forgotPassword} to="/get-pass">Забыли пароль?</NavLink>
       </Form.Item>
 
       {/* TODO: change to custom btn? */}
