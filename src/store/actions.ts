@@ -1,9 +1,8 @@
-export const UserInfoActionType = {
-  setUserName: 'SET_USER_NAME',
-};
+import { UserInfoActionTypeType } from './types';
 
-export const searchTermActionType = {
-  setSearchTerm: 'SET_SEARCH_TERM',
+export const UserInfoActionType: UserInfoActionTypeType = {
+  setUserName: 'SET_USER_NAME',
+  clearUserName: 'CLEAR_USER_NAME',
 };
 
 export const SetUserNameAction = (name: string) => ({
@@ -11,7 +10,6 @@ export const SetUserNameAction = (name: string) => ({
   payload: name,
 });
 
-export const SetSearchTerm = (searchTerm: string) => ({
-  type: searchTermActionType.setSearchTerm,
-  payload: searchTerm,
+export const ClearUserNameAction = () => ({
+  type: UserInfoActionType.clearUserName,
 });

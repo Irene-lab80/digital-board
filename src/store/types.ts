@@ -2,9 +2,18 @@ export type userInfoReducerType = {
   name: string;
 }
 
+export type UserInfoActionTypeType = {
+  setUserName: 'SET_USER_NAME',
+  clearUserName: 'CLEAR_USER_NAME',
+}
+
 export type SetUserNameActionType = {
-  type: string;
+  type: UserInfoActionTypeType['setUserName'];
   payload: string;
 }
 
-export type ActionType = SetUserNameActionType;
+export type ClearUserNameActionType = {
+  type: UserInfoActionTypeType['clearUserName'];
+}
+
+export type ActionType = SetUserNameActionType | ClearUserNameActionType;

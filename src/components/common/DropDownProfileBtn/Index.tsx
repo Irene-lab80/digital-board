@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Dropdown, Menu } from 'antd';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import style from './DropDownProfileBtn.module.scss';
 import ExitSvg from '../svg/ExitSvg';
 import BookSvg from '../svg/BookSvg';
@@ -9,14 +9,15 @@ import PersonSvg from '../svg/PersonSvg';
 import PersonSvgActive from '../svg/PersonSvgActive';
 import GetUserName from '../../../store/selectors';
 
+import { ClearUserNameAction } from '../../../store/actions';
+
 // TODO: переделать стили? СДелать отдельный компонент?
 
 const DropDownProfileBtn = () => {
   const name = useSelector(GetUserName);
-
+  const dispatch = useDispatch();
   // TODO
-  const exitHandler = () => {};
-
+  const exitHandler = () => { dispatch(ClearUserNameAction()); };
   const menu = (
     <Menu title="">
       <Menu.Item style={{
@@ -52,6 +53,7 @@ const DropDownProfileBtn = () => {
         }}
         icon={<span className={style.icon}><ExitSvg /></span>}>
         <button type="button" onClick={exitHandler}>Выход</button>
+
       </Menu.Item>
     </Menu>
   );
