@@ -7,9 +7,9 @@ import Search from '../Search';
 import style from './Header.module.scss';
 import ModalBtn from '../ModalBtn';
 import ProfileButton from '../ProfileButton';
-import GetUserName from '../../../store/selectors';
 import DropDownProfileBtn from '../DropDownProfileBtn/Index';
 import CustomButton from '../CustomButton';
+import GetUserName from '../../../store/selectors';
 
 const Header = () => {
   const name = useSelector(GetUserName);
@@ -20,7 +20,9 @@ const Header = () => {
           <Logo />
         </div>
         <div className={style.searchWrapper}>
-          <div className={style.search}><Search /></div>
+          <div className={style.search}>
+            <Search onSearch={() => {}} />
+          </div>
           <div className={style.searchMobile}>
             <SearchOutlined style={{ fontSize: '24px', opacity: '0.4' }} />
           </div>

@@ -1,25 +1,36 @@
 import React from 'react';
 // eslint-disable-next-line import/no-unresolved
-import Search from 'antd/lib/input/Search';
+// import Search from 'antd/lib/input/Search';
 import { SearchOutlined } from '@ant-design/icons';
+import { Input } from 'antd';
 
-const onSearch = (value: string) => console.log(value);
+type CustomSearchType = {
+  onSearch: any;
+}
 
-const suffix = (
-  <SearchOutlined
-    style={{
-      opacity: '0.4',
-      fontSize: '24px'
-    }}
-  />
-);
+const CustomSearch = ({ onSearch }: CustomSearchType) => {
+  const suffix = (
+    <SearchOutlined
+      style={{
+        opacity: '0.4',
+        fontSize: '24px'
+      }}
+    />
+  );
 
-export default () => (
-  <Search
-    placeholder=""
-    allowClear
-    enterButton="Искать"
-    onSearch={onSearch}
-    prefix={suffix}
-  />
-);
+  return (
+    // <Search
+    //   allowClear
+    //   enterButton="Искать"
+    //   onSubmit={onSearch}
+    //   onSearch={onSearch}
+    //   prefix={suffix}
+    // />
+    <form action="/search">
+      <Input type="search" allowClear prefix={suffix} id="mySearch" name="q" />
+      <button type="submit" onSubmit={onSearch}>Искать</button>
+    </form>
+  );
+};
+
+export default CustomSearch;

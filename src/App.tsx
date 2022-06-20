@@ -12,6 +12,7 @@ import MyAdsPageContainer from './components/Containers/MyAdsPageContainer';
 import EditAdPageContainer from './components/Containers/EditAdPageContainer';
 import AuthHoc from './components/HOC/AuthHoc';
 import './assets/styles/main.scss';
+import SeachResultsPage from './components/Pages/SeachResultsPage';
 
 const App = () => (
   <div className="App">
@@ -23,6 +24,7 @@ const App = () => (
         <Route path="get-pass" element={<GetPasswordContainer />} />
         <Route path="my-ads" element={<AuthHoc><MyAdsPageContainer /></AuthHoc>} />
         <Route path="edit-ad" element={<AuthHoc><EditAdPageContainer /></AuthHoc>} />
+        <Route path="search" element={<SeachResultsPage />} />
         <Route path="product/:id" element={<ProductPageContainer />} />
         <Route path="*" element={<NotFoundContainer />} />
       </Route>
