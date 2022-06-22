@@ -1,10 +1,20 @@
 import React from 'react';
-import style from './Menu.module.scss';
 
-const Menu = () => (
-  <div className={style.wrapper}>
-    <h2>MENU</h2>
-  </div>
+type MenuItemType = {
+  onClick: any;
+  children: string;
+  className: string;
+  id: string;
+}
+
+const MenuItem:React.FC<MenuItemType> = ({ children, onClick, className, id }) => (
+  <button
+    className={className}
+    type="button"
+    id={id}
+    onClick={onClick}>
+    {children}
+  </button>
 );
 
-export default Menu;
+export default MenuItem;

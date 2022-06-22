@@ -1,96 +1,35 @@
+/* eslint-disable react/jsx-no-useless-fragment */
+/* eslint-disable max-len */
 import React, { useState } from 'react';
 import style from './Feed.module.scss';
 import CustomButton from '../CustomButton';
 import Cards from '../Cards';
 import LoadSvg from '../svg/LoadSvg';
+import MenuItem from '../MenuItem';
 
 const Feed = () => {
-  const [filter, setFilter] = useState('Все товары');
+  const [filter, setFilter]: [any, any] = useState('Все товары');
   const filterHandler = (event: any) => {
     setFilter(event.target.getAttribute('id'));
   };
-  // const typeNames = ['active', 'inactive'];
-  // const [activeType, setActiveType] = useState(typeNames[0]);
+  // const tags = ['Все товары', 'Автомобили', 'Аксессуары', 'Мебель', 'Одежда', 'Спорт', 'Техника', 'Товары для дома'];
+  // const menu = tags.map((el) => <MenuItem className={filter === { el } ? 'menu-item--active' : 'menu-item'} id={el} onClick={filterHandler}>{el}</MenuItem>);
 
   return (
     <div className={style.feedwrapper}>
       <nav className={style.nav}>
         <ul className={style.menu}>
-          <li className={filter === 'Все товары' ? 'menu-item--active' : ''}>
-            <button
-              className="menu-item"
-              type="button"
-              id="Все товары"
-              onClick={filterHandler}>
-              Все товары
-            </button>
-          </li>
-          <li className={filter === 'Автомобили' ? 'menu-item--active' : ''}>
-            <button
-              className="menu-item"
-              type="button"
-              id="Автомобили"
-              onClick={filterHandler}>
-              Автомобили
-            </button>
-          </li>
-          <li className={filter === 'Аксессуары' ? 'menu-item--active' : ''}>
-            <button
-              className="menu-item"
-              type="button"
-              id="Аксессуары"
-              onClick={filterHandler}>
-              Аксессуары
-            </button>
-          </li>
-          <li className={filter === 'Мебель' ? 'menu-item--active' : ''}>
-            <button
-              className="menu-item"
-              type="button"
-              id="Мебель"
-              onClick={filterHandler}>
-              Мебель
-            </button>
-          </li>
-          <li className={filter === 'Одежда' ? 'menu-item--active' : ''}>
-            <button
-              className="menu-item"
-              type="button"
-              id="Одежда"
-              onClick={filterHandler}>
-              Одежда
-            </button>
-          </li>
-          <li className={filter === 'Спорт' ? 'menu-item--active' : ''}>
-            <button
-              className="menu-item"
-              type="button"
-              id="Спорт"
-              onClick={filterHandler}>
-              Спорт
-            </button>
-          </li>
-          <li className={filter === 'Техника' ? 'menu-item--active' : ''}>
-            <button
-              className="menu-item"
-              type="button"
-              id="Техника"
-              onClick={filterHandler}>
-              Техника
-            </button>
-          </li>
-          <li className={filter === 'Товары для дома' ? 'menu-item--active' : ''}>
-            <button
-              className="menu-item"
-              type="button"
-              id="Товары для дома"
-              onClick={filterHandler}>
-              Товары для дома
-            </button>
-          </li>
+          {/* {menu} */}
+          <MenuItem className={filter === 'Все товары' ? 'menu-item--active' : 'menu-item'} id="Все товары" onClick={filterHandler}>Все товары</MenuItem>
+          <MenuItem className={filter === 'Автомобили' ? 'menu-item--active' : 'menu-item'} id="Автомобили" onClick={filterHandler}>Автомобили</MenuItem>
+          <MenuItem className={filter === 'Аксессуары' ? 'menu-item--active' : 'menu-item'} id="Аксессуары" onClick={filterHandler}>Аксессуары</MenuItem>
+          <MenuItem className={filter === 'Мебель' ? 'menu-item--active' : 'menu-item'} id="Мебель" onClick={filterHandler}>Мебель</MenuItem>
+          <MenuItem className={filter === 'Одежда' ? 'menu-item--active' : 'menu-item'} id="Одежда" onClick={filterHandler}>Одежда</MenuItem>
+          <MenuItem className={filter === 'Спорт' ? 'menu-item--active' : 'menu-item'} id="Спорт" onClick={filterHandler}>Спорт</MenuItem>
+          <MenuItem className={filter === 'Техника' ? 'menu-item--active' : 'menu-item'} id="Техника" onClick={filterHandler}>Техника</MenuItem>
+          <MenuItem className={filter === 'Товары для дома' ? 'menu-item--active' : 'menu-item'} id="Товары для дома" onClick={filterHandler}>Товары для дома</MenuItem>
         </ul>
       </nav>
-
       <div className={style.titleWrapper}>
         <h2 className={style.title}>Вся лента</h2>
       </div>

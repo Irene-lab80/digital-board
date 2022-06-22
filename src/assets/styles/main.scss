@@ -140,6 +140,8 @@ ymaps.ymaps-2-1-79-controls__toolbar_left > ymaps:nth-child(2) {
   color: $color-text-dark-l;
   pointer-events: none;
   border-radius: 35px;
+  padding: 8px 24px;
+  margin-right: 24px;
 }
 
 .menu-item {
@@ -163,5 +165,5 @@ ymaps.ymaps-2-1-79-controls__toolbar_left > ymaps:nth-child(2) {
 }
 
 .menu-item:last-child {
-  margin-right: 0;
+  // margin-right: 0;
 }
