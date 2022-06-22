@@ -3,6 +3,7 @@ import React from 'react';
 // import Search from 'antd/lib/input/Search';
 import { SearchOutlined } from '@ant-design/icons';
 import { Input } from 'antd';
+import style from './Search.module.scss';
 
 type CustomSearchType = {
   onSearch: any;
@@ -26,9 +27,11 @@ const CustomSearch = ({ onSearch }: CustomSearchType) => {
     //   onSearch={onSearch}
     //   prefix={suffix}
     // />
-    <form action="/search">
-      <Input type="search" allowClear prefix={suffix} id="mySearch" name="q" />
-      <button type="submit" onSubmit={onSearch}>Искать</button>
+    <form className={style.wrapper} action="/search">
+      <Input className={style.input} type="search" allowClear prefix={suffix} id="mySearch" name="q" />
+      <div className={style.btnWrapper}>
+        <button className="btn btn--primary" type="submit" onSubmit={onSearch}>Искать</button>
+      </div>
     </form>
   );
 };

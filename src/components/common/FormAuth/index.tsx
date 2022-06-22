@@ -1,15 +1,17 @@
 import React from 'react';
 import { Form, Input } from 'antd';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { SetUserNameAction } from '../../../store/actions';
 import style from './FormAuth.module.scss';
 
 const FormAuth: React.FC = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const onFinish = (values: any) => {
     console.log('Success:', values);
     dispatch(SetUserNameAction(values.email));
+    navigate('/', { replace: true });
   };
 
   const onFinishFailed = (errorInfo: any) => {

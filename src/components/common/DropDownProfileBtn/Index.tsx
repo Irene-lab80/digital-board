@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Dropdown, Menu } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import style from './DropDownProfileBtn.module.scss';
 import ExitSvg from '../svg/ExitSvg';
@@ -14,10 +14,13 @@ import { ClearUserNameAction } from '../../../store/actions';
 // TODO: переделать стили? СДелать отдельный компонент?
 
 const DropDownProfileBtn = () => {
+  // const navigate = useNavigate();
   const name = useSelector(GetUserName);
   const dispatch = useDispatch();
-  // TODO
-  const exitHandler = () => { dispatch(ClearUserNameAction()); };
+  const exitHandler = () => {
+    dispatch(ClearUserNameAction());
+    // navigate('/', { replace: true });
+  };
   const menu = (
     <Menu title="">
       <Menu.Item style={{
