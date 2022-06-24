@@ -4,10 +4,13 @@ import style from './EditAdPage.module.scss';
 import 'antd/dist/antd.min.css';
 import EditAdFrom from '../../common/EditAdFrom';
 import GoBackBtn from '../../common/GoBackBtn';
+import ProfileMenu from '../../common/ProfileMenu';
 
 const EditAdPage = () => (
   <div className={style.wrapper}>
-    <nav className={style.nav}>Админ меню</nav>
+    <nav className={style.nav}>
+      <ProfileMenu />
+    </nav>
     <div className={style.mainWrapper}>
       <GoBackBtn>
         Вернуться назад

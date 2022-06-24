@@ -119,10 +119,17 @@ ymaps.ymaps-2-1-79-controls__toolbar_left > ymaps:nth-child(2) {
   height: 64px;
 }
 
-// .ant-input {
-//   height: 48px;
-// }
+.ant-menu-item.item {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(42, 47, 55, 0.1);  
+}
 
+.ant-menu-title-content{
+  display: flex;
+  align-items: center;
+}
 
 // .ant-upload-list {
 //   display: inline-flex;
