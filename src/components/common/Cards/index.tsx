@@ -8,7 +8,6 @@ type CardsType = {
 }
 
 const Cards = ({ filterName }: CardsType) => {
-  // const filterName = 'Техника';
   let newData;
   if (filterName === 'Все товары') {
     newData = data;
@@ -29,7 +28,8 @@ const Cards = ({ filterName }: CardsType) => {
   }
   // const newData = data.filter(((el) => el.tag.toString() === filterName));
 
-  const arrayOfCards = newData?.map((el) => (
+  // TODO: remove any
+  const arrayOfCards: any = newData?.map((el) => (
     <Card
       id={el.id}
       key={el.id}
@@ -43,26 +43,26 @@ const Cards = ({ filterName }: CardsType) => {
       />
   ));
 
-  // const arrayOfCardTablet = [];
-  // const arrayOfCardMobile = [];
+  const arrayOfCardTablet = [];
+  const arrayOfCardMobile = [];
 
-  // for (let i = 0; i < 6; i += 1) {
-  //   while (i < 6) {
-  //     arrayOfCardTablet?.push(arrayOfCards[i]);
-  //     i += 1;
-  //   }
-  // }
+  for (let i = 0; i < 6; i += 1) {
+    while (i < 6) {
+      arrayOfCardTablet?.push(arrayOfCards[i]);
+      i += 1;
+    }
+  }
 
-  // for (let i = 0; i < 3; i += 1) {
-  //   while (i <= 2) {
-  //     arrayOfCardMobile.push(arrayOfCards[i]);
-  //     i += 1;
-  //   }
-  // }
+  for (let i = 0; i < 3; i += 1) {
+    while (i <= 2) {
+      arrayOfCardMobile.push(arrayOfCards[i]);
+      i += 1;
+    }
+  }
 
   // TODO: remove any
   type PropsType = {
-    children: any
+    children: any;
   }
 
   const Desktop: React.FC<PropsType> = ({ children }) => {
@@ -80,8 +80,8 @@ const Cards = ({ filterName }: CardsType) => {
   return (
     <>
       <Desktop>{arrayOfCards}</Desktop>
-      {/* <Tablet>{arrayOfCardTablet}</Tablet>
-      <Mobile>{arrayOfCardMobile}</Mobile> */}
+      <Tablet>{arrayOfCardTablet}</Tablet>
+      <Mobile>{arrayOfCardMobile}</Mobile>
     </>
   );
 };

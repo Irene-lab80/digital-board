@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 /* eslint-disable react/jsx-no-useless-fragment */
 /* eslint-disable max-len */
 import React, { useState } from 'react';
@@ -12,22 +13,19 @@ const Feed = () => {
   const filterHandler = (event: any) => {
     setFilter(event.target.getAttribute('id'));
   };
-  // const tags = ['Все товары', 'Автомобили', 'Аксессуары', 'Мебель', 'Одежда', 'Спорт', 'Техника', 'Товары для дома'];
-  // const menu = tags.map((el) => <MenuItem className={filter === { el } ? 'menu-item--active' : 'menu-item'} id={el} onClick={filterHandler}>{el}</MenuItem>);
 
   return (
     <div className={style.feedwrapper}>
       <nav className={style.nav}>
         <div className={style.menu}>
-          {/* {menu} */}
-          <MenuItem className={filter === 'Все товары' ? 'menu-item--active' : 'menu-item'} id="Все товары" onClick={filterHandler}>Все товары</MenuItem>
-          <MenuItem className={filter === 'Автомобили' ? 'menu-item--active' : 'menu-item'} id="Автомобили" onClick={filterHandler}>Автомобили</MenuItem>
-          <MenuItem className={filter === 'Аксессуары' ? 'menu-item--active' : 'menu-item'} id="Аксессуары" onClick={filterHandler}>Аксессуары</MenuItem>
-          <MenuItem className={filter === 'Мебель' ? 'menu-item--active' : 'menu-item'} id="Мебель" onClick={filterHandler}>Мебель</MenuItem>
-          <MenuItem className={filter === 'Одежда' ? 'menu-item--active' : 'menu-item'} id="Одежда" onClick={filterHandler}>Одежда</MenuItem>
-          <MenuItem className={filter === 'Спорт' ? 'menu-item--active' : 'menu-item'} id="Спорт" onClick={filterHandler}>Спорт</MenuItem>
-          <MenuItem className={filter === 'Техника' ? 'menu-item--active' : 'menu-item'} id="Техника" onClick={filterHandler}>Техника</MenuItem>
-          <MenuItem className={filter === 'Товары для дома' ? 'menu-item--active' : 'menu-item'} id="Товары для дома" onClick={filterHandler}>Товары для дома</MenuItem>
+          <MenuItem className={filter === 'Все товары' ? 'menu-item--active menu-item' : 'menu-item'} id="Все товары" onClick={filterHandler}>Все товары</MenuItem>
+          <MenuItem className={filter === 'Автомобили' ? 'menu-item--active  menu-item' : 'menu-item'} id="Автомобили" onClick={filterHandler}>Автомобили</MenuItem>
+          <MenuItem className={filter === 'Аксессуары' ? 'menu-item--active  menu-item' : 'menu-item'} id="Аксессуары" onClick={filterHandler}>Аксессуары</MenuItem>
+          <MenuItem className={filter === 'Мебель' ? 'menu-item--active  menu-item' : 'menu-item'} id="Мебель" onClick={filterHandler}>Мебель</MenuItem>
+          <MenuItem className={filter === 'Одежда' ? 'menu-item--active  menu-item' : 'menu-item'} id="Одежда" onClick={filterHandler}>Одежда</MenuItem>
+          <MenuItem className={filter === 'Спорт' ? 'menu-item--active  menu-item' : 'menu-item'} id="Спорт" onClick={filterHandler}>Спорт</MenuItem>
+          <MenuItem className={filter === 'Техника' ? 'menu-item--active  menu-item' : 'menu-item'} id="Техника" onClick={filterHandler}>Техника</MenuItem>
+          <MenuItem className={filter === 'Товары для дома' ? 'menu-item--active  menu-item' : 'menu-item'} id="Товары для дома" onClick={filterHandler}>Товары для дома</MenuItem>
         </div>
       </nav>
       <div className={style.titleWrapper}>
@@ -47,5 +45,4 @@ const Feed = () => {
     </div>
   );
 };
-
 export default Feed;

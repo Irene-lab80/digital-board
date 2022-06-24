@@ -1,19 +1,16 @@
+/* eslint-disable react/jsx-no-useless-fragment */
+/* eslint-disable array-callback-return */
 import React from 'react';
-import style from './Menu.module.scss';
+// import style from './Menu.module.scss';
 
-const Menu = () => (
-  <nav className={style.nav}>
-    <ul className={style.menu}>
-      <li className={style.menuItem_accented}>Вся доска</li>
-      <li className={style.menuItem}>Автомобили</li>
-      <li className={style.menuItem}>Аксессуары</li>
-      <li className={style.menuItem}>Мебель</li>
-      <li className={style.menuItem}>Одежда</li>
-      <li className={style.menuItem}>Спорт</li>
-      <li className={style.menuItem}>Техника</li>
-      <li className={style.menuItem}>Товары для дома</li>
-    </ul>
-  </nav>
+// const [filter, setFilter]: [any, any] = useState('Все товары');
+// const filterHandler = (event: any) => {
+//   setFilter(event.target.getAttribute('id'));
+// };
+// const tags = ['Все товары', 'Автомобили',
+// 'Аксессуары', 'Мебель', 'Одежда', 'Спорт', 'Техника', 'Товары для дома'];
+
+const MobileMenu = () => (
+  <h1>123</h1>
 );
-
-export default Menu;
+export default MobileMenu;

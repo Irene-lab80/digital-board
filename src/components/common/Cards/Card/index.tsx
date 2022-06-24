@@ -5,14 +5,14 @@ import ViewsNumber from '../../ViewsNumber';
 import style from './Card.module.scss';
 
 type CardPropsType = {
-  id: number;
-  tag: string;
-  title: string;
-  description: string;
-  price: number;
-  date: string;
-  views: number;
-  src: string;
+  id: number | undefined;
+  tag: string | undefined;
+  title: string | undefined;
+  description: string | undefined;
+  price: number | undefined;
+  date: string | undefined;
+  views: number | undefined;
+  src: string | undefined;
 };
 
 const Card = ({ id, tag, title, description, price, date, views, src }: CardPropsType) => (
@@ -29,7 +29,7 @@ const Card = ({ id, tag, title, description, price, date, views, src }: CardProp
         </div>
         <div className={style.bottom}>
           <div className={style.price}>
-            {`${(price).toLocaleString('ru')
+            {`${(price)?.toLocaleString('ru')
             } Р `}
           </div>
           <div className={style.footer}>

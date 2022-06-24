@@ -1,53 +1,53 @@
-@import '../../../assets/styles/constants';
+// @import '../../../assets/styles/constants';
 
-.nav {
-  padding: 40px 15px;
-}
+// .nav {
+//   padding: 40px 15px;
+// }
 
-.menu {
-  margin: 0;
-  padding: 0;
-}
+// .menu {
+//   margin: 0;
+//   padding: 0;
+// }
 
-.active {
-  background: $color-button-accented;
-}
+// .active {
+//   background: $color-button-accented;
+// }
 
-.menuItem {
-  display: inline-flex;
-  align-items: center;
-  list-style: none;
-  flex-shrink: 0;
-  font-size: 16px;
-  border-radius: 35px;
-  margin-right: 24px;
-  color: $color-text-dark-m;
-  transition: .3s;
-  padding: 8px 24px;
-  border: 1px solid transparent;
-}
+// .menuItem {
+//   display: inline-flex;
+//   align-items: center;
+//   list-style: none;
+//   flex-shrink: 0;
+//   font-size: 16px;
+//   border-radius: 35px;
+//   margin-right: 24px;
+//   color: $color-text-dark-m;
+//   transition: .3s;
+//   padding: 8px 24px;
+//   border: 1px solid transparent;
+// }
 
-.menuItem:hover {
-  cursor: pointer;
-  border: 1px solid $color-button-main;
-  color: $color-button-main;
-}
+// .menuItem:hover {
+//   cursor: pointer;
+//   border: 1px solid $color-button-main;
+//   color: $color-button-main;
+// }
 
-.menuItem:last-child {
-  margin-right: 0;
-}
+// .menuItem:last-child {
+//   margin-right: 0;
+// }
 
-.menuItem_accented {
-  @extend .menuItem;
-  background-color: $color-button-accented;
-  color: $color-text-dark-l;
-  padding: 8px 24px;
-  pointer-events: none;
-}
+// .menuItem_accented {
+//   @extend .menuItem;
+//   background-color: $color-button-accented;
+//   color: $color-text-dark-l;
+//   padding: 8px 24px;
+//   pointer-events: none;
+// }
 
-.menuItem_bordered {
-  @extend .menuItem;
-  border: 1px solid $color-button-main;
-  color: $color-button-main;
-  padding: 8px 24px;
-}
+// .menuItem_bordered {
+//   @extend .menuItem;
+//   border: 1px solid $color-button-main;
+//   color: $color-button-main;
+//   padding: 8px 24px;
+// }
