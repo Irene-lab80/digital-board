@@ -46,6 +46,18 @@ const Cards = ({ filterName }: CardsType) => {
   const arrayOfCardTablet = [];
   const arrayOfCardMobile = [];
 
+  // const numberPerPage = (number: number) => {
+  //   let arrayOfCardsPerPage: any;
+
+  //   for (let i = 0; i < number; i += 1) {
+  //     while (i < number) {
+  //       arrayOfCardsPerPage.push(arrayOfCards[i]);
+  //       i += 1;
+  //     }
+  //   }
+  //   return arrayOfCardsPerPage;
+  // };
+
   for (let i = 0; i < 6; i += 1) {
     while (i < 6) {
       arrayOfCardTablet?.push(arrayOfCards[i]);
