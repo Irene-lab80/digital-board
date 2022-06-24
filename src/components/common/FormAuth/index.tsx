@@ -26,6 +26,7 @@ const FormAuth: React.FC = () => {
       onFinishFailed={onFinishFailed}
       autoComplete="off">
       <Form.Item
+        className={style.inputWrapper}
         name="email"
         rules={[
           {
@@ -37,23 +38,25 @@ const FormAuth: React.FC = () => {
             message: 'Введите E-mail!',
           },
         ]}>
-        <Input placeholder="Email" />
+        <Input placeholder="Email" className={style.input} />
       </Form.Item>
 
       <Form.Item
+        className={style.inputWrapper}
         name="password"
         rules={[{ required: true, message: 'Введите пароль!' }]}>
-        <Input.Password placeholder="Пароль" />
+        <Input.Password placeholder="Password" className={style.input} />
       </Form.Item>
 
       <Form.Item>
         <NavLink className={style.forgotPassword} to="/get-pass">Забыли пароль?</NavLink>
       </Form.Item>
-
-      {/* TODO: change to custom btn? */}
       <Form.Item>
-        <button className="btn btn--primary" type="submit" onClick={() => {}}>Войти</button>
+        <button className={style.button} type="submit">Войти</button>
       </Form.Item>
+      {/* <Form.Item>
+        <button className="btn btn--primary" type="submit" onClick={() => {}}>Войти</button>
+      </Form.Item> */}
     </Form>
   );
 };

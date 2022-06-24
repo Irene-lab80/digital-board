@@ -3,9 +3,8 @@ import FormAuth from '../../common/FormAuth';
 import FormHeader from '../../common/FormHeader';
 
 const AuthPage = () => (
-  <>
-    <FormHeader />
+  <FormHeader>
     <FormAuth />
-  </>
+  </FormHeader>
 );
 export default AuthPage;

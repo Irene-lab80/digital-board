@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Input, Checkbox } from 'antd';
+import style from './FormReg.module.scss';
 
 const FormReg: React.FC = () => {
   const onFinish = (values: any) => {
@@ -31,20 +32,23 @@ const FormReg: React.FC = () => {
       autoComplete="off"
     >
       <Form.Item
+        className={style.inputWrapper}
         name="name"
         rules={[{ required: true, message: 'Введите имя!' }, { max: 25, message: 'Имя не должно быть длиннее 25 символов' }]}
       >
-        <Input placeholder="Имя" />
+        <Input className={style.input} placeholder="Имя" />
       </Form.Item>
 
       <Form.Item
+        className={style.inputWrapper}
         name="lastname"
         rules={[{ required: true, message: 'Введите фамилию!' }, { max: 25, message: 'Фамилия не должна быть длиннее 25 символов' }]}
       >
-        <Input placeholder="Фамилия" />
+        <Input className={style.input} placeholder="Фамилия" />
       </Form.Item>
 
       <Form.Item
+        className={style.inputWrapper}
         name="email"
         rules={[
           {
@@ -57,19 +61,21 @@ const FormReg: React.FC = () => {
           },
         ]}
       >
-        <Input placeholder="Email" />
+        <Input className={style.input} placeholder="Email" />
       </Form.Item>
 
       <Form.Item
+        className={style.inputWrapper}
         name="password"
         rules={[{ required: true, message: 'Введите пароль!' },
           // { min: 5, message: 'Пароль должен быть не менее 8 символов.' },
           { validator: validatePassword }]}
       >
-        <Input.Password placeholder="Пароль" />
+        <Input.Password className={style.input} placeholder="Пароль" />
       </Form.Item>
 
       <Form.Item
+        className={style.inputWrapper}
         name="confirm"
         dependencies={['password']}
         hasFeedback
@@ -88,11 +94,7 @@ const FormReg: React.FC = () => {
           }),
         ]}
       >
-        <Input.Password placeholder="Повторите пароль" />
-      </Form.Item>
-
-      <Form.Item>
-        <button className="btn btn--primary" type="submit" onClick={() => {}}>Создать аккаунт</button>
+        <Input.Password className={style.input} placeholder="Повторите пароль" />
       </Form.Item>
 
       <Form.Item name="remember" valuePropName="checked">
@@ -104,6 +106,14 @@ const FormReg: React.FC = () => {
           </a>
         </Checkbox>
       </Form.Item>
+
+      <Form.Item>
+        <button className={style.button} type="submit">Создать аккаунт</button>
+      </Form.Item>
+      {/* <Form.Item>
+        <button className="btn btn--primary" type="submit" onClick={() => {}}>
+        Создать аккаунт</button>
+      </Form.Item> */}
     </Form>
 
   );
