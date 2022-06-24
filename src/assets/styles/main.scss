@@ -44,6 +44,9 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
   border-radius: 4px;
   font-weight: 500;
   white-space: nowrap;
@@ -80,6 +83,7 @@ li {
 
 .btn--accent {
   background-color: $color-button-accented;
+  color: $color-text-dark-l;
 
   &:hover {
     background-color: $color-button-accented-hover;
