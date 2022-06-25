@@ -46,18 +46,19 @@ const DropDownProfileBtn = () => {
           Мои объявления
         </Menu.Item>
       </Link>
-      <Menu.Item
-        style={{
-          fontSize: '14px',
-          paddingTop: 16,
-          paddingBottom: 16,
-          paddingLeft: 24,
-          paddingRight: 24,
-        }}
-        icon={<span className={style.icon}><ExitSvg /></span>}>
-        <button type="button" onClick={exitHandler}>Выход</button>
-
-      </Menu.Item>
+      <Link onClick={exitHandler} to="/">
+        <Menu.Item
+          style={{
+            fontSize: '14px',
+            paddingTop: 16,
+            paddingBottom: 16,
+            paddingLeft: 24,
+            paddingRight: 24,
+          }}
+          icon={<span className={style.icon}><ExitSvg /></span>}>
+          Выход
+        </Menu.Item>
+      </Link>
     </Menu>
   );
   const [isHovering, setIsHovering] = useState(false);
