@@ -14,6 +14,7 @@
     "@types/react-redux": "^7.1.24",
     "@types/styled-components": "^5.1.25",
     "antd": "^4.19.5",
+    "axios": "^0.27.2",
     "eslint-config-airbnb": "^19.0.4",
     "gh-pages": "^4.0.0",
     "moment": "^2.29.3",
@@ -37,7 +38,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "json-server -w server/db.json -p 3001"
   },
   "eslintConfig": {
     "extends": [
@@ -66,6 +68,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
+    "json-server": "^0.17.0",
     "node-sass": "^6.0.0",
     "prettier": "^2.6.2"
   }
