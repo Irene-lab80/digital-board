@@ -10,8 +10,10 @@ const FormAuth: React.FC = () => {
   const dispatch = useDispatch();
   const onFinish = (values: any) => {
     console.log('Success:', values);
-    dispatch(SetUserNameAction(values.email));
-    navigate('/', { replace: true });
+    if (values.email === 'login@login.com' && values.password === 'password') {
+      dispatch(SetUserNameAction(values.email));
+      navigate('/', { replace: false });
+    } else { alert('Неверный логин или пароль'); }
   };
 
   const onFinishFailed = (errorInfo: any) => {
