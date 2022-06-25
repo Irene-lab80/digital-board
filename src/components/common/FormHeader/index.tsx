@@ -19,9 +19,9 @@ const FormHeader:React.FC<FormHeaderType> = ({ children }) => (
         to="/reg">
         Регистрация
       </NavLink>
-    </div>
-    <div className={style.form}>
-      {children}
+      <div className={style.form}>
+        {children}
+      </div>
     </div>
   </div>
 );
