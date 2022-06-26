@@ -2,13 +2,17 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 /* eslint-disable max-len */
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import style from './Feed.module.scss';
 import CustomButton from '../CustomButton';
-import Cards from '../Cards';
 import LoadSvg from '../svg/LoadSvg';
 import MenuItem from '../MenuItem';
+import CardList from '../CardList';
+import getProducts from '../../../store/products/selectors';
 
 const Feed = () => {
+  const productData = useSelector(getProducts);
+
   const [filter, setFilter]: [any, any] = useState('Все товары');
   const filterHandler = (event: any) => {
     setFilter(event.target.getAttribute('id'));
@@ -32,7 +36,7 @@ const Feed = () => {
         <h2 className={style.title}>Вся лента</h2>
       </div>
       <div className={style.cardsWrapper}>
-        <Cards filterName={filter} />
+        <CardList data={productData} />
       </div>
       <div className={style.btnWrapper}>
         <CustomButton onClick={() => {}} buttonStyle="btn--outline">
