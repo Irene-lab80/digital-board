@@ -9,7 +9,7 @@ import ModalBtn from '../ModalBtn';
 import ProfileButton from '../ProfileButton';
 import DropDownProfileBtn from '../DropDownProfileBtn/Index';
 import CustomButton from '../CustomButton';
-import GetUserName from '../../../store/selectors';
+import GetUserName from '../../../store/auth/selectors';
 
 const Header = () => {
   const name = useSelector(GetUserName);

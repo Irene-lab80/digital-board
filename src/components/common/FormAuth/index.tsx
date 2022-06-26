@@ -1,18 +1,16 @@
 import React from 'react';
 import { Form, Input } from 'antd';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { SetUserNameAction } from '../../../store/actions';
+import { SetUserNameAction } from '../../../store/auth/actions';
 import style from './FormAuth.module.scss';
 
 const FormAuth: React.FC = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const onFinish = (values: any) => {
     console.log('Success:', values);
     if (values.email === 'login@login.com' && values.password === 'password') {
       dispatch(SetUserNameAction(values.email));
-      navigate('/', { replace: false });
     } else { alert('Неверный логин или пароль'); }
   };
 

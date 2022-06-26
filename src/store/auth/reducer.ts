@@ -1,7 +1,7 @@
 import { UserInfoActionType } from './actions';
-import { userInfoReducerType, ActionType } from './types';
+import { UserInfoReducerType, ActionType } from './types';
 
-const initialState: userInfoReducerType = {
+const initialState: UserInfoReducerType = {
   name: '',
 };
 
