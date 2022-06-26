@@ -20,7 +20,7 @@ const Feed = () => {
 
   return (
     <div className={style.feedwrapper}>
-      <nav className={style.nav}>
+      {/* <nav className={style.nav}>
         <div className={style.menu}>
           <MenuItem className={filter === 'Все товары' ? 'menu-item--active menu-item' : 'menu-item'} id="Все товары" onClick={filterHandler}>Все товары</MenuItem>
           <MenuItem className={filter === 'Автомобили' ? 'menu-item--active  menu-item' : 'menu-item'} id="Автомобили" onClick={filterHandler}>Автомобили</MenuItem>
@@ -31,6 +31,17 @@ const Feed = () => {
           <MenuItem className={filter === 'Техника' ? 'menu-item--active  menu-item' : 'menu-item'} id="Техника" onClick={filterHandler}>Техника</MenuItem>
           <MenuItem className={filter === 'Товары для дома' ? 'menu-item--active  menu-item' : 'menu-item'} id="Товары для дома" onClick={filterHandler}>Товары для дома</MenuItem>
         </div>
+      </nav> */}
+
+      <nav className={style.scrollingWrapper}>
+        <MenuItem className={style.menuItemActive} id="Все товары" onClick={filterHandler}>Все товары</MenuItem>
+        <MenuItem className={style.menuItem} id="Автомобили" onClick={filterHandler}>Автомобили</MenuItem>
+        <MenuItem className={style.menuItem} id="Аксессуары" onClick={filterHandler}>Аксессуары</MenuItem>
+        <MenuItem className={style.menuItem} id="Мебель" onClick={filterHandler}>Мебель</MenuItem>
+        <MenuItem className={style.menuItem} id="Одежда" onClick={filterHandler}>Одежда</MenuItem>
+        <MenuItem className={style.menuItem} id="Спорт" onClick={filterHandler}>Спорт</MenuItem>
+        <MenuItem className={style.menuItem} id="Техника" onClick={filterHandler}>Техника</MenuItem>
+        <MenuItem className={style.menuItem} id="Товары для дома" onClick={filterHandler}>Товары для дома</MenuItem>
       </nav>
       <div className={style.titleWrapper}>
         <h2 className={style.title}>Вся лента</h2>
