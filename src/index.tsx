@@ -6,10 +6,10 @@ import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'react-redux';
 import App from './App';
-import userInfoReducer from './store/reducer';
+import rootReducer from './store';
 
 // TODO: instead of createStore use configureStore of the @reduxjs/toolkit?
-const store = createStore(userInfoReducer, composeWithDevTools(applyMiddleware()));
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware()));
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>

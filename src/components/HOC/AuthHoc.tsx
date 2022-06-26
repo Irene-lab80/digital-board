@@ -2,7 +2,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';
-import GetUserName from '../../store/selectors';
+import GetUserName from '../../store/auth/selectors';
 
 type AuthHocProps = {
   children: React.ReactNode;

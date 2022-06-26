@@ -26,7 +26,6 @@ const Cards = ({ filterName }: CardsType) => {
   } else if (filterName === 'Товары для дома') {
     newData = data.filter(((el) => el.tag.toString() === filterName));
   }
-  // const newData = data.filter(((el) => el.tag.toString() === filterName));
 
   // TODO: remove any
   const arrayOfCards: any = newData?.map((el) => (

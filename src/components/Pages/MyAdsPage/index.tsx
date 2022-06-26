@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Pagination, Table, TablePaginationConfig } from 'antd';
+import React from 'react';
+import { Table } from 'antd';
 import { Link } from 'react-router-dom';
 import MenuDots from '../../common/svg/MenuDots';
 import style from './MyAdsPage.module.scss';

@@ -5,8 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import BookSvg from '../svg/BookSvg';
 import ExitSvg from '../svg/ExitSvg';
 import style from './ProfileMenu.module.scss';
-import { ClearUserNameAction } from '../../../store/actions';
-import GetUserName from '../../../store/selectors';
+import { ClearUserNameAction } from '../../../store/auth/actions';
+import GetUserName from '../../../store/auth/selectors';
 
 // TODO: объеденить с компонентом для хэдера?
 const ProfileMenu = () => {

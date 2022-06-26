@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable react/jsx-indent */
 import React, { useEffect, useState } from 'react';
 import 'antd/dist/antd.min.css';
@@ -15,6 +16,7 @@ import EditAdPageContainer from './components/Containers/EditAdPageContainer';
 import AuthHoc from './components/HOC/AuthHoc';
 import './assets/styles/main.scss';
 import SeachResultsPage from './components/Pages/SeachResultsPage';
+import MainPageContainer2 from './components/Containers/MainPageContainer2';
 
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -33,7 +35,8 @@ const App = () => {
           ? <ClipLoader loading={loading} css="margin: 40vh 45vw" size={100} color="#1d42be" speedMultiplier={1.5} />
           : <Routes>
             <Route path="/" element={<PageWrapper />}>
-              <Route index element={<MainPageContainer />} />
+              <Route path="main" element={<MainPageContainer />} />
+              <Route index element={<MainPageContainer2 />} />
               <Route path="auth" element={<AuthContainer />} />
               <Route path="reg" element={<RegistrationContainer />} />
               <Route path="get-pass" element={<GetPasswordContainer />} />
