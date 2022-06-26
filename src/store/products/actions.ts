@@ -9,6 +9,6 @@ export const GetProductsAction = () => async (dispatch: any) => {
   const data = await makeRequest({ url: '/products' });
   dispatch({
     type: ProductsActionsType.getProducts,
-    payload: data.results,
+    payload: data,
   });
 };

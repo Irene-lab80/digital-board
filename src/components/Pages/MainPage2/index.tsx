@@ -1,8 +1,14 @@
 import React from 'react';
+import CardList from '../../common/CardList';
 
-const MainPage2 = () => (
+type MainPagType = {
+  productData: any[];
+}
+
+const MainPage2 = ({ productData }: MainPagType) => (
   <>
-    MAIN PAGE 2
+    <h1>LIST DATA</h1>
+    {productData.length ? <CardList data={productData} /> : <h1>LOADING</h1>}
   </>
 );
 
