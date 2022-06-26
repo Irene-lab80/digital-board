@@ -1,7 +1,5 @@
-/* eslint-disable array-callback-return */
-/* eslint-disable react/jsx-no-useless-fragment */
 /* eslint-disable max-len */
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import style from './Feed.module.scss';
 import CustomButton from '../CustomButton';
@@ -13,10 +11,10 @@ import getProducts from '../../../store/products/selectors';
 const Feed = () => {
   const productData = useSelector(getProducts);
 
-  const [filter, setFilter]: [any, any] = useState('Все товары');
-  const filterHandler = (event: any) => {
-    setFilter(event.target.getAttribute('id'));
-  };
+  // const [filter, setFilter]: [any, any] = useState('Все товары');
+  // const filterHandler = (event: any) => {
+  //   setFilter(event.target.getAttribute('id'));
+  // };
 
   return (
     <div className={style.feedwrapper}>
@@ -34,19 +32,21 @@ const Feed = () => {
       </nav> */}
 
       <nav className={style.scrollingWrapper}>
-        <MenuItem className={style.menuItemActive} id="Все товары" onClick={filterHandler}>Все товары</MenuItem>
-        <MenuItem className={style.menuItem} id="Автомобили" onClick={filterHandler}>Автомобили</MenuItem>
-        <MenuItem className={style.menuItem} id="Аксессуары" onClick={filterHandler}>Аксессуары</MenuItem>
-        <MenuItem className={style.menuItem} id="Мебель" onClick={filterHandler}>Мебель</MenuItem>
-        <MenuItem className={style.menuItem} id="Одежда" onClick={filterHandler}>Одежда</MenuItem>
-        <MenuItem className={style.menuItem} id="Спорт" onClick={filterHandler}>Спорт</MenuItem>
-        <MenuItem className={style.menuItem} id="Техника" onClick={filterHandler}>Техника</MenuItem>
-        <MenuItem className={style.menuItem} id="Товары для дома" onClick={filterHandler}>Товары для дома</MenuItem>
+        <MenuItem className={style.menuItemActive} id="Все товары" onClick={() => {}}>Все товары</MenuItem>
+        <MenuItem className={style.menuItem} id="Автомобили" onClick={() => {}}>Автомобили</MenuItem>
+        <MenuItem className={style.menuItem} id="Аксессуары" onClick={() => {}}>Аксессуары</MenuItem>
+        <MenuItem className={style.menuItem} id="Мебель" onClick={() => {}}>Мебель</MenuItem>
+        <MenuItem className={style.menuItem} id="Одежда" onClick={() => {}}>Одежда</MenuItem>
+        <MenuItem className={style.menuItem} id="Спорт" onClick={() => {}}>Спорт</MenuItem>
+        <MenuItem className={style.menuItem} id="Техника" onClick={() => {}}>Техника</MenuItem>
+        <MenuItem className={style.menuItem} id="Товары для дома" onClick={() => {}}>Товары для дома</MenuItem>
       </nav>
       <div className={style.titleWrapper}>
         <h2 className={style.title}>Вся лента</h2>
       </div>
       <div className={style.cardsWrapper}>
+        {/* TODO: add loader? */}
+        {/* {productData ? <CardList data={productData} /> : <div className="lds-dual-ring" /> } */}
         <CardList data={productData} />
       </div>
       <div className={style.btnWrapper}>
