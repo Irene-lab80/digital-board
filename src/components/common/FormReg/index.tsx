@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Form, Input, Checkbox } from 'antd';
-import axios from 'axios';
 import style from './FormReg.module.scss';
 import makeRequest from '../../../network';
 
