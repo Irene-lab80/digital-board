@@ -176,31 +176,46 @@ ymaps.ymaps-2-1-79-controls__toolbar_left > ymaps:nth-child(2) {
   }
 }
 
-.menu-item {
-  flex: 0 0 auto;
-  border-radius: 35px;
-  margin-right: 24px;
-  color: $color-text-dark-m;
-  transition: .3s;
-  padding: 8px 24px;
-  border: 1px solid transparent;
-  font-family: 'Jost';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
+.scrolling-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 40px 15px;
 
-  &:hover {
-    cursor: pointer;
-    border: 1px solid $color-button-main;
-    color: $color-button-main;
+
+  &::-webkit-scrollbar {
+    display: none;
   }
-} 
 
+  @include media-tablet {
+    width: 100vw;  
+  } 
+  
+  .menu-item {
+    flex: 0 0 auto;
+    border-radius: 35px;
+    margin-right: 24px;
+    color: $color-text-dark-m;
+    transition: .3s;
+    padding: 8px 24px;
+    border: 1px solid transparent;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    &:hover {
+      cursor: pointer;
+      border: 1px solid $color-button-main;
+      color: $color-button-main;
+    }
+  }
+}
 
 .menu-item--active {
   @extend .menu-item;
   background-color: $color-button-accented;
   color: $color-text-dark-l;
-  pointer-events: none;
+  // pointer-events: none;
 }
