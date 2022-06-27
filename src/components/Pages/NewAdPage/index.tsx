@@ -1,12 +1,12 @@
 import React from 'react';
 import CustomButton from '../../common/CustomButton';
-import style from './EditAdPage.module.scss';
+import style from './NewAdPage.module.scss';
 import 'antd/dist/antd.min.css';
 import EditAdFrom from '../../common/EditAdFrom';
 import GoBackBtn from '../../common/GoBackBtn';
 import ProfileMenu from '../../common/ProfileMenu';
 
-const EditAdPage = () => (
+const NewAdPage = () => (
   <div className={style.wrapper}>
     <nav className={style.nav}>
       <ProfileMenu />
@@ -32,4 +32,4 @@ const EditAdPage = () => (
   </div>
 );
 
-export default EditAdPage;
+export default NewAdPage;

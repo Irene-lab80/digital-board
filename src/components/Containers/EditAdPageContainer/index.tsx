@@ -1,6 +1,6 @@
 import React from 'react';
-import EditAdPage from '../../Pages/EditAdPage';
+import NewAdPage from '../../Pages/NewAdPage';
 
-const EditAdPageContainer = () => <EditAdPage />;
+const EditAdPageContainer = () => <NewAdPage />;
 
 export default EditAdPageContainer;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { UploadOutlined } from '@ant-design/icons';
 import { Button, Form, Input, Radio, RadioChangeEvent, Upload } from 'antd';
-import { YMaps, Map } from 'react-yandex-maps';
+// import { YMaps, Map } from 'react-yandex-maps';
 import ProductMap from '../ProductMap';
 import style from './EditAdFrom.module.scss';
 
