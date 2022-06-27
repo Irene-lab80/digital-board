@@ -1,0 +1,35 @@
+@import '../../../assets/styles/constants';
+@import '../../../assets/styles/mixins';
+
+.cardsWrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: $content-width;
+  padding-top: 40px;
+}
+
+.btnWrapper {
+  display: flex;
+  justify-content: center;
+  margin: 40px auto 0;  
+  max-width: 242px;
+}
+
+.btnText {
+  margin-left: 12px;
+}
+
+.titleWrapper {
+  padding: 0 15px;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+}

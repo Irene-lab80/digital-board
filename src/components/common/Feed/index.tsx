@@ -2,8 +2,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import style from './Feed.module.scss';
-import CustomButton from '../CustomButton';
-import LoadSvg from '../svg/LoadSvg';
 import CardList from '../CardList';
 import getProducts from '../../../store/products/selectors';
 import Buttons from './Buttons';
@@ -38,19 +36,9 @@ const Feed = () => {
       <div className={style.titleWrapper}>
         <h2 className={style.title}>Вся лента</h2>
       </div>
-      <div className={style.cardsWrapper}>
-        {/* TODO: add loader? */}
-        {/* {productData ? <CardList data={productData} /> : <div className="lds-dual-ring" /> } */}
-        <CardList data={item} />
-      </div>
-      <div className={style.btnWrapper}>
-        <CustomButton onClick={() => {}} buttonStyle="btn--outline">
-          <LoadSvg />
-          <span className={style.btnText}>
-            Загрузить еще
-          </span>
-        </CustomButton>
-      </div>
+      {/* TODO: add loader? */}
+      {/* {productData ? <CardList data={productData} /> : <div className="lds-dual-ring" /> } */}
+      <CardList data={item} />
     </div>
   );
 };

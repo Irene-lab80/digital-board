@@ -9,6 +9,7 @@ type ButtonsType = {
 
 const Buttons = ({ setItem, menuItems }: ButtonsType) => {
   const productData = useSelector(getProducts);
+  // TODO: сделать активные кнопки?
   const [filter, setFilter]: [any, any] = useState('Все товары');
 
   const filterItem = (curTag: string) => {
