@@ -4,6 +4,7 @@ import { Button, Form, Input, Radio, RadioChangeEvent, Upload } from 'antd';
 // import { YMaps, Map } from 'react-yandex-maps';
 import ProductMap from '../ProductMap';
 import style from './EditAdFrom.module.scss';
+import makeRequest from '../../../network';
 
 /* @ts-ignore this lib is incompatible with react18 */
 // const myMap = new YMaps.Map('map', {
@@ -16,9 +17,11 @@ import style from './EditAdFrom.module.scss';
 // });
 
 const EditAdFrom = () => {
-  const handleSubmit = (values: any) => {
-    console.log('Success:', values);
-  };
+  async function handleSubmit(values: any) {
+    await makeRequest({ url: '/products', method: 'POST', data: values });
+    console.log(values);
+  }
+
   const [form] = Form.useForm();
   const normFile = (e: any) => {
     console.log('Upload event:', e);
@@ -41,21 +44,22 @@ const EditAdFrom = () => {
         name="edit-ad-form"
         form={form}
         layout="vertical"
+        // eslint-disable-next-line react/jsx-no-bind
         onFinish={handleSubmit}>
-        <Form.Item name={['product', 'title']} label="Название товара">
+        <Form.Item name={['title']} label="Название товара">
           <Input name="title" placeholder="Введите название товара" />
         </Form.Item>
         {/* TODO: remove div? */}
         <div className={style.df}>
           {/* TODO: add Select */}
-          <Form.Item name={['product', 'tag']} style={{ width: '48%', display: 'inline-flex' }} label="Категория">
+          <Form.Item name={['tag']} style={{ width: '48%', display: 'inline-flex' }} label="Категория">
             <Input placeholder="Детская одежда" />
           </Form.Item>
-          <Form.Item name={['product', 'price']} style={{ width: '48%', display: 'inline-flex' }} label="Стоимость">
+          <Form.Item name={['price']} style={{ width: '48%', display: 'inline-flex' }} label="Стоимость">
             <Input placeholder="Введите стоимость" />
           </Form.Item>
         </div>
-        <Form.Item name={['product', 'description']} label="Описание">
+        <Form.Item name={['description']} label="Описание">
           <Input.TextArea placeholder="Введите текст (до 3000 символов)" style={{ resize: 'none', height: '128px' }} />
         </Form.Item>
         <Form.Item
@@ -68,7 +72,7 @@ const EditAdFrom = () => {
           </Upload>
         </Form.Item>
         {/* TODO: ymap api? */}
-        <Form.Item name={['product', 'address']} label="Местоположение">
+        <Form.Item name={['address']} label="Местоположение">
           <Input placeholder="Введите адрес" />
         </Form.Item>
         <div className={style.map}>
