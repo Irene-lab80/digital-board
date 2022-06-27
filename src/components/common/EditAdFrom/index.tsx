@@ -16,6 +16,9 @@ import style from './EditAdFrom.module.scss';
 // });
 
 const EditAdFrom = () => {
+  const handleSubmit = (values: any) => {
+    console.log('Success:', values);
+  };
   const [form] = Form.useForm();
   const normFile = (e: any) => {
     console.log('Upload event:', e);
@@ -35,22 +38,24 @@ const EditAdFrom = () => {
   return (
     <div className="edit-ad-form">
       <Form
+        name="edit-ad-form"
         form={form}
-        layout="vertical">
-        <Form.Item label="Название товара">
-          <Input placeholder="Введите название товара" />
+        layout="vertical"
+        onFinish={handleSubmit}>
+        <Form.Item name={['product', 'title']} label="Название товара">
+          <Input name="title" placeholder="Введите название товара" />
         </Form.Item>
         {/* TODO: remove div? */}
         <div className={style.df}>
           {/* TODO: add Select */}
-          <Form.Item style={{ width: '48%', display: 'inline-flex' }} label="Категория">
+          <Form.Item name={['product', 'tag']} style={{ width: '48%', display: 'inline-flex' }} label="Категория">
             <Input placeholder="Детская одежда" />
           </Form.Item>
-          <Form.Item style={{ width: '48%', display: 'inline-flex' }} label="Стоимость">
+          <Form.Item name={['product', 'price']} style={{ width: '48%', display: 'inline-flex' }} label="Стоимость">
             <Input placeholder="Введите стоимость" />
           </Form.Item>
         </div>
-        <Form.Item name={['user', 'introduction']} label="Описание">
+        <Form.Item name={['product', 'description']} label="Описание">
           <Input.TextArea placeholder="Введите текст (до 3000 символов)" style={{ resize: 'none', height: '128px' }} />
         </Form.Item>
         <Form.Item
@@ -63,14 +68,14 @@ const EditAdFrom = () => {
           </Upload>
         </Form.Item>
         {/* TODO: ymap api? */}
-        <Form.Item label="Местоположение">
+        <Form.Item name={['product', 'address']} label="Местоположение">
           <Input placeholder="Введите адрес" />
         </Form.Item>
         <div className={style.map}>
           <ProductMap coordinates={[[56.307129174823224, 44.00063863810793]]} />
         </div>
-        <Form.Item>
-          <Button type="primary">Submit</Button>
+        <Form.Item className={style.btnWrapper}>
+          <button className="btn btn--primary" type="submit">Submit</button>
         </Form.Item>
         <Form.Item label="Публикация">
           <Radio.Group onChange={onChange} value={value}>
