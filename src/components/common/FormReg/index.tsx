@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Form, Input, Checkbox } from 'antd';
+import axios from 'axios';
 import style from './FormReg.module.scss';
+import makeRequest from '../../../network';
 
 const FormReg: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -10,24 +12,14 @@ const FormReg: React.FC = () => {
     lastname: ''
   });
 
-  function handleSubmit(e: any) {
-    // e.preventDefault();
-    fetch('https://soapy-auspicious-lancer.glitch.me/users', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData)
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
+  async function handleSubmit(e: any) {
+    await makeRequest({ url: '/users', method: 'POST', data: formData });
+    console.log(formData);
   }
 
   function handleChange(e: any) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
-
-  const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo);
-  };
 
   const validatePassword = (rule: any, value: any, callback: any) => {
     // at least one small letter, at least one capital, at least 8 digits, no special symbols
@@ -46,7 +38,6 @@ const FormReg: React.FC = () => {
       name="reg-form"
       initialValues={{ remember: true }}
       onFinish={(e) => handleSubmit(e)}
-      onFinishFailed={onFinishFailed}
       autoComplete="off"
     >
       <Form.Item
