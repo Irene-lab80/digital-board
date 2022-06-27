@@ -1,11 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Input, Checkbox } from 'antd';
 import style from './FormReg.module.scss';
 
 const FormReg: React.FC = () => {
-  const onFinish = (values: any) => {
-    console.log('Success:', values);
-  };
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+    firstname: '',
+    lastname: ''
+  });
+
+  function handleSubmit(e: any) {
+    // e.preventDefault();
+    fetch('https://soapy-auspicious-lancer.glitch.me/users', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  }
+
+  function handleChange(e: any) {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  }
 
   const onFinishFailed = (errorInfo: any) => {
     console.log('Failed:', errorInfo);
@@ -25,26 +43,25 @@ const FormReg: React.FC = () => {
 
   return (
     <Form
-      name="basic"
+      name="reg-form"
       initialValues={{ remember: true }}
-      onFinish={onFinish}
+      onFinish={(e) => handleSubmit(e)}
       onFinishFailed={onFinishFailed}
       autoComplete="off"
     >
       <Form.Item
         className={style.inputWrapper}
-        name="name"
+        name="firstname"
         rules={[{ required: true, message: 'Введите имя!' }, { max: 25, message: 'Имя не должно быть длиннее 25 символов' }]}
       >
-        <Input className={style.input} placeholder="Имя" />
+        <Input className={style.input} placeholder="Имя" value={formData.firstname} name="firstname" onChange={(e) => handleChange(e)} />
       </Form.Item>
 
       <Form.Item
         className={style.inputWrapper}
         name="lastname"
-        rules={[{ required: true, message: 'Введите фамилию!' }, { max: 25, message: 'Фамилия не должна быть длиннее 25 символов' }]}
-      >
-        <Input className={style.input} placeholder="Фамилия" />
+        rules={[{ required: true, message: 'Введите фамилию!' }, { max: 25, message: 'Фамилия не должна быть длиннее 25 символов' }]}>
+        <Input className={style.input} placeholder="Фамилия" value={formData.lastname} name="lastname" onChange={(e) => handleChange(e)} />
       </Form.Item>
 
       <Form.Item
@@ -61,17 +78,15 @@ const FormReg: React.FC = () => {
           },
         ]}
       >
-        <Input className={style.input} placeholder="Email" />
+        <Input className={style.input} placeholder="Email" value={formData.email} name="email" onChange={(e) => handleChange(e)} />
       </Form.Item>
 
       <Form.Item
         className={style.inputWrapper}
         name="password"
         rules={[{ required: true, message: 'Введите пароль!' },
-          // { min: 5, message: 'Пароль должен быть не менее 8 символов.' },
-          { validator: validatePassword }]}
-      >
-        <Input.Password className={style.input} placeholder="Пароль" />
+          { validator: validatePassword }]}>
+        <Input.Password className={style.input} placeholder="Пароль" value={formData.password} name="password" onChange={(e) => handleChange(e)} />
       </Form.Item>
 
       <Form.Item
@@ -92,8 +107,7 @@ const FormReg: React.FC = () => {
               return Promise.reject(new Error('Пароли не совпадают!'));
             },
           }),
-        ]}
-      >
+        ]}>
         <Input.Password className={style.input} placeholder="Повторите пароль" />
       </Form.Item>
 
@@ -110,12 +124,7 @@ const FormReg: React.FC = () => {
       <Form.Item>
         <button className={style.button} type="submit">Создать аккаунт</button>
       </Form.Item>
-      {/* <Form.Item>
-        <button className="btn btn--primary" type="submit" onClick={() => {}}>
-        Создать аккаунт</button>
-      </Form.Item> */}
     </Form>
-
   );
 };
 
