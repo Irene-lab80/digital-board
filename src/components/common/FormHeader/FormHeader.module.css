@@ -1,0 +1,40 @@
+.wrapper {
+  width: 364px;
+}
+
+.form {
+  padding: 24px;
+}
+
+.button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 182px;
+  height: 32px;
+  border-bottom: 1px solid rgba(42, 47, 55, 0.12);
+  color: #2A2F37;
+}
+
+.button_active {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 182px;
+  height: 32px;
+  border-bottom: 2px solid #3A95FF;
+  font-weight: 700;
+}
+/*# sourceMappingURL=FormHeader.module.css.map */

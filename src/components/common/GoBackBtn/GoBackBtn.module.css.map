@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,QAAQ,CAAE;EACR,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;CACpB;;AAED,AAAA,MAAM,CAAC;EACL,WAAW,EAAE,MAAM;EACnB,YAAY,EAAE,GAAG;CAClB",
+    "sources": [
+        "GoBackBtn.module.scss",
+        "../../../assets/styles/_constants.scss"
+    ],
+    "names": [],
+    "file": "GoBackBtn.module.css"
+}
