@@ -42,6 +42,7 @@ const columns = [
 
 const MyAdsPage = () => {
   const productData = useSelector(getProducts);
+  // TODO: отформатировать дату
   // {moment(date).format('LL')}
   return (
     <div className={style.wrapper}>
