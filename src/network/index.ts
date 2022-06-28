@@ -8,6 +8,7 @@ const makeRequest = async ({ url, method = 'GET', data = {}, params }: AxiosRequ
       data,
       params,
       baseURL: 'https://tourmaline-past-hall.glitch.me/',
+      // baseURL: 'http://localhost:3000/',
       timeout: 10000,
     });
 

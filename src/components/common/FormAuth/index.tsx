@@ -10,21 +10,21 @@ import style from './FormAuth.module.scss';
 import { SetUserNameAction } from '../../../store/auth/actions';
 
 const FormAuth: React.FC = () => {
-  // async function handleSubmit(values: any) {
-  //   // e.preventDefault();
-  //   await makeRequest({ url: '/login', method: 'POST', data: values });
-  //   console.log(values);
-  //   alert('Успешно отправлено?');
-  // }
+  async function handleSubmit(values: any) {
+    // e.preventDefault();
+    await makeRequest({ url: '/login', method: 'POST', data: values });
+    console.log(values);
+    alert('Успешно отправлено?');
+  }
 
-  // Код который работает
-  const dispatch = useDispatch();
-  const handleSubmit = (values: any) => {
-    console.log('Success:', values);
-    if (values.email === 'login@login.com' && values.password === 'password') {
-      dispatch(SetUserNameAction(values.email));
-    } else { alert('Неверный логин или пароль'); }
-  };
+  // Код чтобы залогиниться, который работает
+  // const dispatch = useDispatch();
+  // const handleSubmit = (values: any) => {
+  //   console.log('Success:', values);
+  //   if (values) {
+  //     dispatch(SetUserNameAction(values.email));
+  //   }
+  // };
 
   return (
     <Form
