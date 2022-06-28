@@ -1,5 +1,4 @@
 import React from 'react';
-import CustomButton from '../../common/CustomButton';
 import style from './NewAdPage.module.scss';
 import 'antd/dist/antd.min.css';
 import EditAdFrom from '../../common/EditAdFrom';
@@ -16,14 +15,14 @@ const NewAdPage = () => (
         Вернуться назад
       </GoBackBtn>
       <main className={style.main}>
-        <div className={style.top}>
+        {/* <div className={style.top}>
           <h2 className={style.title}>Чепчик</h2>
           <div className={style.btnWrapper}>
             <CustomButton buttonStyle="btn--primary" onClick={() => {}}>
               Сохранить
             </CustomButton>
           </div>
-        </div>
+        </div> */}
         <div className={style.form}>
           <EditAdFrom />
         </div>
