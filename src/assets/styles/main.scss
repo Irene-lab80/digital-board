@@ -118,10 +118,10 @@ ymaps.ymaps-2-1-79-controls__toolbar_left > ymaps:nth-child(2) {
   display: none;
 }
 
-//styles for edit ads page
-.edit-ad-form .ant-input {
-  height: 64px;
-}
+// //styles for edit ads page
+// .edit-ad-form .ant-input {
+//   height: 64px;
+// }
 
 .ant-menu-item.item {
   height: 72px;
@@ -149,3 +149,73 @@ ymaps.ymaps-2-1-79-controls__toolbar_left > ymaps:nth-child(2) {
 // .ant-form-item-label {
 //   overflow: visible;
 // }
+
+// LOADER
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.scrolling-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 40px 15px;
+
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include media-tablet {
+    width: 100vw;  
+  } 
+  
+  .menu-item {
+    flex: 0 0 auto;
+    border-radius: 35px;
+    margin-right: 24px;
+    color: $color-text-dark-m;
+    transition: .3s;
+    padding: 8px 24px;
+    border: 1px solid transparent;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    &:hover {
+      cursor: pointer;
+      border: 1px solid $color-button-main;
+      color: $color-button-main;
+    }
+  }
+}
+
+.menu-item--active {
+  @extend .menu-item;
+  background-color: $color-button-accented;
+  color: $color-text-dark-l;
+  // pointer-events: none;
+}
