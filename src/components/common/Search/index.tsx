@@ -1,11 +1,8 @@
+/* eslint-disable import/no-unresolved */
 import React from 'react';
-// eslint-disable-next-line import/no-unresolved
-// import Search from 'antd/lib/input/Search';
 import { SearchOutlined } from '@ant-design/icons';
-import { Input } from 'antd';
 import Search from 'antd/lib/input/Search';
-import { NavLink } from 'react-router-dom';
-import style from './Search.module.scss';
+// import style from './Search.module.scss';
 
 type CustomSearchType = {
   onSearch: any;
@@ -22,16 +19,13 @@ const CustomSearch = ({ onSearch }: CustomSearchType) => {
   );
 
   return (
-    <>
-      <Search
-        allowClear
-      // enterButton="Искать"
-        onSubmit={onSearch}
-        onSearch={onSearch}
-        prefix={suffix}
+    <Search
+      allowClear
+      enterButton="Искать"
+      onSubmit={onSearch}
+      onSearch={onSearch}
+      prefix={suffix}
     />
-      <button type="submit">Искать</button>
-    </>
     // <form className={style.wrapper}>
     //   <Input
     //     className={style.input}

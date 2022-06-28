@@ -47,7 +47,6 @@ const FormAuth: React.FC = () => {
           },
         ]}>
         <Input className={style.input} type="text" placeholder="Email" name="email" />
-        {/* <Input className={style.input} type="text" placeholder="Email" name="email" onChange={(e) => handleChange(e)} /> */}
       </Form.Item>
 
       <Form.Item
@@ -55,7 +54,6 @@ const FormAuth: React.FC = () => {
         name="password"
         rules={[{ required: true, message: 'Введите пароль!' }]}>
         <Input className={style.input} type="text" placeholder="Password" name="password" />
-        {/* <Input className={style.input} type="text" placeholder="Password" name="password" onChange={(e) => handleChange(e)} /> */}
       </Form.Item>
 
       <Form.Item>

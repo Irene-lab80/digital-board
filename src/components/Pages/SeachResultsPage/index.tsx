@@ -1,16 +1,15 @@
 /* eslint-disable consistent-return */
 /* eslint-disable array-callback-return */
 // import Search from 'antd/lib/input/Search';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { data } from '../../../helpers';
 import GetSearchTerm from '../../../store/search/selector';
 // import CustomSearch from '../../common/Search';
 
 const SeachResultsPage = () => {
-  const searchTerm = useSelector(GetSearchTerm);
-  console.log(searchTerm);
+  const search = useSelector(GetSearchTerm);
 
   // const [searchTerm, setSearchTerm] = useState('');
 
@@ -24,12 +23,11 @@ const SeachResultsPage = () => {
 
   return (
     <>
-      <h1>{searchTerm}</h1>
-      {/* {data
+      {data
         .filter((val) => {
-          if (searchTerm === '') {
+          if (search === '') {
             return val;
-          } if (val.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+          } if (val.title.toLowerCase().includes(search.toLowerCase())) {
             return val;
           }
         })
@@ -41,7 +39,7 @@ const SeachResultsPage = () => {
               <div className="date">{val.date}</div>
             </div>
           </Link>
-        ))} */}
+        ))}
     </>
   );
 };
