@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,aAAa,CAAC;EAEZ,MAAM,EAAE,KAAK;EACb,OAAO,EAAE,IAAI;EACb,mBAAmB,EAAE,2BAA2B;EAChD,kBAAkB,EAAE,eAAe;CACpC;;AAED,AAAA,QAAQ,CAAC;EACP,OAAO,EAAE,MAAM;EACf,SAAS,ECKK,MAAM;EDJpB,MAAM,EAAE,MAAM;CACf",
+    "sources": [
+        "PageWrapper.module.scss",
+        "../../../assets/styles/_constants.scss"
+    ],
+    "names": [],
+    "file": "PageWrapper.module.css"
+}

@@ -17,13 +17,13 @@ const FormAuth: React.FC = () => {
     alert('Успешно отправлено?');
   }
 
-  // Код который работает
+  // Код чтобы залогиниться, который работает
   // const dispatch = useDispatch();
   // const handleSubmit = (values: any) => {
   //   console.log('Success:', values);
-  //   if (values.email === 'login@login.com' && values.password === 'password') {
+  //   if (values) {
   //     dispatch(SetUserNameAction(values.email));
-  //   } else { alert('Неверный логин или пароль'); }
+  //   }
   // };
 
   return (

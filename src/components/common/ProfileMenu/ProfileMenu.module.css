@@ -1,0 +1,35 @@
+.form {
+  background: transparent;
+}
+
+.avatar {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #E5E5E5;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 24px;
+  margin-right: 16px;
+  color: #424242;
+  opacity: 0.5;
+}
+
+.icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 8px;
+}
+/*# sourceMappingURL=ProfileMenu.module.css.map */

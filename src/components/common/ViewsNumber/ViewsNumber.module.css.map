@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,QAAQ,CAAC;EACP,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;CACpB;;AAED,AAAA,WAAW,CAAC;EACV,YAAY,EAAE,GAAG;EACjB,KAAK,ECLa,OAAO;EDMzB,OAAO,EAAE,GAAG;CACb",
+    "sources": [
+        "ViewsNumber.module.scss",
+        "../../../assets/styles/_constants.scss"
+    ],
+    "names": [],
+    "file": "ViewsNumber.module.css"
+}
