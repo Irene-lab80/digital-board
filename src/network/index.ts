@@ -7,8 +7,9 @@ const makeRequest = async ({ url, method = 'GET', data = {}, params }: AxiosRequ
       url,
       data,
       params,
-      baseURL: 'https://tourmaline-past-hall.glitch.me/',
-      // baseURL: 'http://localhost:3000/',
+      baseURL: 'http://localhost:8000/',
+      // baseURL: 'https://rural-empty-horn.glitch.me/',
+
       timeout: 10000,
     });
 

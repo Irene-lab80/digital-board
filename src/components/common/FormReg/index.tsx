@@ -12,7 +12,7 @@ const FormReg: React.FC = () => {
   // });
 
   async function handleSubmit(values: any) {
-    await makeRequest({ url: '/users', method: 'POST', data: values });
+    await makeRequest({ url: '/auth/register', method: 'POST', data: values });
     console.log(values);
     // TODO: remove alert
     alert('Успешно');

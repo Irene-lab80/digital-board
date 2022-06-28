@@ -12,7 +12,8 @@ import { SetUserNameAction } from '../../../store/auth/actions';
 const FormAuth: React.FC = () => {
   async function handleSubmit(values: any) {
     // e.preventDefault();
-    await makeRequest({ url: '/login', method: 'POST', data: values });
+    // @ts-ignore
+    await makeRequest({ url: '/auth/login', method: 'POST', data: values }); // params: 'Authorization: Bearer <ACCESS_TOKEN>' ??
     console.log(values);
     alert('Успешно отправлено?');
   }
