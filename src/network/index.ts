@@ -7,7 +7,7 @@ const makeRequest = async ({ url, method = 'GET', data = {}, params }: AxiosRequ
       url,
       data,
       params,
-      baseURL: 'https://soapy-auspicious-lancer.glitch.me/',
+      baseURL: 'https://tourmaline-past-hall.glitch.me/',
       timeout: 10000,
     });
 
