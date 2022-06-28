@@ -1,6 +1,6 @@
 import React from 'react';
 import { MenuOutlined, SearchOutlined } from '@ant-design/icons';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 import Search from '../Search';
@@ -10,9 +10,15 @@ import ProfileButton from '../ProfileButton';
 import DropDownProfileBtn from '../DropDownProfileBtn/Index';
 import CustomButton from '../CustomButton';
 import GetUserName from '../../../store/auth/selectors';
+import { SetSearchTermAction } from '../../../store/search/actions';
 
 const Header = () => {
   const name = useSelector(GetUserName);
+  const dispatch = useDispatch();
+  const searchHandler = (searchTerm: string) => {
+    dispatch(SetSearchTermAction(searchTerm));
+  };
+
   return (
     <div className={style.wrapper}>
       <header className={style.header}>
@@ -21,7 +27,7 @@ const Header = () => {
         </div>
         <div className={style.searchWrapper}>
           <div className={style.search}>
-            <Search onSearch={() => {}} />
+            <Search onSearch={searchHandler} />
           </div>
           <div className={style.searchMobile}>
             <SearchOutlined style={{ fontSize: '24px', opacity: '0.4' }} />

@@ -3,6 +3,8 @@ import React from 'react';
 // import Search from 'antd/lib/input/Search';
 import { SearchOutlined } from '@ant-design/icons';
 import { Input } from 'antd';
+import Search from 'antd/lib/input/Search';
+import { NavLink } from 'react-router-dom';
 import style from './Search.module.scss';
 
 type CustomSearchType = {
@@ -27,11 +29,19 @@ const CustomSearch = ({ onSearch }: CustomSearchType) => {
     //   onSearch={onSearch}
     //   prefix={suffix}
     // />
-    <form className={style.wrapper} action="/search">
-      <Input className={style.input} type="search" allowClear prefix={suffix} id="mySearch" name="q" />
-      <div className={style.btnWrapper}>
-        <button className="btn btn--primary" type="submit" onSubmit={onSearch}>Искать</button>
-      </div>
+    <form className={style.wrapper}>
+      <Input
+        className={style.input}
+        type="search"
+        allowClear
+        prefix={suffix}
+        id="mySearch"
+        name="q" />
+      <NavLink to="/search">
+        <div className={style.btnWrapper}>
+          <button className="btn btn--primary" type="button" onSubmit={onSearch}>Искать</button>
+        </div>
+      </NavLink>
     </form>
   );
 };

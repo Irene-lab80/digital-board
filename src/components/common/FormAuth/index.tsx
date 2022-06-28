@@ -23,7 +23,7 @@ const FormAuth: React.FC = () => {
   // const handleSubmit = (values: any) => {
   //   console.log('Success:', values);
   //   if (values) {
-  //     dispatch(SetUserNameAction(values.email));
+  // dispatch(SetUserNameAction(values.email));
   //   }
   // };
 
