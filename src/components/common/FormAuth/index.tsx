@@ -10,28 +10,21 @@ import style from './FormAuth.module.scss';
 import { SetUserNameAction } from '../../../store/auth/actions';
 
 const FormAuth: React.FC = () => {
-  // const [formData, setFormData] = useState({
-  //   email: '',
-  //   password: ''
-  // });
+  async function handleSubmit(values: any) {
+    // e.preventDefault();
+    await makeRequest({ url: '/login', method: 'POST', data: values });
+    console.log(values);
+    alert('Успешно отправлено?');
+  }
 
-  // async function handleSubmit(e: any) {
-  //   // e.preventDefault();
-  //   await makeRequest({ url: 'login', method: 'POST', data: formData });
-  //   console.log(formData);
-  // }
-
-  // function handleChange(e: any) {
-  //   setFormData({ ...formData, [e.target.name]: e.target.value });
-  // }
-
-  const dispatch = useDispatch();
-  const handleSubmit = (values: any) => {
-    console.log('Success:', values);
-    if (values.email === 'login@login.com' && values.password === 'password') {
-      dispatch(SetUserNameAction(values.email));
-    } else { alert('Неверный логин или пароль'); }
-  };
+  // Код который работает
+  // const dispatch = useDispatch();
+  // const handleSubmit = (values: any) => {
+  //   console.log('Success:', values);
+  //   if (values.email === 'login@login.com' && values.password === 'password') {
+  //     dispatch(SetUserNameAction(values.email));
+  //   } else { alert('Неверный логин или пароль'); }
+  // };
 
   return (
     <Form

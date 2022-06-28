@@ -4,21 +4,23 @@ import style from './FormReg.module.scss';
 import makeRequest from '../../../network';
 
 const FormReg: React.FC = () => {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-    firstname: '',
-    lastname: ''
-  });
+  // const [formData, setFormData] = useState({
+  //   email: '',
+  //   password: '',
+  //   firstname: '',
+  //   lastname: ''
+  // });
 
-  async function handleSubmit(e: any) {
-    await makeRequest({ url: '/users', method: 'POST', data: formData });
-    console.log(formData);
+  async function handleSubmit(values: any) {
+    await makeRequest({ url: '/users', method: 'POST', data: values });
+    console.log(values);
+    // TODO: remove alert
+    alert('Успешно');
   }
 
-  function handleChange(e: any) {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  }
+  // function handleChange(e: any) {
+  //   setFormData({ ...formData, [e.target.name]: e.target.value });
+  // }
 
   const validatePassword = (rule: any, value: any, callback: any) => {
     // at least one small letter, at least one capital, at least 8 digits, no special symbols
@@ -38,20 +40,21 @@ const FormReg: React.FC = () => {
       initialValues={{ remember: true }}
       onFinish={(e) => handleSubmit(e)}
       autoComplete="off"
+      layout="vertical"
     >
       <Form.Item
         className={style.inputWrapper}
         name="firstname"
         rules={[{ required: true, message: 'Введите имя!' }, { max: 25, message: 'Имя не должно быть длиннее 25 символов' }]}
       >
-        <Input className={style.input} placeholder="Имя" value={formData.firstname} name="firstname" onChange={(e) => handleChange(e)} />
+        <Input className={style.input} placeholder="Имя" name="firstname" />
       </Form.Item>
 
       <Form.Item
         className={style.inputWrapper}
         name="lastname"
         rules={[{ required: true, message: 'Введите фамилию!' }, { max: 25, message: 'Фамилия не должна быть длиннее 25 символов' }]}>
-        <Input className={style.input} placeholder="Фамилия" value={formData.lastname} name="lastname" onChange={(e) => handleChange(e)} />
+        <Input className={style.input} placeholder="Фамилия" name="lastname" />
       </Form.Item>
 
       <Form.Item
@@ -68,7 +71,7 @@ const FormReg: React.FC = () => {
           },
         ]}
       >
-        <Input className={style.input} placeholder="Email" value={formData.email} name="email" onChange={(e) => handleChange(e)} />
+        <Input className={style.input} placeholder="Email" name="email" />
       </Form.Item>
 
       <Form.Item
@@ -76,7 +79,7 @@ const FormReg: React.FC = () => {
         name="password"
         rules={[{ required: true, message: 'Введите пароль!' },
           { validator: validatePassword }]}>
-        <Input.Password className={style.input} placeholder="Пароль" value={formData.password} name="password" onChange={(e) => handleChange(e)} />
+        <Input.Password className={style.input} placeholder="Пароль" name="password" />
       </Form.Item>
 
       <Form.Item
