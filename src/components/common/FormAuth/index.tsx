@@ -70,33 +70,3 @@ const FormAuth: React.FC = () => {
 };
 
 export default FormAuth;
-
-// const FormAuth = () => {
-//   const [formData, setFormData] = useState({
-//     email: '',
-//     password: ''
-//   });
-
-//   async function handleSubmit(e: any) {
-//     e.preventDefault();
-//     await makeRequest({ url: 'auth/login', method: 'POST', data: formData });
-//     console.log(formData);
-//   }
-
-//   function handleChange(e: any) {
-//     setFormData({ ...formData, [e.target.name]: e.target.value });
-//   }
-
-//   return (
-//     <div>
-//       <h1>Login Form</h1>
-//       <form className="login-form" onSubmit={handleSubmit}>
-//         <input type="text" placeholder="Email" value={formData.email} name="email" onChange={(e) => handleChange(e)} />
-//         <input type="text" placeholder="Password" value={formData.password} name="password" onChange={(e) => handleChange(e)} />
-//         <button className="login-btn" type="submit">Login</button>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default FormAuth;

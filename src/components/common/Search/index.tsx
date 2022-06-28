@@ -22,27 +22,30 @@ const CustomSearch = ({ onSearch }: CustomSearchType) => {
   );
 
   return (
-    // <Search
-    //   allowClear
-    //   enterButton="Искать"
-    //   onSubmit={onSearch}
-    //   onSearch={onSearch}
-    //   prefix={suffix}
-    // />
-    <form className={style.wrapper}>
-      <Input
-        className={style.input}
-        type="search"
+    <>
+      <Search
         allowClear
+      // enterButton="Искать"
+        onSubmit={onSearch}
+        onSearch={onSearch}
         prefix={suffix}
-        id="mySearch"
-        name="q" />
-      <NavLink to="/search">
-        <div className={style.btnWrapper}>
-          <button className="btn btn--primary" type="button" onSubmit={onSearch}>Искать</button>
-        </div>
-      </NavLink>
-    </form>
+    />
+      <button type="submit">Искать</button>
+    </>
+    // <form className={style.wrapper}>
+    //   <Input
+    //     className={style.input}
+    //     type="search"
+    //     allowClear
+    //     prefix={suffix}
+    //     id="mySearch"
+    //     name="q" />
+    //   <NavLink to="/search">
+    //     <div className={style.btnWrapper}>
+    //       <button className="btn btn--primary" type="button" onSubmit={onSearch}>Искать</button>
+    //     </div>
+    //   </NavLink>
+    // </form>
   );
 };
 
