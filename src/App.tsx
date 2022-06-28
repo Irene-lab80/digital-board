@@ -8,7 +8,6 @@ import PageWrapper from './components/common/PageWrapper';
 import AuthContainer from './components/Containers/AuthContainer';
 import RegistrationContainer from './components/Containers/RegistrationContainer';
 import NotFoundContainer from './components/Containers/NotFoundContainer';
-import MainPageContainer from './components/Containers/MainPageContainer';
 import GetPasswordContainer from './components/Containers/GetPasswordContainer';
 import ProductPageContainer from './components/Containers/ProductPageContainer';
 import MyAdsPageContainer from './components/Containers/MyAdsPageContainer';
@@ -16,7 +15,7 @@ import EditAdPageContainer from './components/Containers/EditAdPageContainer';
 import AuthHoc from './components/HOC/AuthHoc';
 import './assets/styles/main.scss';
 import SeachResultsPage from './components/Pages/SeachResultsPage';
-import MainPageContainer2 from './components/Containers/MainPageContainer2';
+import MainPageContainer from './components/Containers/MainPageContainer';
 
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -36,7 +35,7 @@ const App = () => {
           : <Routes>
             <Route path="/" element={<PageWrapper />}>
               <Route path="main" element={<MainPageContainer />} />
-              <Route index element={<MainPageContainer2 />} />
+              <Route index element={<MainPageContainer />} />
               <Route path="auth" element={<AuthContainer />} />
               <Route path="reg" element={<RegistrationContainer />} />
               <Route path="get-pass" element={<GetPasswordContainer />} />
