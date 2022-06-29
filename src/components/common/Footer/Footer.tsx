@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../Logo/Logo';
+import Logo from '../Header/Logo';
 import style from './Footer.module.scss';
 import fbIcon from '../../../assets/images/fb-icon.svg';
 import igIcon from '../../../assets/images/ig-icon.svg';

@@ -29,6 +29,9 @@ const CardList = ({ data }: UserListPropsType) => {
 
   return (
     <>
+      <div className={style.titleWrapper}>
+        <h2 className={style.title}>Вся лента</h2>
+      </div>
       <div className={style.cardsWrapper}>
         {data?.slice(0, next)?.map((el) => (
           <Card

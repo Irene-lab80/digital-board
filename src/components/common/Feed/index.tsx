@@ -34,9 +34,6 @@ const Feed = () => {
         <MenuItem className={filter === 'Техника' ? 'menu-item--active  menu-item' : 'menu-item'} id="Техника" onClick={filterHandler}>Техника</MenuItem>
         <MenuItem className={filter === 'Товары для дома' ? 'menu-item--active  menu-item' : 'menu-item'} id="Товары для дома" onClick={filterHandler}>Товары для дома</MenuItem> */}
       </nav>
-      <div className={style.titleWrapper}>
-        <h2 className={style.title}>Вся лента</h2>
-      </div>
       {/* TODO: add loader? */}
       {productData ? <CardList data={item} /> : <div className="lds-dual-ring" /> }
       {/* {productData ? <CardList data={item} /> : 'loading'} */}
