@@ -2,9 +2,11 @@ import React from 'react';
 import { UploadOutlined } from '@ant-design/icons';
 import { Button, Form, Input, Upload } from 'antd';
 // import { YMaps, Map } from 'react-yandex-maps';
+import { useSelector } from 'react-redux';
 import ProductMap from '../ProductMap';
 import style from './EditAdFrom.module.scss';
 import makeRequest from '../../../network';
+import { GetUserEmail } from '../../../store/auth/selectors';
 
 /* @ts-ignore this lib is incompatible with react18 */
 // const myMap = new YMaps.Map('map', {
@@ -17,13 +19,13 @@ import makeRequest from '../../../network';
 // });
 
 const EditAdFrom = () => {
+  const userEmail = useSelector(GetUserEmail);
+
   async function handleSubmit(values: any) {
     const newValues = { ...values };
-    newValues.userEmail = 'Ford';
-    // await makeRequest({ url: '/products', method: 'POST', data: values });
-    console.log(values);
+    newValues.userEmail = userEmail;
+    await makeRequest({ url: '/products', method: 'POST', data: newValues });
     console.log(newValues);
-
     // TODO: remove alert
     alert('Успешно');
   }
