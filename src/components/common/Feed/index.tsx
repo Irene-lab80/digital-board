@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import style from './Feed.module.scss';
 import CardList from '../CardList';
-import getProducts from '../../../store/products/selectors';
+import { getProducts } from '../../../store/products/selectors';
 import Buttons from './Buttons';
 
 const Feed = () => {

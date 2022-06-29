@@ -1,3 +1,5 @@
+/* eslint-disable consistent-return */
+/* eslint-disable array-callback-return */
 import React from 'react';
 import { Table } from 'antd';
 import { Link } from 'react-router-dom';
@@ -8,7 +10,8 @@ import style from './MyAdsPage.module.scss';
 import CustomButton from '../../common/CustomButton';
 import PlusSvg from '../../common/svg/PlusSvg';
 import ProfileMenu from '../../common/ProfileMenu';
-import getProducts from '../../../store/products/selectors';
+import { getProducts, getUserProducts } from '../../../store/products/selectors';
+import { GetUserEmail } from '../../../store/auth/selectors';
 
 const columns = [
   {
@@ -41,7 +44,10 @@ const columns = [
 ];
 
 const MyAdsPage = () => {
+  // const userProductData = useSelector(getUserProducts);
   const productData = useSelector(getProducts);
+  const localUserEmail = useSelector(GetUserEmail);
+  const userProductData = productData.filter((el) => el.userEmail === localUserEmail);
   // TODO: отформатировать дату
   // {moment(date).format('LL')}
   return (
@@ -53,7 +59,7 @@ const MyAdsPage = () => {
             <h2 className={style.title}>Объявления</h2>
             <span className={style.subtitle}>
               Всего:
-              {productData.length}
+              {userProductData.length}
             </span>
           </div>
           <div className={style.btnWrapper}>
@@ -68,7 +74,7 @@ const MyAdsPage = () => {
         <div className={style.table}>
           <Table
             rowKey={(data) => data.id}
-            dataSource={productData}
+            dataSource={userProductData}
             columns={columns}
           />
         </div>
