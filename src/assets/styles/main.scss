@@ -151,6 +151,15 @@ div.Header_search__KfFxZ > span > span > span.ant-input-affix-wrapper {
   height: 36px;
 }
 
+.ant-list-pagination > ul {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.ant-spin-nested-loading > div > div {
+  display: none;
+}
+
 // .ant-upload-list {
 //  display: inline-flex;
 // }
