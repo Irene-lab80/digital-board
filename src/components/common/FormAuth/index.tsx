@@ -8,6 +8,7 @@ import makeRequest from '../../../network';
 // import { SetUserNameAction } from '../../../store/auth/actions';
 import style from './FormAuth.module.scss';
 import { SetUserEmailAction, SetUserNameAction } from '../../../store/auth/actions';
+import CustomButton from '../CustomButton';
 
 const FormAuth: React.FC = () => {
   const dispatch = useDispatch();
@@ -71,7 +72,7 @@ const FormAuth: React.FC = () => {
       </Form.Item>
 
       <Form.Item>
-        <button className={style.button} type="submit">Войти</button>
+        <CustomButton buttonStyle="btm--primary" type="submit" onClick={() => {}}>Войти</CustomButton>
       </Form.Item>
     </Form>
   );

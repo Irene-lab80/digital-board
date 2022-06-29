@@ -2,6 +2,7 @@ import React from 'react';
 import { Form, Input, Checkbox } from 'antd';
 import style from './FormReg.module.scss';
 import makeRequest from '../../../network';
+import CustomButton from '../CustomButton';
 
 const FormReg: React.FC = () => {
   async function handleSubmit(values: any) {
@@ -104,7 +105,7 @@ const FormReg: React.FC = () => {
       </Form.Item>
 
       <Form.Item>
-        <button className={style.button} type="submit">Создать аккаунт</button>
+        <CustomButton buttonStyle="btm--primary" type="submit" onClick={() => {}}>Создать аккаунт</CustomButton>
       </Form.Item>
     </Form>
   );

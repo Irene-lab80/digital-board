@@ -10,7 +10,7 @@ import style from './MyAdsPage.module.scss';
 import CustomButton from '../../common/CustomButton';
 import PlusSvg from '../../common/svg/PlusSvg';
 import ProfileMenu from '../../common/ProfileMenu';
-import { getProducts, getUserProducts } from '../../../store/products/selectors';
+import { getProducts } from '../../../store/products/selectors';
 import { GetUserEmail } from '../../../store/auth/selectors';
 
 const columns = [
@@ -64,7 +64,7 @@ const MyAdsPage = () => {
           </div>
           <div className={style.btnWrapper}>
             <Link to="/edit-ad">
-              <CustomButton buttonStyle="btn--primary" onClick={() => {}}>
+              <CustomButton buttonStyle="btn--primary" onClick={() => {}} type="button">
                 Добавить
                 <span className={style.icon}><PlusSvg /></span>
               </CustomButton>

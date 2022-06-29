@@ -19,7 +19,7 @@ const ModalBtn: React.FC = () => {
 
   return (
     <>
-      <CustomButton onClick={showModal} buttonStyle="btn--accent">Подать объявление</CustomButton>
+      <CustomButton onClick={showModal} buttonStyle="btn--accent" type="button">Подать объявление</CustomButton>
       {/* @ts-ignore this lib is incompatible with react18 */}
       <Modal title="Действие недоступно" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
         Для подачи объявления необходимо

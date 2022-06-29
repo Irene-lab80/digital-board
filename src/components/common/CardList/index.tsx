@@ -46,7 +46,7 @@ const CardList = ({ data }: UserListPropsType) => {
       </div>
       <div className={style.btnWrapper}>
         {next < data?.length && (
-        <CustomButton onClick={() => {}} buttonStyle="btn--outline">
+        <CustomButton onClick={() => {}} buttonStyle="btn--outline" type>
           <LoadSvg />
           <button type="button" className={style.btnText} onClick={handleMoreImage}>
             Загрузить еще
