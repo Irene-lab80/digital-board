@@ -31,7 +31,11 @@ const App = () => {
     <div className="App">
       {
         loading
-          ? <ClipLoader loading={loading} css="margin: 40vh 45vw" size={100} color="#1d42be" speedMultiplier={1.5} />
+          ? <div
+              className="lds-dual-ring"
+              style={{ position: 'absolute',
+                top: '50%',
+                left: '50%' }} />
           : <Routes>
             <Route path="/" element={<PageWrapper />}>
               <Route path="main" element={<MainPageContainer />} />

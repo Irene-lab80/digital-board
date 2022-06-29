@@ -18,13 +18,6 @@ const Header = () => {
   const name = useSelector(GetUserName);
   const navigate = useNavigate();
 
-  const dispatch = useDispatch();
-  const searchHandler = (searchTerm: string) => {
-    dispatch(SetSearchTermAction(searchTerm));
-    navigate('/search');
-  };
-
-  // close/open search on mobile
   const [open, setOpen] = useState(false);
   const showSearch = () => {
     setOpen(true);
@@ -32,6 +25,15 @@ const Header = () => {
   const hideSearch = () => {
     setOpen(false);
   };
+
+  const dispatch = useDispatch();
+  const searchHandler = (searchTerm: string) => {
+    dispatch(SetSearchTermAction(searchTerm));
+    navigate('/search');
+    setOpen(false);
+  };
+
+  // close/open search on mobile
 
   return (
     <div className={style.wrapper}>

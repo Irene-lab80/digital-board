@@ -1,8 +1,12 @@
 @import '../../../assets/styles/constants';
+@import '../../../assets/styles/mixins';
 
 .pageWrapper {
   align-self: start;
   width: 100%;
+  @include media-730 {
+    padding: 24px;
+  }  
 }
 
 .productWrapper {

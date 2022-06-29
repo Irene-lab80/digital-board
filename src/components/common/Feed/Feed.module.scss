@@ -26,6 +26,12 @@
   width: 100%;
   display: flex;
   justify-content: start;
+  @include media-tablet {
+    padding: 0 15px;
+  } 
+  @include media-mobile {
+    padding: 0 24px;
+  } 
 }
 
 .title {
