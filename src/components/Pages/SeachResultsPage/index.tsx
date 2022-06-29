@@ -3,7 +3,7 @@
 // import Search from 'antd/lib/input/Search';
 import { Pagination } from 'antd';
 import moment from 'moment';
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getProducts } from '../../../store/products/selectors';
@@ -15,6 +15,8 @@ moment.locale('ru');
 const SeachResultsPage = () => {
   const search = useSelector(GetSearchTerm);
   const data = useSelector(getProducts);
+
+  const [posts, setPosts] = useState([]);
 
   const results = data
     .filter((val) => {

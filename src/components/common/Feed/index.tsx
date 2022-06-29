@@ -18,6 +18,7 @@ const Feed = () => {
   // };
 
   return (
+
     <div className={style.feedwrapper}>
       <nav className={style.scrollingWrapper}>
         <Buttons
@@ -37,8 +38,8 @@ const Feed = () => {
         <h2 className={style.title}>Вся лента</h2>
       </div>
       {/* TODO: add loader? */}
-      {/* {productData ? <CardList data={productData} /> : <div className="lds-dual-ring" /> } */}
-      <CardList data={item} />
+      {productData ? <CardList data={item} /> : <div className="lds-dual-ring" /> }
+      {/* {productData ? <CardList data={item} /> : 'loading'} */}
     </div>
   );
 };

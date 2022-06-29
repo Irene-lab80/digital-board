@@ -180,7 +180,7 @@ div.Header_search__KfFxZ > span > span > span.ant-input-affix-wrapper {
   margin: 8px;
   border-radius: 50%;
   border: 6px solid #fff;
-  border-color: #fff transparent #fff transparent;
+  border-color: $color-button-main transparent $color-button-main transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {
