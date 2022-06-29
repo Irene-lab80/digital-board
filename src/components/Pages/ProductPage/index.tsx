@@ -1,8 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
 import moment from 'moment';
-import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
 import ProductSlider from '../../common/ProductSlider';
 import style from './ProductPage.module.scss';
 import ViewsNumber from '../../common/ViewsNumber';
@@ -11,8 +9,6 @@ import ProductMap from '../../common/ProductMap';
 import CardsSmall from '../../common/CardsSmall';
 import 'moment/locale/ru'; // without this line it didn't work
 import GoBackBtn from '../../common/GoBackBtn';
-import { getProducts } from '../../../store/products/selectors';
-import { GetProductsAction } from '../../../store/products/actions';
 
 moment.locale('ru');
 
@@ -37,8 +33,10 @@ const ProductPage = ({ productInfo }:ProductPagePropsType) => {
   const defaultCoordinates = [56.30, 43.98]; // without it YMaps carahes all page
 
   return (
-    <>
-      <GoBackBtn> </GoBackBtn>
+    <div className="page-wrapper">
+      <div className={style.arrowBtn}>
+        <GoBackBtn> </GoBackBtn>
+      </div>
       <div className={style.wrapper}>
         <main className={style.main}>
           <div className={style.date}>{moment(productInfo?.date).format('LL')}</div>
@@ -68,7 +66,7 @@ const ProductPage = ({ productInfo }:ProductPagePropsType) => {
           <CardsSmall bigTag={productInfo?.tag} id={productInfo?.id} />
         </aside>
       </div>
-    </>
+    </div>
   );
 };
 

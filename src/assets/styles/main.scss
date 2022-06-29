@@ -40,6 +40,16 @@ li {
   display: inline-flex;
 }
 
+.page-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 .btn {
   display: flex;
   align-items: center;

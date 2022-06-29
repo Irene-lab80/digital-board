@@ -51,34 +51,36 @@ const MyAdsPage = () => {
   // TODO: отформатировать дату
   // {moment(date).format('LL')}
   return (
-    <div className={style.wrapper}>
-      <ProfileMenu />
-      <main className={style.main}>
-        <div className={style.top}>
-          <div className={style.titleWrapper}>
-            <h2 className={style.title}>Объявления</h2>
-            <span className={style.subtitle}>
-              Всего:
-              {userProductData.length}
-            </span>
+    <div className="page-wrapper">
+      <div className={style.wrapper}>
+        <ProfileMenu />
+        <main className={style.main}>
+          <div className={style.top}>
+            <div className={style.titleWrapper}>
+              <h2 className={style.title}>Объявления</h2>
+              <span className={style.subtitle}>
+                Всего:
+                {userProductData.length}
+              </span>
+            </div>
+            <div className={style.btnWrapper}>
+              <Link to="/edit-ad">
+                <CustomButton buttonStyle="btn--primary" onClick={() => {}} type="button">
+                  Добавить
+                  <span className={style.icon}><PlusSvg /></span>
+                </CustomButton>
+              </Link>
+            </div>
           </div>
-          <div className={style.btnWrapper}>
-            <Link to="/edit-ad">
-              <CustomButton buttonStyle="btn--primary" onClick={() => {}} type="button">
-                Добавить
-                <span className={style.icon}><PlusSvg /></span>
-              </CustomButton>
-            </Link>
-          </div>
-        </div>
-        <div className={style.table}>
-          <Table
-            rowKey={(data) => data.id}
-            dataSource={userProductData}
-            columns={columns}
+          <div className={style.table}>
+            <Table
+              rowKey={(data) => data.id}
+              dataSource={userProductData}
+              columns={columns}
           />
-        </div>
-      </main>
+          </div>
+        </main>
+      </div>
     </div>
   );
 };

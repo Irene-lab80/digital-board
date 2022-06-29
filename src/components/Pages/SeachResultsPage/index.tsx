@@ -36,12 +36,14 @@ const SeachResultsPage = () => {
       </Link>
     ));
   return (
-    <div className={style.pageWrapper}>
-      <span className={style.serchResulstNumber}>Найдено: </span>
-      {results.length}
+    <div className="page-wrapper">
+      <div className={style.pageWrapper}>
+        <span className={style.serchResulstNumber}>Найдено: </span>
+        {results.length}
 
-      {results}
+        {results}
 
+      </div>
       <Pagination
         className={style.pagination}
         defaultCurrent={1}
