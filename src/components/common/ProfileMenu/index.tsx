@@ -6,7 +6,7 @@ import BookSvg from '../svg/BookSvg';
 import ExitSvg from '../svg/ExitSvg';
 import style from './ProfileMenu.module.scss';
 import { ClearUserNameAction } from '../../../store/auth/actions';
-import GetUserName from '../../../store/auth/selectors';
+import { GetUserName } from '../../../store/auth/selectors';
 
 // TODO: объеденить с компонентом для хэдера?
 const ProfileMenu = () => {

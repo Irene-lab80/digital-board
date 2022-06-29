@@ -7,7 +7,7 @@ import makeRequest from '../../../network';
 // import { useDispatch } from 'react-redux';
 // import { SetUserNameAction } from '../../../store/auth/actions';
 import style from './FormAuth.module.scss';
-import { SetUserNameAction } from '../../../store/auth/actions';
+import { SetUserEmailAction, SetUserNameAction } from '../../../store/auth/actions';
 
 const FormAuth: React.FC = () => {
   const dispatch = useDispatch();
@@ -22,7 +22,8 @@ const FormAuth: React.FC = () => {
     USERS.forEach((el: any) => {
       if (el.password === INPUT_PASSWORD && el.email === INPUT_EMAIL) {
         alert('Пользователь существует!');
-        dispatch(SetUserNameAction(`${USERS[3].firstname} ${USERS[3].lastname}`));
+        dispatch(SetUserNameAction(`${el.firstname} ${el.lastname}`));
+        dispatch(SetUserEmailAction(el.email));
       }
     });
   }

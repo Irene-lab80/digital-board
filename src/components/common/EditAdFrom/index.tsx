@@ -18,8 +18,12 @@ import makeRequest from '../../../network';
 
 const EditAdFrom = () => {
   async function handleSubmit(values: any) {
-    await makeRequest({ url: '/products', method: 'POST', data: values });
+    const newValues = { ...values };
+    newValues.userEmail = 'Ford';
+    // await makeRequest({ url: '/products', method: 'POST', data: values });
     console.log(values);
+    console.log(newValues);
+
     // TODO: remove alert
     alert('Успешно');
   }

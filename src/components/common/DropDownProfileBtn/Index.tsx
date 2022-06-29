@@ -7,7 +7,7 @@ import ExitSvg from '../svg/ExitSvg';
 import BookSvg from '../svg/BookSvg';
 import PersonSvg from '../svg/PersonSvg';
 import PersonSvgActive from '../svg/PersonSvgActive';
-import GetUserName from '../../../store/auth/selectors';
+import { GetUserName } from '../../../store/auth/selectors';
 import { ClearUserNameAction } from '../../../store/auth/actions';
 
 const DropDownProfileBtn = () => {
