@@ -1,7 +1,7 @@
 import React from 'react';
 import { MenuOutlined, SearchOutlined } from '@ant-design/icons';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 import Search from '../Search';
 import style from './Header.module.scss';
@@ -14,9 +14,12 @@ import { SetSearchTermAction } from '../../../store/search/actions';
 
 const Header = () => {
   const name = useSelector(GetUserName);
+  const navigate = useNavigate();
+
   const dispatch = useDispatch();
   const searchHandler = (searchTerm: string) => {
     dispatch(SetSearchTermAction(searchTerm));
+    navigate('/search');
   };
 
   return (
