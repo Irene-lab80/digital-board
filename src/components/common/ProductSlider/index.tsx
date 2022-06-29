@@ -34,16 +34,16 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ cname, src }) => {
         ref={slider1}>
 
         <div className={style.slide}>
-          <img alt="img" className={style.img} src={src} width={766} />
+          <img alt="img" className={style.img} src={`../${src}`} width={766} />
         </div>
         <div className={style.slide}>
-          <img alt="img" className={style.img} src={src} width={766} />
+          <img alt="img" className={style.img} src={`../${src}`} width={766} />
         </div>
         <div className={style.slide}>
-          <img alt="img" className={style.img} src={src} width={766} />
+          <img alt="img" className={style.img} src={`../${src}`} width={766} />
         </div>
         <div className={style.slide}>
-          <img alt="img" className={style.img} src={src} width={766} />
+          <img alt="img" className={style.img} src={`../${src}`} width={766} />
         </div>
       </Slider>
 
@@ -56,16 +56,16 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ cname, src }) => {
         swipeToSlide
         className={style.thumbnailswrapper}>
         <div className={style.thumbnailSlide}>
-          <img alt="img" className={style.thumbnailImg} src={src} width={162} />
+          <img alt="img" className={style.thumbnailImg} src={`../${src}`} width={162} />
         </div>
         <div className={style.thumbnailSlide}>
-          <img alt="img" className={style.thumbnailImg} src={src} width={162} />
+          <img alt="img" className={style.thumbnailImg} src={`../${src}`} width={162} />
         </div>
         <div className={style.thumbnailSlide}>
-          <img alt="img" className={style.thumbnailImg} src={src} width={162} />
+          <img alt="img" className={style.thumbnailImg} src={`../${src}`} width={162} />
         </div>
         <div className={style.thumbnailSlide}>
-          <img alt="img" className={style.thumbnailImg} src={src} width={162} />
+          <img alt="img" className={style.thumbnailImg} src={`../${src}`} width={162} />
         </div>
 
       </Slider>

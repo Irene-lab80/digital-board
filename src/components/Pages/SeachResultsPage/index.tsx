@@ -32,9 +32,9 @@ const SeachResultsPage = () => {
           }
         })
         .map((val) => (
-          <Link to={`/product/${val.id}`}>
+          <Link to={`/product/${val.id}`} key={val.id}>
             <div className="product">
-              <h2 className="title" key={val.id}>{val.title}</h2>
+              <h2 className="title">{val.title}</h2>
               <p className="description">{val.description}</p>
               <div className="date">{val.date}</div>
             </div>
