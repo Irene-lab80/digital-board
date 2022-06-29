@@ -1,6 +1,6 @@
 import React from 'react';
 import { MenuOutlined } from '@ant-design/icons';
-import Logo from '../Logo/Logo';
+import Logo from '../Header/Logo';
 import style from './HeaderAdmin.module.scss';
 import DropDownProfileBtnAdmin from '../DropDownProfileBtnAdmin/Index';
 

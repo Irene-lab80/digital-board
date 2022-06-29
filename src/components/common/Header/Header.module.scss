@@ -12,12 +12,13 @@
   justify-content: space-between;
   max-width: $content-width;
   margin: 0 auto;
-  padding: 0 15px;
-}
-
-.logo {
+  padding: 0 16px;
   @include media-tablet {
-    margin: 0 0 0 24px;
+    padding: 0 24px;
+  }
+    
+  @include media-mobile {
+    padding: 0  16px;
   }
 }
 
@@ -50,14 +51,26 @@
 
 }
 
-.searchMobile {
+.searchMobileIcon {
   display: none;
-  width: 24px;
-  height: 24px;
+  position: relative;
 
   @include media-730 {
     display: inline-flex;
   }
+}
+
+.searchMobile {
+  position: absolute;
+  top: 40px;
+  right: 175px;
+  display: flex;
+  width: 50%;
+}
+
+
+.searchMobile > span > span {
+  width: 160px;
 }
 
 .button {
@@ -106,4 +119,3 @@
     margin-left: 0;
   }
 }
-
