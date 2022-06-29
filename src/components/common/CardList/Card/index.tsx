@@ -5,15 +5,15 @@ import ViewsNumber from '../../ViewsNumber';
 import style from './Card.module.scss';
 
 type CardType = {
-  id: number;
-  title: string;
-  key: number;
-  tag: string;
-  description: string ;
-  price: number ;
-  date: string ;
-  views: number ;
-  src: string;
+  id: number | undefined;
+  title: string | undefined;
+  key: number | undefined;
+  tag: string | undefined ;
+  description: string | undefined;
+  price: number | undefined;
+  date: string | undefined;
+  views: number | undefined;
+  src: string | undefined;
 };
 
 const Card = ({ id, title, key, tag, description, price, date, views, src }: CardType) => (

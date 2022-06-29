@@ -3,6 +3,7 @@ import { ActionType, ProductsReducerType } from './types';
 
 const initialState: ProductsReducerType = {
   data: [],
+  userProductsData: [],
 };
 
 const ProductsReducer = (state = initialState, action: ActionType) => {
@@ -11,6 +12,12 @@ const ProductsReducer = (state = initialState, action: ActionType) => {
       return {
         ...state,
         data: action.payload,
+      };
+
+    case ProductsActionsType.getUserProducts:
+      return {
+        ...state,
+        userProductsData: action.payload,
       };
 
     default:

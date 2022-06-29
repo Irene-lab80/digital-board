@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { UploadOutlined } from '@ant-design/icons';
-import { Button, Form, Input, Upload } from 'antd';
+import { Button, Form, Input, Radio, RadioChangeEvent, Upload } from 'antd';
 // import { YMaps, Map } from 'react-yandex-maps';
+import { useSelector } from 'react-redux';
 import ProductMap from '../ProductMap';
 import style from './EditAdFrom.module.scss';
 import makeRequest from '../../../network';
+import { GetUserEmail } from '../../../store/auth/selectors';
 
 /* @ts-ignore this lib is incompatible with react18 */
 // const myMap = new YMaps.Map('map', {
@@ -17,9 +19,24 @@ import makeRequest from '../../../network';
 // });
 
 const EditAdFrom = () => {
+  const userEmail = useSelector(GetUserEmail);
+
+  // radio btns: pusblish = 1, hide = 0
+  const [publish, setPublish] = useState(1);
+  const onChangeRadio = (e: RadioChangeEvent) => {
+    console.log('radio checked', e.target.value);
+    setPublish(e.target.value);
+  };
+
+  // on save
   async function handleSubmit(values: any) {
-    await makeRequest({ url: '/products', method: 'POST', data: values });
-    console.log(values);
+    const newValues = { ...values };
+    newValues.userEmail = userEmail;
+    newValues.publish = publish;
+    newValues.date = new Date();
+
+    await makeRequest({ url: '/products', method: 'POST', data: newValues });
+    console.log(newValues);
     // TODO: remove alert
     alert('Успешно');
   }
@@ -84,13 +101,13 @@ const EditAdFrom = () => {
         <ProductMap coordinates={[[56.307129174823224, 44.00063863810793]]} />
       </div>
 
-      {/* <Form.Item label="Публикация">
-          <Radio.Group onChange={onChange} value={value}>
-            <Radio value={1}> Показать </Radio>
-            <Radio value={2}> Скрыть </Radio>
-          </Radio.Group>
-          <button type="button">Сбросить выбор</button>
-        </Form.Item> */}
+      <Form.Item label="Публикация">
+        <Radio.Group onChange={onChangeRadio} value={publish}>
+          <Radio value={1}> Показать </Radio>
+          <Radio value={0}> Скрыть </Radio>
+        </Radio.Group>
+        <button type="button">Сбросить выбор</button>
+      </Form.Item>
     </Form>
   );
 };

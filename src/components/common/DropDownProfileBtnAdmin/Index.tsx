@@ -8,7 +8,7 @@ import BookSvg from '../svg/BookSvg';
 import PanelSvg from '../svg/PanelSvg';
 import PersonSvg from '../svg/PersonSvg';
 import PersonSvgActive from '../svg/PersonSvgActive';
-import GetUserName from '../../../store/auth/selectors';
+import { GetUserName } from '../../../store/auth/selectors';
 
 // TODO: переделать стили? СДелать отдельный компонент?
 

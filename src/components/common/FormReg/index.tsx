@@ -1,26 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Form, Input, Checkbox } from 'antd';
 import style from './FormReg.module.scss';
 import makeRequest from '../../../network';
+import CustomButton from '../CustomButton';
 
 const FormReg: React.FC = () => {
-  // const [formData, setFormData] = useState({
-  //   email: '',
-  //   password: '',
-  //   firstname: '',
-  //   lastname: ''
-  // });
-
   async function handleSubmit(values: any) {
-    await makeRequest({ url: '/auth/register', method: 'POST', data: values });
+    await makeRequest({ url: '/users', method: 'POST', data: values });
     console.log(values);
     // TODO: remove alert
     alert('Успешно');
   }
-
-  // function handleChange(e: any) {
-  //   setFormData({ ...formData, [e.target.name]: e.target.value });
-  // }
 
   const validatePassword = (rule: any, value: any, callback: any) => {
     // at least one small letter, at least one capital, at least 8 digits, no special symbols
@@ -115,7 +105,7 @@ const FormReg: React.FC = () => {
       </Form.Item>
 
       <Form.Item>
-        <button className={style.button} type="submit">Создать аккаунт</button>
+        <CustomButton buttonStyle="btm--primary" type="submit" onClick={() => {}}>Создать аккаунт</CustomButton>
       </Form.Item>
     </Form>
   );

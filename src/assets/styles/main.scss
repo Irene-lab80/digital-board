@@ -40,6 +40,16 @@ li {
   display: inline-flex;
 }
 
+.page-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 .btn {
   display: flex;
   align-items: center;
@@ -118,11 +128,6 @@ ymaps.ymaps-2-1-79-controls__toolbar_left > ymaps:nth-child(2) {
   display: none;
 }
 
-// //styles for edit ads page
-// .edit-ad-form .ant-input {
-//   height: 64px;
-// }
-
 .ant-menu-item.item {
   height: 72px;
   display: flex;
@@ -135,8 +140,28 @@ ymaps.ymaps-2-1-79-controls__toolbar_left > ymaps:nth-child(2) {
   align-items: center;
 }
 
+#root > div > div > div.Header_wrapper__mfO2\+ > header > div.Header_searchWrapper__TG1N5 > div.Header_search__KfFxZ > span > span > span.ant-input-group-addon > button {
+  @extend .btn--primary;
+  @extend .btn;
+  border-radius: 0px 4px 4px 0px;
+  height: 36px !important ;
+}
+
+div.Header_search__KfFxZ > span > span > span.ant-input-affix-wrapper {
+  height: 36px;
+}
+
+.ant-list-pagination > ul {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.ant-spin-nested-loading > div > div {
+  display: none;
+}
+
 // .ant-upload-list {
-//   display: inline-flex;
+//  display: inline-flex;
 // }
 
 // .ant-form-item-control-input-content > span {
@@ -164,7 +189,7 @@ ymaps.ymaps-2-1-79-controls__toolbar_left > ymaps:nth-child(2) {
   margin: 8px;
   border-radius: 50%;
   border: 6px solid #fff;
-  border-color: #fff transparent #fff transparent;
+  border-color: $color-button-main transparent $color-button-main transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Input, Button } from 'antd';
+import CustomButton from '../CustomButton';
 
 const GetPasswordForm: React.FC = () => {
   const onFinish = (values: any) => {
@@ -34,9 +35,7 @@ const GetPasswordForm: React.FC = () => {
       </Form.Item>
 
       <Form.Item>
-        <Button type="primary" htmlType="submit">
-          Выслать ссылку
-        </Button>
+        <CustomButton buttonStyle="btn--primary" onClick={() => {}} type="submit">Выслать ссылку</CustomButton>
       </Form.Item>
 
       <Form.Item name="remember" valuePropName="checked">

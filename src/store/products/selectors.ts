@@ -1,5 +1,5 @@
 import { RootReducerType } from '../rootType';
 
-const getProducts = (state: RootReducerType) => state.products.data;
+export const getProducts = (state: RootReducerType) => state.products.data;
 
-export default getProducts;
+export const getUserProducts = (state: RootReducerType) => state.products.userProductsData;

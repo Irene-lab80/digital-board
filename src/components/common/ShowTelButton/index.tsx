@@ -15,7 +15,7 @@ const ShowTelButton:React.FC<ShowTelButtonProps> = ({ children }) => {
   return (
     <>
       <div className={style.btnWrapper}>
-        <CustomButton onClick={handler} buttonStyle="btn--primary">
+        <CustomButton onClick={handler} buttonStyle="btn--primary" type="button">
           <span>{NumberVisible ? 'Скрыть номер' : 'Показать номер'}</span>
         </CustomButton>
       </div>

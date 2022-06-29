@@ -7,15 +7,18 @@ import ExitSvg from '../svg/ExitSvg';
 import BookSvg from '../svg/BookSvg';
 import PersonSvg from '../svg/PersonSvg';
 import PersonSvgActive from '../svg/PersonSvgActive';
-import GetUserName from '../../../store/auth/selectors';
+import { GetUserName } from '../../../store/auth/selectors';
 import { ClearUserNameAction } from '../../../store/auth/actions';
 
 const DropDownProfileBtn = () => {
   const name = useSelector(GetUserName);
+  const nameArr = name.toUpperCase().split(' ');
+  const AVATAR_NAME = nameArr[0].slice(0, 1) + nameArr[1].slice(0, 1);
   const dispatch = useDispatch();
   const exitHandler = () => {
     dispatch(ClearUserNameAction());
   };
+
   const menu = (
     <Menu title="">
       <Menu.Item style={{
@@ -25,7 +28,7 @@ const DropDownProfileBtn = () => {
         paddingBottom: 16,
 
       }}>
-        <span className={style.avatar}>{name.slice(0, 2).toLocaleUpperCase()}</span>
+        <span className={style.avatar}>{AVATAR_NAME}</span>
         {name || 'no_auth'}
       </Menu.Item>
       <Link to="my-ads">

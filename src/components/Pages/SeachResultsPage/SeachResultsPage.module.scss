@@ -1,0 +1,47 @@
+@import '../../../assets/styles/constants';
+
+.pageWrapper {
+  align-self: start;
+  width: 100%;
+}
+
+.productWrapper {
+  margin-top: 40px;
+  color: $color-text-dark-l;
+}
+
+.title {
+  font-family: 'Jost';
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: initial;
+}
+
+.productWrapper:hover .title {
+  color: $color-button-main-hover;
+}
+
+.description, .date {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  opacity: 0.8;
+  margin-top: 24px;
+}
+
+.serchResulstNumber, .serchResulstNumber > span {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color:  $color-text-dark-l;
+  opacity: 0.6;
+}
+
+.pagination {
+  margin-top: 40px;
+  text-align: center;
+  margin-bottom: auto;
+}

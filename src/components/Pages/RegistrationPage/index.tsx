@@ -3,9 +3,11 @@ import FormReg from '../../common/FormReg';
 import FormHeader from '../../common/FormHeader';
 
 const RegistrationPage = () => (
-  <FormHeader>
-    <FormReg />
-  </FormHeader>
+  <div className="page-wrapper">
+    <FormHeader>
+      <FormReg />
+    </FormHeader>
+  </div>
 );
 
 export default RegistrationPage;

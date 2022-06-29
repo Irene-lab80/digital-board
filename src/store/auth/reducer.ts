@@ -3,6 +3,7 @@ import { UserInfoReducerType, ActionType } from './types';
 
 const initialState: UserInfoReducerType = {
   name: '',
+  email: '',
 };
 
 const userInfoReducer = (state = initialState, action: ActionType) => {
@@ -16,6 +17,12 @@ const userInfoReducer = (state = initialState, action: ActionType) => {
     case UserInfoActionType.clearUserName:
       return {
         ...initialState,
+      };
+
+    case UserInfoActionType.setUserEmail:
+      return {
+        ...state,
+        email: action.payload,
       };
 
     default:

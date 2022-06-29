@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import getProducts from '../../../../store/products/selectors';
+import { getProducts } from '../../../../store/products/selectors';
 
 type ButtonsType = {
   setItem: any,

@@ -6,15 +6,15 @@ import style from './CardList.module.scss';
 
 type UserListPropsType = {
   data: {
-    id: number;
-    title: string;
-    key: number;
-    tag: string;
-    description: string ;
-    price: number ;
-    date: string ;
-    views: number ;
-    src: string ;
+    id: number | undefined;
+    title: string | undefined;
+    key: number | undefined;
+    tag: string | undefined;
+    description: string | undefined;
+    price: number | undefined;
+    date: string | undefined;
+    views: number | undefined;
+    src: string | undefined;
   }[];
 };
 
@@ -32,21 +32,21 @@ const CardList = ({ data }: UserListPropsType) => {
       <div className={style.cardsWrapper}>
         {data?.slice(0, next)?.map((el) => (
           <Card
-            key={el.id}
-            id={el.id}
-            tag={el.tag}
-            title={el.title}
-            description={el.description}
-            price={el.price}
-            date={el.date}
-            views={el.views}
-            src={el.src}
+            key={el?.id}
+            id={el?.id}
+            tag={el?.tag}
+            title={el?.title}
+            description={el?.description}
+            price={el?.price}
+            date={el?.date}
+            views={el?.views}
+            src={el?.src}
       />
         ))}
       </div>
       <div className={style.btnWrapper}>
         {next < data?.length && (
-        <CustomButton onClick={() => {}} buttonStyle="btn--outline">
+        <CustomButton onClick={() => {}} buttonStyle="btn--outline" type>
           <LoadSvg />
           <button type="button" className={style.btnText} onClick={handleMoreImage}>
             Загрузить еще

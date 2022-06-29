@@ -1,10 +1,7 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import React from 'react';
-import moment from 'moment';
 import CardSmall from './CardSmall';
 import { data } from '../../../helpers';
-
-moment.locale('ru');
 
 type CardsSmallType = {
   bigTag: string | undefined;

@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import React, { useState } from 'react';
+import React from 'react';
 import { Form, Input } from 'antd';
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -7,15 +7,26 @@ import makeRequest from '../../../network';
 // import { useDispatch } from 'react-redux';
 // import { SetUserNameAction } from '../../../store/auth/actions';
 import style from './FormAuth.module.scss';
-import { SetUserNameAction } from '../../../store/auth/actions';
+import { SetUserEmailAction, SetUserNameAction } from '../../../store/auth/actions';
+import CustomButton from '../CustomButton';
 
 const FormAuth: React.FC = () => {
-  async function handleSubmit(values: any) {
+  const dispatch = useDispatch();
+
+  async function CheckUser(values: any) {
     // e.preventDefault();
-    // @ts-ignore
-    await makeRequest({ url: '/auth/login', method: 'POST', data: values }); // params: 'Authorization: Bearer <ACCESS_TOKEN>' ??
-    console.log(values);
-    alert('Успешно отправлено?');
+    const USERS = await makeRequest({ url: '/users' });
+    console.log(`Веденные данные: ${values.email}, ${values.password}`);
+    const INPUT_EMAIL = values.email;
+    const INPUT_PASSWORD = values.password;
+
+    USERS.forEach((el: any) => {
+      if (el.password === INPUT_PASSWORD && el.email === INPUT_EMAIL) {
+        alert('Пользователь существует!');
+        dispatch(SetUserNameAction(`${el.firstname} ${el.lastname}`));
+        dispatch(SetUserEmailAction(el.email));
+      }
+    });
   }
 
   // Код чтобы залогиниться, который работает
@@ -31,7 +42,7 @@ const FormAuth: React.FC = () => {
     <Form
       name="auth-form"
       initialValues={{ remember: true }}
-      onFinish={(e) => handleSubmit(e)}
+      onFinish={(e) => CheckUser(e)}
       autoComplete="off">
       <Form.Item
         className={style.inputWrapper}
@@ -61,7 +72,7 @@ const FormAuth: React.FC = () => {
       </Form.Item>
 
       <Form.Item>
-        <button className={style.button} type="submit">Войти</button>
+        <CustomButton buttonStyle="btm--primary" type="submit" onClick={() => {}}>Войти</CustomButton>
       </Form.Item>
     </Form>
   );
