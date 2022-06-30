@@ -10,14 +10,14 @@ type CardsSmallType = {
 
 // TODO: leave only two first cards by date
 const CardsSmall = ({ bigTag, id }: CardsSmallType) => {
-  const newData = data.filter(((el) => el.tag.toString() === bigTag && el.id !== id));
+  const newData = data.filter(((el) => el.tag.toString() === bigTag && el.id !== id)).slice(0, 2);
+
   const arrayOfCards = newData.map((el) => (
     <CardSmall
       id={el.id}
       key={el.id}
       title={el.title}
       src={el.src}
-      // date={el.date}
       />
   ));
 

@@ -128,9 +128,10 @@
   padding-top: 32px;
   padding-left: 32px;
   animation: menuSlideIn 0.2s ease-in;
-  width: 90vw;
+  width: 100vw;
   height: 100vh;
   left: 0;
+  z-index: 1000;
 
   @include media-tablet {
     top: 72px;
@@ -161,4 +162,8 @@
   100% {
     left: 0;
   }
+}
+
+.mobileButton {
+  max-width: fit-content;
 }

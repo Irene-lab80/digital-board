@@ -16,7 +16,6 @@ import ShowSearchMobile from './ShowSearchMobile';
 import HideSearchMobile from './HideSearchMobile';
 import BurgerMenuIcon from './BurgerMenuIcon';
 import ProfileLockIcon from '../svg/ProfileLockIcon';
-import MobileMenu from './MobileMenu';
 
 const Header = () => {
   const name = useSelector(GetUserName);
@@ -99,11 +98,13 @@ const Header = () => {
 
           {openMenu
           && <div className={style.MobileMenu}>
+              <div className={style.mobileButton}>
               <Link to="edit-ad">
                 <CustomButton onClick={() => {}} buttonStyle="btn--accent" type="button">
                   Подать объявление
                 </CustomButton>
               </Link>
+              </div>
               <ul className={style.list}>
                 <li className={style.listItem}>Вся лента</li>
                 <li className={style.listItem}>Автомобили</li>

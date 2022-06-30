@@ -1,8 +1,8 @@
-
+@import '../../../../assets/styles/mixins';
 @import '../../../../assets/styles/constants';
 
 .wrapper {
-  max-width: 363px;
+  // max-width: 363px;
   border-radius: 4px;
   position: relative;
   background: $color-primary-light;
@@ -14,7 +14,7 @@
 }
 
 .img {
-  width: 363px;
+  width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 4px 4px 0 0;
@@ -22,6 +22,10 @@
 
 .imgWrapper {
   position: relative;
+  width: 303px;
+  @include media-mobile-big {
+    width: 288px;
+  } 
 }
 
 .tag {

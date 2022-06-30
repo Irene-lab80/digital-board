@@ -4,11 +4,8 @@ import style from './CardSmall.module.scss';
 
 type CardPropsType = {
   id: number;
-  // tag: string;
   title: string;
-  // date: string;
   src: string;
-  // date: string;
 };
 
 const CardSmall = ({ id, title, src }: CardPropsType) => (
@@ -18,7 +15,6 @@ const CardSmall = ({ id, title, src }: CardPropsType) => (
         <img className={style.img} src={src} alt="product" />
       </div>
       <div className={style.title}>{title}</div>
-      {/* <div className={style.title}>{date}</div> */}
     </div>
   </NavLink>
 );

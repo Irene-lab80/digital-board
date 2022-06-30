@@ -4,9 +4,7 @@
 .pageWrapper {
   align-self: start;
   width: 100%;
-  @include media-730 {
-    padding: 24px;
-  }  
+  padding-left: 24px;
 }
 
 .productWrapper {
