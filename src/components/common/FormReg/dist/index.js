@@ -44,6 +44,7 @@ var network_1 = require("../../../network");
 var CustomButton_1 = require("../CustomButton");
 var FormReg = function () {
     var navigate = react_router_dom_1.useNavigate();
+    // const [success, setSucces] = useState('');
     function handleSubmit(values) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
@@ -52,9 +53,8 @@ var FormReg = function () {
                     case 1:
                         _a.sent();
                         console.log(values);
-                        setTimeout(function () {
-                            navigate('/auth');
-                        }, 5000);
+                        // setSucces('Регистраци прошла успешно! Вы будете перенаправлены на страницу входа');
+                        navigate('/auth');
                         return [2 /*return*/];
                 }
             });
@@ -70,49 +70,50 @@ var FormReg = function () {
             callback();
         }
     };
-    return (react_1["default"].createElement(antd_1.Form, { name: "reg-form", initialValues: { remember: true }, onFinish: function (e) { return handleSubmit(e); }, autoComplete: "off", layout: "vertical" },
-        react_1["default"].createElement(antd_1.Form.Item, { className: FormReg_module_scss_1["default"].inputWrapper, name: "firstname", rules: [{ required: true, message: 'Введите имя!' }, { max: 25, message: 'Имя не должно быть длиннее 25 символов' }] },
-            react_1["default"].createElement(antd_1.Input, { className: FormReg_module_scss_1["default"].input, placeholder: "\u0418\u043C\u044F", name: "firstname" })),
-        react_1["default"].createElement(antd_1.Form.Item, { className: FormReg_module_scss_1["default"].inputWrapper, name: "lastname", rules: [{ required: true, message: 'Введите фамилию!' }, { max: 25, message: 'Фамилия не должна быть длиннее 25 символов' }] },
-            react_1["default"].createElement(antd_1.Input, { className: FormReg_module_scss_1["default"].input, placeholder: "\u0424\u0430\u043C\u0438\u043B\u0438\u044F", name: "lastname" })),
-        react_1["default"].createElement(antd_1.Form.Item, { className: FormReg_module_scss_1["default"].inputWrapper, name: "email", rules: [
-                {
-                    type: 'email',
-                    message: 'Некорректный формат адреса электронной почты!'
-                },
-                {
-                    required: true,
-                    message: 'Введите E-mail!'
-                },
-            ] },
-            react_1["default"].createElement(antd_1.Input, { className: FormReg_module_scss_1["default"].input, placeholder: "Email", name: "email" })),
-        react_1["default"].createElement(antd_1.Form.Item, { className: FormReg_module_scss_1["default"].inputWrapper, name: "password", rules: [{ required: true, message: 'Введите пароль!' },
-                { validator: validatePassword }] },
-            react_1["default"].createElement(antd_1.Input.Password, { className: FormReg_module_scss_1["default"].input, placeholder: "\u041F\u0430\u0440\u043E\u043B\u044C", name: "password" })),
-        react_1["default"].createElement(antd_1.Form.Item, { className: FormReg_module_scss_1["default"].inputWrapper, name: "confirm", dependencies: ['password'], hasFeedback: true, rules: [
-                {
-                    required: true,
-                    message: 'Повторите пароль'
-                },
-                function (_a) {
-                    var getFieldValue = _a.getFieldValue;
-                    return ({
-                        validator: function (_, value) {
-                            if (!value || getFieldValue('password') === value) {
-                                return Promise.resolve();
+    return (react_1["default"].createElement(react_1["default"].Fragment, null,
+        react_1["default"].createElement(antd_1.Form, { name: "reg-form", initialValues: { remember: true }, onFinish: function (e) { return handleSubmit(e); }, autoComplete: "off", layout: "vertical" },
+            react_1["default"].createElement(antd_1.Form.Item, { className: FormReg_module_scss_1["default"].inputWrapper, name: "firstname", rules: [{ required: true, message: 'Введите имя!' }, { max: 25, message: 'Имя не должно быть длиннее 25 символов' }] },
+                react_1["default"].createElement(antd_1.Input, { className: FormReg_module_scss_1["default"].input, placeholder: "\u0418\u043C\u044F", name: "firstname" })),
+            react_1["default"].createElement(antd_1.Form.Item, { className: FormReg_module_scss_1["default"].inputWrapper, name: "lastname", rules: [{ required: true, message: 'Введите фамилию!' }, { max: 25, message: 'Фамилия не должна быть длиннее 25 символов' }] },
+                react_1["default"].createElement(antd_1.Input, { className: FormReg_module_scss_1["default"].input, placeholder: "\u0424\u0430\u043C\u0438\u043B\u0438\u044F", name: "lastname" })),
+            react_1["default"].createElement(antd_1.Form.Item, { className: FormReg_module_scss_1["default"].inputWrapper, name: "email", rules: [
+                    {
+                        type: 'email',
+                        message: 'Некорректный формат адреса электронной почты!'
+                    },
+                    {
+                        required: true,
+                        message: 'Введите E-mail!'
+                    },
+                ] },
+                react_1["default"].createElement(antd_1.Input, { className: FormReg_module_scss_1["default"].input, placeholder: "Email", name: "email" })),
+            react_1["default"].createElement(antd_1.Form.Item, { className: FormReg_module_scss_1["default"].inputWrapper, name: "password", rules: [{ required: true, message: 'Введите пароль!' },
+                    { validator: validatePassword }] },
+                react_1["default"].createElement(antd_1.Input.Password, { className: FormReg_module_scss_1["default"].input, placeholder: "\u041F\u0430\u0440\u043E\u043B\u044C", name: "password" })),
+            react_1["default"].createElement(antd_1.Form.Item, { className: FormReg_module_scss_1["default"].inputWrapper, name: "confirm", dependencies: ['password'], hasFeedback: true, rules: [
+                    {
+                        required: true,
+                        message: 'Повторите пароль'
+                    },
+                    function (_a) {
+                        var getFieldValue = _a.getFieldValue;
+                        return ({
+                            validator: function (_, value) {
+                                if (!value || getFieldValue('password') === value) {
+                                    return Promise.resolve();
+                                }
+                                return Promise.reject(new Error('Пароли не совпадают!'));
                             }
-                            return Promise.reject(new Error('Пароли не совпадают!'));
-                        }
-                    });
-                },
-            ] },
-            react_1["default"].createElement(antd_1.Input.Password, { className: FormReg_module_scss_1["default"].input, placeholder: "\u041F\u043E\u0432\u0442\u043E\u0440\u0438\u0442\u0435 \u043F\u0430\u0440\u043E\u043B\u044C" })),
-        react_1["default"].createElement(antd_1.Form.Item, { name: "remember", valuePropName: "checked" },
-            react_1["default"].createElement(antd_1.Checkbox, null,
-                "\u041F\u0440\u0438\u043D\u0438\u043C\u0430\u044E \u0443\u0441\u043B\u043E\u0432\u0438\u044F",
-                react_1["default"].createElement("br", null),
-                react_1["default"].createElement("a", { href: "!#" }, "\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\u0441\u043A\u043E\u0433\u043E \u0441\u043E\u0433\u043B\u0430\u0448\u0435\u043D\u0438\u044F"))),
-        react_1["default"].createElement(antd_1.Form.Item, null,
-            react_1["default"].createElement(CustomButton_1["default"], { buttonStyle: "btm--primary", type: "submit", onClick: function () { } }, "\u0421\u043E\u0437\u0434\u0430\u0442\u044C \u0430\u043A\u043A\u0430\u0443\u043D\u0442"))));
+                        });
+                    },
+                ] },
+                react_1["default"].createElement(antd_1.Input.Password, { className: FormReg_module_scss_1["default"].input, placeholder: "\u041F\u043E\u0432\u0442\u043E\u0440\u0438\u0442\u0435 \u043F\u0430\u0440\u043E\u043B\u044C" })),
+            react_1["default"].createElement(antd_1.Form.Item, { name: "remember", valuePropName: "checked" },
+                react_1["default"].createElement(antd_1.Checkbox, null,
+                    "\u041F\u0440\u0438\u043D\u0438\u043C\u0430\u044E \u0443\u0441\u043B\u043E\u0432\u0438\u044F",
+                    react_1["default"].createElement("br", null),
+                    react_1["default"].createElement("a", { href: "!#" }, "\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C\u0441\u043A\u043E\u0433\u043E \u0441\u043E\u0433\u043B\u0430\u0448\u0435\u043D\u0438\u044F"))),
+            react_1["default"].createElement(antd_1.Form.Item, null,
+                react_1["default"].createElement(CustomButton_1["default"], { buttonStyle: "btm--primary", type: "submit", onClick: function () { } }, "\u0421\u043E\u0437\u0434\u0430\u0442\u044C \u0430\u043A\u043A\u0430\u0443\u043D\u0442")))));
 };
 exports["default"] = FormReg;
