@@ -1,18 +1,25 @@
 @import '../../../assets/styles/constants';
+@import '../../../assets/styles/mixins';
+
 
 .wrapper {
   display: flex;
   justify-content: space-between;
-  // TODO:fix for adaptive
-  width: 1170px;
+  width: 100%;
 }
 
 .mainWrapper {
   width: calc(867 / 1170 * 100%);
+  @include media-tablet {
+    width: 100%;  
+  } 
 }
 
-.nav {
+.profileMenu {
   width: calc(263 / 1170 * 100%);
+  @include media-tablet {
+    display: none;
+  }
 }
 
 .title {
@@ -34,7 +41,10 @@
 }
 
 .btnWrapper {
-  width: 147px
+  width: 147px;
+  @include media-mobile {
+    display: flex;
+   }
 }
 
 .backBtn {

@@ -23,7 +23,9 @@ const FormAuth: React.FC = () => {
     USERS.forEach((el: any) => {
       if (el.password === INPUT_PASSWORD && el.email === INPUT_EMAIL) {
         dispatch(SetUserNameAction(`${el.firstname} ${el.lastname}`));
-        dispatch(SetUserEmailAction(el.email));
+        // dispatch(SetUserEmailAction(el.email));
+
+        localStorage.setItem('currentloggedin', el.email);
       } else if (el.email !== INPUT_EMAIL) {
         setErrorMessage('Пользователя с указанным email не существует!');
       } else if (el.password !== INPUT_EMAIL && el.email === INPUT_EMAIL) {
