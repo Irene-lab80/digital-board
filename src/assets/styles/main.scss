@@ -13,7 +13,7 @@ body {
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
-  background: rgba(42, 47, 55, 0.02);;
+  background: #fbfbfb;
 }
 
 button {
@@ -235,11 +235,16 @@ div.Header_search__KfFxZ > span > span > span.ant-input-affix-wrapper {
       border: 1px solid $color-button-main;
       color: $color-button-main;
     }
+
+    &:focus {
+     @extend .menu-item--active;
+     border: none;
+    }
   }
 }
 
 .menu-item--active {
-  @extend .menu-item;
+  // @extend .menu-item;
   background-color: $color-button-accented;
   color: $color-text-dark-l;
   // pointer-events: none;

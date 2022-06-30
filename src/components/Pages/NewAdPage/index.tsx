@@ -8,9 +8,9 @@ import ProfileMenu from '../../common/ProfileMenu';
 const NewAdPage = () => (
   <div className="page-wrapper">
     <div className={style.wrapper}>
-      <nav className={style.nav}>
+      <div className={style.profileMenu}>
         <ProfileMenu />
-      </nav>
+      </div>
       <div className={style.mainWrapper}>
         <GoBackBtn>
           Вернуться назад

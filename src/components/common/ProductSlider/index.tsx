@@ -6,11 +6,10 @@ import 'slick-carousel/slick/slick-theme.css';
 import style from './ProductSlider.module.scss';
 
 type ProductSliderProps = {
-  cname: string;
   src: string | undefined;
 }
 
-const ProductSlider: React.FC<ProductSliderProps> = ({ cname, src }) => {
+const ProductSlider: React.FC<ProductSliderProps> = ({ src }) => {
   const [nav1, setNav1] = useState();
   const [nav2, setNav2] = useState();
   const slider1: any = useRef(null); // TODO: remove any??
@@ -22,8 +21,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ cname, src }) => {
   }, []);
 
   return (
-
-    <div className={cname}>
+    <>
       <Slider
         className={style.wrapper}
         autoplay={false}
@@ -34,16 +32,16 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ cname, src }) => {
         ref={slider1}>
 
         <div className={style.slide}>
-          <img alt="img" className={style.img} src={`../${src}`} width={766} />
+          <img alt="img" className={style.img} src={`../${src}`} />
         </div>
         <div className={style.slide}>
-          <img alt="img" className={style.img} src={`../${src}`} width={766} />
+          <img alt="img" className={style.img} src={`../${src}`} />
         </div>
         <div className={style.slide}>
-          <img alt="img" className={style.img} src={`../${src}`} width={766} />
+          <img alt="img" className={style.img} src={`../${src}`} />
         </div>
         <div className={style.slide}>
-          <img alt="img" className={style.img} src={`../${src}`} width={766} />
+          <img alt="img" className={style.img} src={`../${src}`} />
         </div>
       </Slider>
 
@@ -56,21 +54,19 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ cname, src }) => {
         swipeToSlide
         className={style.thumbnailswrapper}>
         <div className={style.thumbnailSlide}>
-          <img alt="img" className={style.thumbnailImg} src={`../${src}`} width={162} />
+          <img alt="img" className={style.thumbnailImg} src={`../${src}`} />
         </div>
         <div className={style.thumbnailSlide}>
-          <img alt="img" className={style.thumbnailImg} src={`../${src}`} width={162} />
+          <img alt="img" className={style.thumbnailImg} src={`../${src}`} />
         </div>
         <div className={style.thumbnailSlide}>
-          <img alt="img" className={style.thumbnailImg} src={`../${src}`} width={162} />
+          <img alt="img" className={style.thumbnailImg} src={`../${src}`} />
         </div>
         <div className={style.thumbnailSlide}>
-          <img alt="img" className={style.thumbnailImg} src={`../${src}`} width={162} />
+          <img alt="img" className={style.thumbnailImg} src={`../${src}`} />
         </div>
-
       </Slider>
-
-    </div>
+    </>
   );
 };
 

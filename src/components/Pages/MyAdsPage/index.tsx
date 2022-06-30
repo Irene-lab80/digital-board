@@ -53,7 +53,9 @@ const MyAdsPage = () => {
   return (
     <div className="page-wrapper">
       <div className={style.wrapper}>
-        <ProfileMenu />
+        <div className={style.profileMenu}>
+          <ProfileMenu />
+        </div>
         <main className={style.main}>
           <div className={style.top}>
             <div className={style.titleWrapper}>
@@ -77,7 +79,7 @@ const MyAdsPage = () => {
               rowKey={(data) => data.id}
               dataSource={userProductData}
               columns={columns}
-          />
+            />
           </div>
         </main>
       </div>

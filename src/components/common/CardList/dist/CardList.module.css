@@ -1,19 +1,16 @@
-@import '../../../assets/styles/constants';
-@import '../../../assets/styles/mixins';
-
 .cardsWrapper {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 40px;
-  max-width: $content-width;
+  max-width: 1200px;
   padding-top: 40px;
 }
 
 .btnWrapper {
   display: flex;
   justify-content: center;
-  margin: 40px auto 0;  
+  margin: 40px auto 0;
   max-width: 242px;
 }
 

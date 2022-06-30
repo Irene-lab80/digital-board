@@ -34,37 +34,52 @@ const ProductPage = ({ productInfo }:ProductPagePropsType) => {
 
   return (
     <div className="page-wrapper">
-      <div className={style.arrowBtn}>
-        <GoBackBtn> </GoBackBtn>
-      </div>
       <div className={style.wrapper}>
+        <div className={style.arrowBtn}>
+          <GoBackBtn> </GoBackBtn>
+        </div>
+
+        <div className={style.header}>
+          <div className={style.left}>
+            <div className={style.date}>{moment(productInfo?.date).format('LL')}</div>
+            <h2 className={style.title}>{productInfo?.title}</h2>
+            <div className={style.number}>WS-25645-253-55</div>
+            <ViewsNumber cname={style.views}>{productInfo?.views}</ViewsNumber>
+          </div>
+
+          <div className={style.headerRight}>
+            <div className={style.price}>{`${productInfo?.price?.toLocaleString('ru')} Р`}</div>
+            <div className={style.telButton}>
+              <ShowTelButton>{productInfo?.tel}</ShowTelButton>
+            </div>
+          </div>
+        </div>
+
         <main className={style.main}>
-          <div className={style.date}>{moment(productInfo?.date).format('LL')}</div>
-          <h2 className={style.title}>{productInfo?.title}</h2>
-          {/* TODO: is that id? */}
-          <div className={style.number}>WS-25645-253-55</div>
-          <ViewsNumber cname={style.views}>{productInfo?.views}</ViewsNumber>
-          <ProductSlider cname={style.slider} src={productInfo?.src} />
-          <div className={style.info}>
-            <div className={style.infoTitle}>Описание:</div>
-            <p className={style.description}>{productInfo?.description}</p>
-            <div className={style.infoTitle}>Местоположение:</div>
-            <span className={style.location}>{productInfo?.location}</span>
+          <div className={style.left}>
+            <div className={style.slider}>
+              <ProductSlider src={productInfo?.src} />
+            </div>
+            <div className={style.info}>
+              <div className={style.infoTitle}>Описание:</div>
+              <p className={style.description}>{productInfo?.description}</p>
+              <div className={style.infoTitle}>Местоположение:</div>
+              <span className={style.location}>{productInfo?.location}</span>
+            </div>
+            <div className={style.map}>
+              <ProductMap coordinates={[
+                productInfo?.coordinates
+              ] && [defaultCoordinates]} />
+            </div>
           </div>
-          <div className={style.map}>
-            <ProductMap coordinates={[
-              productInfo?.coordinates
-            ] && [defaultCoordinates]} />
-          </div>
+
+          <aside className={style.aside}>
+            <div className={style.more}>Смотрите также:</div>
+            <div className={style.smallCards}>
+              <CardsSmall bigTag={productInfo?.tag} id={productInfo?.id} />
+            </div>
+          </aside>
         </main>
-        <aside className={style.aside}>
-          <div className={style.price}>{`${productInfo?.price?.toLocaleString('ru')} Р`}</div>
-          <div className={style.button}>
-            <ShowTelButton>{productInfo?.tel}</ShowTelButton>
-          </div>
-          <div className={style.more}>Смотрите также:</div>
-          <CardsSmall bigTag={productInfo?.tag} id={productInfo?.id} />
-        </aside>
       </div>
     </div>
   );
