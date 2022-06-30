@@ -11,7 +11,9 @@ const FormReg: React.FC = () => {
   async function handleSubmit(values: any) {
     await makeRequest({ url: '/users', method: 'POST', data: values });
     console.log(values);
-    navigate('/auth');
+    setTimeout(() => {
+      navigate('/auth');
+    }, 5000);
   }
 
   const validatePassword = (rule: any, value: any, callback: any) => {

@@ -52,7 +52,9 @@ var FormReg = function () {
                     case 1:
                         _a.sent();
                         console.log(values);
-                        navigate('/auth');
+                        setTimeout(function () {
+                            navigate('/auth');
+                        }, 5000);
                         return [2 /*return*/];
                 }
             });

@@ -58,20 +58,20 @@ const Header = () => {
         </div>
         <div className={style.searchWrapper}>
           <div className={style.search}>
-            <Input.Search
-              onSearch={searchHandler}
-              enterButton="Искать"
-              allowClear
-              prefix={<SearchOutlined style={{
-                opacity: '0.4',
-                fontSize: '24px'
-              }} />}
+             <Input.Search
+               onSearch={searchHandler}
+               enterButton="Искать"
+               allowClear
+               prefix={<SearchOutlined style={{
+                 opacity: '0.4',
+                 fontSize: '24px'
+               }} />}
               />
           </div>
           <div className={style.searchMobileIcon}>
-            {!open
-              ? <ShowSearchMobile onClick={showSearch} />
-              : <HideSearchMobile onClick={hideSearch} />}
+             {!open
+               ? <ShowSearchMobile onClick={showSearch} />
+               : <HideSearchMobile onClick={hideSearch} />}
             {open && <Input.Search
               className={style.searchMobile}
               onSearch={searchHandler}
