@@ -1,15 +1,17 @@
 import React from 'react';
 import { Form, Input, Checkbox } from 'antd';
+import { useNavigate } from 'react-router-dom';
 import style from './FormReg.module.scss';
 import makeRequest from '../../../network';
 import CustomButton from '../CustomButton';
 
 const FormReg: React.FC = () => {
+  const navigate = useNavigate();
+
   async function handleSubmit(values: any) {
     await makeRequest({ url: '/users', method: 'POST', data: values });
     console.log(values);
-    // TODO: remove alert
-    alert('Успешно');
+    navigate('/auth');
   }
 
   const validatePassword = (rule: any, value: any, callback: any) => {

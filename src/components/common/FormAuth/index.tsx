@@ -1,17 +1,17 @@
 /* eslint-disable max-len */
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Input } from 'antd';
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import makeRequest from '../../../network';
-// import { useDispatch } from 'react-redux';
-// import { SetUserNameAction } from '../../../store/auth/actions';
 import style from './FormAuth.module.scss';
 import { SetUserEmailAction, SetUserNameAction } from '../../../store/auth/actions';
 import CustomButton from '../CustomButton';
 
 const FormAuth: React.FC = () => {
   const dispatch = useDispatch();
+
+  const [errorMessage, setErrorMessage] = useState('');
 
   async function CheckUser(values: any) {
     // e.preventDefault();
@@ -22,21 +22,15 @@ const FormAuth: React.FC = () => {
 
     USERS.forEach((el: any) => {
       if (el.password === INPUT_PASSWORD && el.email === INPUT_EMAIL) {
-        alert('Пользователь существует!');
         dispatch(SetUserNameAction(`${el.firstname} ${el.lastname}`));
         dispatch(SetUserEmailAction(el.email));
+      } else if (el.email !== INPUT_EMAIL) {
+        setErrorMessage('Пользователя с указанным email не существует!');
+      } else if (el.password !== INPUT_EMAIL && el.email === INPUT_EMAIL) {
+        setErrorMessage('Некорректный пароль!');
       }
     });
   }
-
-  // Код чтобы залогиниться, который работает
-  // const dispatch = useDispatch();
-  // const handleSubmit = (values: any) => {
-  //   console.log('Success:', values);
-  //   if (values) {
-  // dispatch(SetUserNameAction(values.email));
-  //   }
-  // };
 
   return (
     <Form
@@ -44,6 +38,7 @@ const FormAuth: React.FC = () => {
       initialValues={{ remember: true }}
       onFinish={(e) => CheckUser(e)}
       autoComplete="off">
+
       <Form.Item
         className={style.inputWrapper}
         name="email"
@@ -64,12 +59,20 @@ const FormAuth: React.FC = () => {
         className={style.inputWrapper}
         name="password"
         rules={[{ required: true, message: 'Введите пароль!' }]}>
-        <Input className={style.input} type="text" placeholder="Password" name="password" />
+        <Input.Password className={style.input} type="text" placeholder="Password" name="password" />
       </Form.Item>
 
       <Form.Item>
         <NavLink className={style.forgotPassword} to="/get-pass">Забыли пароль?</NavLink>
       </Form.Item>
+
+      {errorMessage && (
+        <p className={style.error}>
+          {' '}
+          {errorMessage}
+          {' '}
+        </p>
+      )}
 
       <Form.Item>
         <CustomButton buttonStyle="btm--primary" type="submit" onClick={() => {}}>Войти</CustomButton>
