@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { getProducts } from '../../../../store/products/selectors';
 
@@ -9,9 +9,6 @@ type ButtonsType = {
 
 const Buttons = ({ setItem, menuItems }: ButtonsType) => {
   const productData = useSelector(getProducts);
-  // TODO: сделать активные кнопки?
-  const [filter, setFilter]: [any, any] = useState('Все товары');
-
   const filterItem = (curTag: string) => {
     const newItem = productData.filter((newval) => newval.tag === curTag);
     setItem(newItem);
@@ -21,7 +18,7 @@ const Buttons = ({ setItem, menuItems }: ButtonsType) => {
     <div className="scrolling-wrapper">
       <button
         type="button"
-        className="menu-item--active"
+        className="menu-item"
         onClick={() => setItem(productData)}>
         Все товары
       </button>
@@ -29,7 +26,7 @@ const Buttons = ({ setItem, menuItems }: ButtonsType) => {
         <button
           type="button"
           id={val}
-          className={filter === { val } ? 'menu-item--active menu-item' : 'menu-item'}
+          className="menu-item"
           onClick={() => filterItem(val)}>
           {val}
         </button>
