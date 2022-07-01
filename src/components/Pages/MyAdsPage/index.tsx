@@ -28,18 +28,13 @@ const columns = [
     title: 'Дата публикации',
     dataIndex: 'date',
     key: 'date',
-    // render: (row: any) => <a> {'123' + row.date} </a>
+    render: ((date:string) => moment(date).format('LL'))
   },
-  // {
-  //   title: 'Публикация',
-  //   dataIndex: 'published',
-  //   key: 'published',
-  // },
   {
     title: '',
     dataIndex: '',
     key: 'x',
-    render: () => <MenuDots />
+    render: () => <div className={style.MenuDots}><MenuDots /></div>
   },
 ];
 
@@ -49,11 +44,10 @@ const MyAdsPage = () => {
   const localUserEmail = useSelector(GetUserEmail);
   const userProductData = productData.filter((el) => el.userEmail === localUserEmail);
   // TODO: отформатировать дату
-  // {moment(date).format('LL')}
   return (
     <div className="page-wrapper">
       <div className={style.wrapper}>
-        <div className={style.profileMenu}>
+        <div className={style.ProfileMenu}>
           <ProfileMenu />
         </div>
         <main className={style.main}>

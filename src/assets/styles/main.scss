@@ -156,10 +156,6 @@ div.Header_search__KfFxZ > span > span > span.ant-input-affix-wrapper {
   margin-top: 40px;
 }
 
-.ant-spin-nested-loading > div > div {
-  display: none;
-}
-
 // .ant-upload-list {
 //  display: inline-flex;
 // }
@@ -244,8 +240,6 @@ div.Header_search__KfFxZ > span > span > span.ant-input-affix-wrapper {
 }
 
 .menu-item--active {
-  // @extend .menu-item;
   background-color: $color-button-accented;
   color: $color-text-dark-l;
-  // pointer-events: none;
 }
