@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-closing-tag-location */
 /* eslint-disable consistent-return */
 /* eslint-disable array-callback-return */
 import React from 'react';
@@ -18,42 +19,36 @@ const columns = [
     title: 'Название объявления',
     dataIndex: 'title',
     key: 'title',
+    sorter: (a: any, b: any) => a.title.localeCompare(b.title),
   },
   {
     title: 'Категория',
     dataIndex: 'tag',
     key: 'category',
+
   },
   {
     title: 'Дата публикации',
     dataIndex: 'date',
     key: 'date',
-    // render: (row: any) => <a> {'123' + row.date} </a>
+    render: ((date:string) => moment(date).format('LL'))
   },
-  // {
-  //   title: 'Публикация',
-  //   dataIndex: 'published',
-  //   key: 'published',
-  // },
   {
     title: '',
     dataIndex: '',
     key: 'x',
-    render: () => <MenuDots />
+    render: () => <div className={style.MenuDots}><MenuDots /></div>
   },
 ];
 
 const MyAdsPage = () => {
-  // const userProductData = useSelector(getUserProducts);
   const productData = useSelector(getProducts);
   const localUserEmail = useSelector(GetUserEmail);
   const userProductData = productData.filter((el) => el.userEmail === localUserEmail);
-  // TODO: отформатировать дату
-  // {moment(date).format('LL')}
   return (
     <div className="page-wrapper">
       <div className={style.wrapper}>
-        <div className={style.profileMenu}>
+        <div className={style.ProfileMenu}>
           <ProfileMenu />
         </div>
         <main className={style.main}>

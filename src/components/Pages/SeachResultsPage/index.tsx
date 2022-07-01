@@ -1,9 +1,9 @@
 /* eslint-disable consistent-return */
 /* eslint-disable array-callback-return */
 // import Search from 'antd/lib/input/Search';
-import { List, Pagination } from 'antd';
+import { List } from 'antd';
 import moment from 'moment';
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getProducts } from '../../../store/products/selectors';
@@ -15,8 +15,6 @@ moment.locale('ru');
 const SeachResultsPage = () => {
   const search = useSelector(GetSearchTerm);
   const productsData = useSelector(getProducts);
-
-  const [posts, setPosts] = useState([]);
 
   const results = productsData.filter((val) => {
     if (search === '') {

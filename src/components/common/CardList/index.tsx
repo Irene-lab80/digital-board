@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CustomButton from '../CustomButton';
 import LoadSvg from '../svg/LoadSvg';
 import Card from './Card';
@@ -18,13 +18,28 @@ type UserListPropsType = {
   }[];
 };
 
-const imagePerRow = 9;
-
 const CardList = ({ data }: UserListPropsType) => {
-  const [next, setNext] = useState(imagePerRow);
+  const [width, setWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleWindowResize);
+
+    // Return a function from the effect that removes the event listener
+    return () => window.removeEventListener('resize', handleWindowResize);
+  }, []);
+  let imagePerPage = 9;
+  if (width < 1200) {
+    imagePerPage = 6;
+  }
+
+  if (width < 768) {
+    imagePerPage = 3;
+  }
+
+  const [next, setNext] = useState(imagePerPage);
 
   const handleMoreImage = () => {
-    setNext(next + imagePerRow);
+    setNext(next + imagePerPage);
   };
 
   return (

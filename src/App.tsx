@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import 'antd/dist/antd.min.css';
 import { Route, Routes } from 'react-router-dom';
-import ClipLoader from 'react-spinners/ClipLoader';
 import PageWrapper from './components/common/PageWrapper';
 import AuthContainer from './components/Containers/AuthContainer';
 import RegistrationContainer from './components/Containers/RegistrationContainer';
@@ -31,11 +30,12 @@ const App = () => {
     <div className="App">
       {
         loading
-          ? <div
+          ? <div className="lds-dual-ring-wrapper">
+            <div
               className="lds-dual-ring"
-              style={{ position: 'absolute',
-                top: '50%',
-                left: '50%' }} />
+              style={{ display: 'block',
+              }} />
+            </div>
           : <Routes>
             <Route path="/" element={<PageWrapper />}>
               <Route path="main" element={<MainPageContainer />} />

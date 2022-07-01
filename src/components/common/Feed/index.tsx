@@ -13,7 +13,6 @@ const Feed = () => {
   const menuItems = ['Автомобили', 'Аксессуары', 'Мебель', 'Одежда', 'Спорт', 'Техника', 'Товары для дома'];
 
   return (
-
     <div className={style.feedwrapper}>
       <nav className={style.scrollingWrapper}>
         <Buttons

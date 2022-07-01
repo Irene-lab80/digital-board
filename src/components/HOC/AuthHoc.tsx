@@ -10,7 +10,6 @@ type AuthHocProps = {
 
 const AuthHoc: React.FC<AuthHocProps> = ({ children }) => {
   const name = useSelector(GetUserName);
-  // const name = localStorage.getItem('currentloggedin');
   let isAuth;
   const location = useLocation();
   if (name) {
@@ -18,11 +17,9 @@ const AuthHoc: React.FC<AuthHocProps> = ({ children }) => {
   } else {
     isAuth = false;
   }
-
   if (isAuth) {
     return <>{ children }</>;
   }
-
   return <Navigate to="/auth" state={{ from: location }} />;
 };
 

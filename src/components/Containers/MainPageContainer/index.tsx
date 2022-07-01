@@ -6,7 +6,6 @@ import MainPage from '../../Pages/MainPage';
 const MainPageContainer = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    // TODO: remove ts-ignore?
     // @ts-ignore
     dispatch(GetProductsAction());
   }, []);
