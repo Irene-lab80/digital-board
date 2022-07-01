@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import 'antd/dist/antd.min.css';
 import { Route, Routes } from 'react-router-dom';
-import ClipLoader from 'react-spinners/ClipLoader';
 import PageWrapper from './components/common/PageWrapper';
 import AuthContainer from './components/Containers/AuthContainer';
 import RegistrationContainer from './components/Containers/RegistrationContainer';
