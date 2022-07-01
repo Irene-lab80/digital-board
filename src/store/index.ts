@@ -7,7 +7,6 @@ const rootReducer = combineReducers({
   auth: userInfoReducer,
   products: productsReducer,
   search: SearchReducer,
-
 });
 
 export default rootReducer;

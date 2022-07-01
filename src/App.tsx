@@ -30,11 +30,12 @@ const App = () => {
     <div className="App">
       {
         loading
-          ? <div
+          ? <div className="lds-dual-ring-wrapper">
+            <div
               className="lds-dual-ring"
-              style={{ position: 'absolute',
-                top: '50%',
-                left: '50%' }} />
+              style={{ display: 'block',
+              }} />
+            </div>
           : <Routes>
             <Route path="/" element={<PageWrapper />}>
               <Route path="main" element={<MainPageContainer />} />

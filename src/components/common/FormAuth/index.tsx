@@ -10,11 +10,8 @@ import CustomButton from '../CustomButton';
 
 const FormAuth: React.FC = () => {
   const dispatch = useDispatch();
-
   const [errorMessage, setErrorMessage] = useState('');
-
   async function CheckUser(values: any) {
-    // e.preventDefault();
     const USERS = await makeRequest({ url: '/users' });
     console.log(`Веденные данные: ${values.email}, ${values.password}`);
     const INPUT_EMAIL = values.email;
@@ -24,8 +21,6 @@ const FormAuth: React.FC = () => {
       if (el.password === INPUT_PASSWORD && el.email === INPUT_EMAIL) {
         dispatch(SetUserNameAction(`${el.firstname} ${el.lastname}`));
         dispatch(SetUserEmailAction(el.email));
-
-        // localStorage.setItem('currentloggedin', el.email);
       } else if (el.email !== INPUT_EMAIL) {
         setErrorMessage('Пользователя с указанным email не существует!');
       } else if (el.password !== INPUT_EMAIL && el.email === INPUT_EMAIL) {
@@ -40,30 +35,25 @@ const FormAuth: React.FC = () => {
       initialValues={{ remember: true }}
       onFinish={(e) => CheckUser(e)}
       autoComplete="off">
-
       <Form.Item
         className={style.inputWrapper}
         name="email"
         rules={[
-          {
-            type: 'email',
+          { type: 'email',
             message: 'Некорректный E-mail!',
           },
-          {
-            required: true,
+          { required: true,
             message: 'Введите E-mail!',
           },
         ]}>
         <Input className={style.input} type="text" placeholder="Email" name="email" />
       </Form.Item>
-
       <Form.Item
         className={style.inputWrapper}
         name="password"
         rules={[{ required: true, message: 'Введите пароль!' }]}>
         <Input.Password className={style.input} type="text" placeholder="Password" name="password" />
       </Form.Item>
-
       <Form.Item>
         <NavLink className={style.forgotPassword} to="/get-pass">Забыли пароль?</NavLink>
       </Form.Item>
