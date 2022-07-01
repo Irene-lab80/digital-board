@@ -8,7 +8,11 @@
 }
 
 .wrapper:hover .text{
-  color: $color-button-main-hover;
+  color: $color-button-main;
+}
+
+.wrapper:hover span svg path{
+  stroke: $color-button-main;
 }
 
 .text {
@@ -28,4 +32,17 @@
   display: flex;
   align-items: center;
   margin-right: 8px;
+
+  @include media-tablet {
+    display: none;
+  }
+}
+
+.iconMobile {
+  display: none;
+  font-size: 24px;
+
+  @include media-tablet {
+    display: inline-flex;
+  }
 }

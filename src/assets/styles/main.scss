@@ -50,6 +50,14 @@ li {
   // padding: 0 20px;
 }
 
+.svg:hover path {
+  stroke: $color-button-main;
+}
+
+.svg:hover line {
+  stroke: $color-button-main;
+}
+
 .btn {
   display: flex;
   align-items: center;

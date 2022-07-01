@@ -15,7 +15,6 @@ import { SetSearchTermAction } from '../../../store/search/actions';
 import ShowSearchMobile from './ShowSearchMobile';
 import HideSearchMobile from './HideSearchMobile';
 import BurgerMenuIcon from './BurgerMenuIcon';
-import ProfileLockIcon from '../svg/ProfileLockIcon';
 
 const Header = () => {
   const name = useSelector(GetUserName);
@@ -85,9 +84,6 @@ const Header = () => {
               </CustomButton>
             </Link>) : <ModalBtn /> }
         </div>
-        <div className={style.profileLockIcon}>
-          <ProfileLockIcon />
-        </div>
         <div className={style.profileButton}>
           {name ? <DropDownProfileBtn /> : <ProfileButton>Войти</ProfileButton> }
         </div>
@@ -95,7 +91,6 @@ const Header = () => {
           {!openMenu
             ? <BurgerMenuIcon onClick={showMenu} />
             : <HideSearchMobile onClick={hideMenu} />}
-
           {openMenu
           && <div className={style.MobileMenu}>
               <div className={style.mobileButton}>
